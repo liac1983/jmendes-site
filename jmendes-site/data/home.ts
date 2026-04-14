@@ -30,17 +30,17 @@ export const homeFeatures = [
 
 export const featuredProjects = [
   {
-    image: "/images/home/project-kitchen.jpg",
+    image: "/images/home/project-kitchen.jpeg",
     categoryLabel: "Residencial",
     title: "Cozinhas Modernas",
   },
   {
-    image: "/images/home/project-closet.jpg",
+    image: "/images/home/project-closet.jpeg",
     categoryLabel: "Por Medida",
     title: "Roupeiros Luxuosos",
   },
   {
-    image: "/images/home/project-living.jpg",
+    image: "/images/home/project-living.jpeg",
     categoryLabel: "Design Premium",
     title: "Salas de Estar",
   },

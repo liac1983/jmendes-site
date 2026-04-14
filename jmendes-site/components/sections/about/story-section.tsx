@@ -25,7 +25,7 @@ export default function StorySection() {
         {/* imagens */}
         <div className="flex gap-6">
           <img
-            src="/images/sobre/story-1.jpg"
+            src="/images/sobre/story-1.jpeg"
             className="w-1/2 object-cover"
           />
           <img
