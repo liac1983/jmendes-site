@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 type Props = {
   locale: string;
@@ -69,13 +70,13 @@ export default function Footer({ locale }: Props) {
 
               <div className="flex gap-4 pt-2">
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="Facebook">
-                  <FacebookIcon className="h-5 w-5" />
+                  <FaFacebookF className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="Instagram">
-                  <InstagramIcon className="h-5 w-5" />
+                  <FaInstagram className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="LinkedIn">
-                  <LinkedinIcon className="h-5 w-5" />
+                  <FaLinkedinIn className="h-5 w-5" />
                 </a>
               </div>
             </div>
