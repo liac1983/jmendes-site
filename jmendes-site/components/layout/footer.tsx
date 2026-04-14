@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { FacebookIcon, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone } from "lucide-react";
 
 type Props = {
   locale: string;
@@ -69,13 +69,13 @@ export default function Footer({ locale }: Props) {
 
               <div className="flex gap-4 pt-2">
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="Facebook">
-                  <Facebook className="h-5 w-5" />
+                  <FacebookIcon className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="Instagram">
-                  <Instagram className="h-5 w-5" />
+                  <InstagramIcon className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-white/70 hover:text-gold" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
+                  <LinkedinIcon className="h-5 w-5" />
                 </a>
               </div>
             </div>

@@ -21,12 +21,12 @@ export default function SectionTitle({
         className
       )}
     >
-      <h2 className="text-4xl leading-tight text-[var(--foreground)] md:text-5xl lg:text-6xl">
+      <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mx-auto mt-4 max-w-3xl text-lg text-[var(--muted)]">
+        <p className="mx-auto mt-5 max-w-3xl text-xl leading-9 text-[var(--muted)]">
           {subtitle}
         </p>
       )}

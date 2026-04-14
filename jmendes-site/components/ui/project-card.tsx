@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ProjectCardProps = {
   image: string;
   title: string;
@@ -16,12 +18,15 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article>
-      <div className="relative overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="h-[420px] w-full object-cover"
-        />
+      <div className="relative overflow-hidden bg-neutral-900">
+        <div className="relative h-[420px] w-full">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+          />
+        </div>
 
         {testimonial && (
           <div className="absolute inset-x-0 bottom-0 bg-black/60 p-5 backdrop-blur-sm">
@@ -35,9 +40,13 @@ export default function ProjectCard({
         <p className="text-sm uppercase tracking-[0.18em] text-[var(--gold)]">
           {categoryLabel}
         </p>
-        <h3 className="mt-2 text-3xl text-[var(--foreground)]">{title}</h3>
+
+        <h3 className="mt-2 text-[26px] leading-tight text-[var(--foreground)] md:text-[32px]">
+          {title}
+        </h3>
       </div>
     </article>
   );
 }
+
 
