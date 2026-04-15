@@ -1,4 +1,12 @@
-export const productLines = [
+export type ProductLine = {
+  title: string;
+  description: string;
+  deliveryTime: string;
+  features: string[];
+  image: string;
+};
+
+export const productLines: ProductLine[] = [
   {
     title: "Cozinhas Modulares",
     description:
@@ -10,7 +18,7 @@ export const productLines = [
       "Eletrodomésticos integrados",
       "Bancadas em pedra ou quartzo",
     ],
-    image: "/images/linhas/cozinhas.jpg",
+    image: "/images/linhas/cozinhas.jpeg",
   },
   {
     title: "Roupeiros Série Premium",
@@ -23,7 +31,7 @@ export const productLines = [
       "Sistema de iluminação LED",
       "Prateleiras ajustáveis",
     ],
-    image: "/images/linhas/roupeiros.jpg",
+    image: "/images/linhas/roupeiros.jpeg",
   },
   {
     title: "Mobiliário de Sala",
@@ -36,30 +44,6 @@ export const productLines = [
       "Gavetas com fecho suave",
       "Design minimalista",
     ],
-    image: "/images/linhas/sala.jpg",
+    image: "/images/linhas/sala.jpeg",
   },
 ];
-
-export const productLineAdvantages = [
-  {
-    title: "Entrega Rápida",
-    description:
-      "Stock disponível para entrega imediata ou produção em 2-4 semanas",
-  },
-  {
-    title: "Preços Competitivos",
-    description:
-      "Produção em escala permite oferecer melhor relação qualidade-preço",
-  },
-  {
-    title: "Qualidade Garantida",
-    description:
-      "Mesma qualidade e atenção ao detalhe dos projetos personalizados",
-  },
-  {
-    title: "Personalizável",
-    description:
-      "Opções de cores, acabamentos e dimensões para adaptar ao seu espaço",
-  },
-];
-
