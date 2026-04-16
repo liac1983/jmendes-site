@@ -12,28 +12,35 @@ export default function ContactInfo() {
       <ContactInfoItem
         icon={Phone}
         title="Telefone"
-        lines={["+351 XXX XXX XXX", "+351 XXX XXX XXX"]}
+        lines={[
+          "+351 255 873 030",
+          "+351 933 085 707",
+          "+351 914 332 572",
+        ]}
       />
 
       <ContactInfoItem
         icon={Mail}
         title="Email"
-        lines={["info@jmendes.pt", "comercial@jmendes.pt"]}
+        lines={["geral@jaimemendes.com"]}
       />
 
       <ContactInfoItem
         icon={MapPin}
         title="Morada"
-        lines={["Zona Industrial de ...", "XXXX-XXX Portugal"]}
+        lines={[
+          "Praça 20 de maio, 39",
+          "4590-182 Paços de Ferreira",
+        ]}
       />
 
       <ContactInfoItem
         icon={Clock3}
         title="Horário"
         lines={[
-          "Segunda a Sexta: 9h - 18h",
-          "Sábado: 9h - 13h",
-          "Domingo: Encerrado",
+          "Segunda a Sexta: 8h - 12h",
+          "13:30h - 17:30h",
+          "Sábado e Domingo: Encerrado",
         ]}
       />
 
@@ -41,7 +48,7 @@ export default function ContactInfo() {
         <h3 className="text-3xl text-white">WhatsApp</h3>
 
         <a
-          href="https://wa.me/351000000000"
+          href="https://wa.me/351255873030"
           target="_blank"
           rel="noreferrer"
           className="mt-6 inline-flex h-[60px] items-center gap-3 bg-[var(--gold)] px-8 text-lg font-medium text-black transition-opacity hover:opacity-90"

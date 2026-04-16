@@ -8,7 +8,7 @@ export default function ContactMap() {
 
         <div className="mt-10 h-[520px] overflow-hidden border border-[var(--border)]">
           <iframe
-            src="https://www.google.com/maps?q=Pa%C3%A7os%20de%20Ferreira&z=13&output=embed"
+            src="https://www.google.com/maps?q=Pra%C3%A7a%2020%20de%20maio%2C%2039%204590-182%20Pa%C3%A7os%20de%20Ferreira&z=16&output=embed"
             width="100%"
             height="100%"
             loading="lazy"

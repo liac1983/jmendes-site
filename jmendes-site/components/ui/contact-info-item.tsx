@@ -1,5 +1,4 @@
 import { LucideIcon } from "lucide-react";
-import IconBox from "./icon-box";
 
 type ContactInfoItemProps = {
   icon: LucideIcon;
@@ -8,19 +7,24 @@ type ContactInfoItemProps = {
 };
 
 export default function ContactInfoItem({
-  icon,
+  icon: Icon,
   title,
   lines,
 }: ContactInfoItemProps) {
   return (
-    <div className="flex items-start gap-4">
-      <IconBox icon={icon} className="h-14 w-14 shrink-0" />
+    <div className="flex gap-6 border-b border-[var(--border)] pb-8">
+      {/* Icon */}
+      <div className="flex h-12 w-12 items-center justify-center border border-[var(--border)]">
+        <Icon className="h-5 w-5 text-[var(--gold)]" />
+      </div>
 
+      {/* Content */}
       <div>
-        <h3 className="text-3xl text-[var(--foreground)]">{title}</h3>
-        <div className="mt-2 space-y-1">
-          {lines.map((line) => (
-            <p key={line} className="text-[var(--muted)]">
+        <h3 className="text-2xl text-white">{title}</h3>
+
+        <div className="mt-3 space-y-2">
+          {lines.map((line, index) => (
+            <p key={`${title}-${index}`} className="text-[var(--muted)]">
               {line}
             </p>
           ))}
