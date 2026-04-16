@@ -30,18 +30,21 @@ export const homeFeatures = [
 
 export const featuredProjects = [
   {
-    image: "/images/home/project-kitchen.jpeg",
-    categoryLabel: "Residencial",
-    title: "Cozinhas Modernas",
-  },
-  {
-    image: "/images/home/project-closet.jpeg",
+    slug: "cozinha-moderna-minimalista",
+    title: "Cozinha Moderna Minimalista",
+    image: "/images/portfolio/cozinha-1.jpg",
     categoryLabel: "Por Medida",
-    title: "Roupeiros Luxuosos",
   },
   {
-    image: "/images/home/project-living.jpeg",
-    categoryLabel: "Design Premium",
-    title: "Salas de Estar",
+    slug: "cozinha-com-ilha-central",
+    title: "Cozinha com Ilha Central",
+    image: "/images/portfolio/cozinha-2.jpg",
+    categoryLabel: "Por Medida",
+  },
+  {
+    slug: "walk-in-closet-luxuoso",
+    title: "Walk-in Closet Luxuoso",
+    image: "/images/portfolio/closet-1.jpg",
+    categoryLabel: "Por Medida",
   },
 ];

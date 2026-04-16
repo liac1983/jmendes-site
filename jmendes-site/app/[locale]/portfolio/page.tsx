@@ -1,11 +1,17 @@
 import PortfolioHero from "@/components/sections/portfolio/portfolio-hero";
 import PortfolioGrid from "@/components/sections/portfolio/portfolio-grid";
 
-export default function PortfolioPage() {
+export default async function PortfolioPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <main>
       <PortfolioHero />
-      <PortfolioGrid />
+      <PortfolioGrid locale={locale} />
     </main>
   );
 }

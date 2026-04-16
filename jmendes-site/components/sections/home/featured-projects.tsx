@@ -20,7 +20,9 @@ export default function FeaturedProjects({ locale }: Props) {
         <div className="grid gap-8 lg:grid-cols-3">
           {featuredProjects.map((project) => (
             <ProjectCard
-              key={project.title}
+              key={project.slug}
+              locale={locale}
+              slug={project.slug}
               image={project.image}
               categoryLabel={project.categoryLabel}
               title={project.title}
@@ -41,3 +43,4 @@ export default function FeaturedProjects({ locale }: Props) {
     </section>
   );
 }
+

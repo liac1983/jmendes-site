@@ -9,7 +9,11 @@ import {
   type PortfolioCategory,
 } from "@/data/portfolio";
 
-export default function PortfolioGrid() {
+type PortfolioGridProps = {
+  locale: string;
+};
+
+export default function PortfolioGrid({ locale }: PortfolioGridProps) {
   const [activeCategory, setActiveCategory] =
     useState<PortfolioCategory>("todos");
 
@@ -33,6 +37,8 @@ export default function PortfolioGrid() {
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.slug}
+              locale={locale}
+              slug={project.slug}
               image={project.image}
               title={project.title}
               categoryLabel={project.type}
