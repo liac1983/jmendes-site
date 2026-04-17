@@ -1,13 +1,20 @@
 "use client";
 
-import type { PortfolioCategory } from "@/data/portfolio";
-import { portfolioCategories } from "@/data/portfolio";
 import clsx from "clsx";
+import type { PortfolioCategory } from "./portfolio-grid";
 
 type Props = {
   activeCategory: PortfolioCategory;
   onChange: (category: PortfolioCategory) => void;
 };
+
+const portfolioCategories: { value: PortfolioCategory; label: string }[] = [
+  { value: "todos", label: "Todos" },
+  { value: "cozinhas", label: "Cozinhas" },
+  { value: "roupeiros", label: "Roupeiros" },
+  { value: "comercial", label: "Comercial" },
+  { value: "casas-completas", label: "Casas Completas" },
+];
 
 export default function PortfolioFilters({
   activeCategory,
@@ -33,4 +40,3 @@ export default function PortfolioFilters({
     </div>
   );
 }
-

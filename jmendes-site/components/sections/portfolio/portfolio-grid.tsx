@@ -4,26 +4,43 @@ import { useMemo, useState } from "react";
 import ProjectCard from "@/components/ui/project-card";
 import Container from "@/components/ui/container";
 import PortfolioFilters from "./portfolio-filters";
-import {
-  portfolioProjects,
-  type PortfolioCategory,
-} from "@/data/portfolio";
+
+export type PortfolioCategory =
+  | "todos"
+  | "cozinhas"
+  | "roupeiros"
+  | "comercial"
+  | "casas-completas";
+
+type PortfolioProject = {
+  slug: string;
+  title: string;
+  category: Exclude<PortfolioCategory, "todos">;
+  type: string;
+  image: string;
+  testimonial?: {
+    text: string;
+    author: string;
+  };
+};
 
 type PortfolioGridProps = {
   locale: string;
+  projects: PortfolioProject[];
 };
 
-export default function PortfolioGrid({ locale }: PortfolioGridProps) {
+export default function PortfolioGrid({
+  locale,
+  projects,
+}: PortfolioGridProps) {
   const [activeCategory, setActiveCategory] =
     useState<PortfolioCategory>("todos");
 
   const filteredProjects = useMemo(() => {
     return activeCategory === "todos"
-      ? portfolioProjects
-      : portfolioProjects.filter(
-          (project) => project.category === activeCategory
-        );
-  }, [activeCategory]);
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
+  }, [activeCategory, projects]);
 
   return (
     <section className="py-20 lg:py-24">
@@ -50,4 +67,3 @@ export default function PortfolioGrid({ locale }: PortfolioGridProps) {
     </section>
   );
 }
-
