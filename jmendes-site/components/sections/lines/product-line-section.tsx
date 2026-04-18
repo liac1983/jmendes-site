@@ -1,79 +1,67 @@
-import Image from "next/image";
-import { CheckCircle2, Clock3 } from "lucide-react";
-import Container from "@/components/ui/container";
-import Button from "@/components/ui/button";
-import type { ProductLine } from "@/data/product-lines";
-import clsx from "clsx";
+import Link from "next/link";
+import { ProductLine } from "@/data/product-lines";
 
-type Props = ProductLine & {
-  reverse?: boolean;
+type ProductLineSectionProps = {
   locale: string;
+  product: ProductLine;
+  reverse?: boolean;
 };
 
 export default function ProductLineSection({
-  title,
-  description,
-  deliveryTime,
-  features,
-  image,
-  reverse = false,
   locale,
-}: Props) {
+  product,
+  reverse = false,
+}: ProductLineSectionProps) {
   return (
-    <section className="py-20 lg:py-24">
-      <Container>
-        <div
-          className={clsx(
-            "grid items-center gap-14 lg:grid-cols-2 lg:gap-20",
-            reverse && "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
-          )}
+    <section className="bg-black text-white">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <article
+          className={`grid items-center gap-12 border-b border-[#2A2116] pb-16 lg:grid-cols-2 ${
+            reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
+          }`}
         >
-          <div>
-            <h2 className="text-5xl leading-tight text-white md:text-6xl">
-              {title}
-            </h2>
-
-            <p className="mt-6 max-w-[620px] text-xl leading-9 text-[var(--muted)]">
-              {description}
+          <div className="space-y-6">
+            <p className="text-sm uppercase tracking-[0.2em] text-[#C8A45D]">
+              {product.category}
             </p>
 
-            <div className="mt-8 inline-flex items-center gap-3 text-xl text-[var(--gold)]">
-              <Clock3 className="h-5 w-5" />
-              <span>Prazo de entrega: {deliveryTime}</span>
+            <h2 className="font-serif text-4xl md:text-5xl">
+              {product.title}
+            </h2>
+
+            <p className="max-w-xl text-lg text-white/70">
+              {product.subtitle}
+            </p>
+
+            <div className="space-y-4">
+              <p className="text-[#C8A45D]">{product.availability}</p>
+
+              <ul className="space-y-3 text-white/80">
+                {product.highlights.map((item) => (
+                  <li key={item}>✓ {item}</li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="mt-8 space-y-5">
-              {features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-4 text-xl leading-8 text-[var(--muted)]"
-                >
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[var(--gold)]" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10">
-              <Button href={`/${locale}/contacto`} className="min-w-[220px]">
-                Pedir Informação
-              </Button>
-            </div>
+            <Link
+              href={`/${locale}/linhas/${product.slug}`}
+              className="inline-flex items-center gap-3 bg-[#C8A45D] px-8 py-4 text-base font-medium text-black transition hover:opacity-90"
+            >
+              Ver detalhes
+              <span aria-hidden>→</span>
+            </Link>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[560px]">
-            <div className="absolute left-5 top-5 h-full w-full bg-[rgba(200,168,90,0.22)]" />
-            <div className="relative h-[420px] w-full overflow-hidden md:h-[520px]">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="relative">
+            <div className="absolute bottom-[-16px] right-[-16px] h-full w-full border border-[#5B4726]" />
+            <img
+              src={product.heroImage}
+              alt={product.title}
+              className="relative z-10 h-[520px] w-full object-cover"
+            />
           </div>
-        </div>
-      </Container>
+        </article>
+      </div>
     </section>
   );
 }

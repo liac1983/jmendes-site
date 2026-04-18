@@ -16,13 +16,9 @@ export default async function LinhasPage({
 
       {productLines.map((line, index) => (
         <ProductLineSection
-          key={line.title}
+          key={line.slug}
           locale={locale}
-          title={line.title}
-          description={line.description}
-          deliveryTime={line.deliveryTime}
-          features={line.features}
-          image={line.image}
+          product={line}
           reverse={index % 2 === 1}
         />
       ))}
