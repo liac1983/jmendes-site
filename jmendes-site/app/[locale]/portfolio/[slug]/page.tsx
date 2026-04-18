@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { getAllProjects, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import ProjectHero from "@/components/sections/project/project-hero";
 import ProjectOverview from "@/components/sections/project/project-overview";
 import ProjectGallery from "@/components/sections/project/project-gallery";
@@ -10,25 +9,87 @@ import ProjectInstagram from "@/components/sections/project/project-instagram";
 import RelatedProjects from "@/components/sections/project/related-projects";
 import ProjectCta from "@/components/sections/project/project-cta";
 
-export function generateStaticParams() {
-  return getAllProjects().map((project) => ({
-    slug: project.slug,
-  }));
-}
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import {
+  projectBySlugQuery,
+  relatedProjectsQuery,
+} from "@/sanity/lib/queries";
+import type {
+  SanityProjectDetail,
+  SanityRelatedProject,
+} from "@/sanity/lib/types";
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}) {
+type ProjectPageProps = {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+};
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const { locale, slug } = await params;
-  const project = getProjectBySlug(slug);
 
-  if (!project) {
+  const sanityProject = await client.fetch<SanityProjectDetail | null>(
+    projectBySlugQuery,
+    { slug }
+  );
+
+  if (!sanityProject) {
     notFound();
   }
 
-  const relatedProjects = getRelatedProjects(project.slug);
+  const sanityRelatedProjects = await client.fetch<SanityRelatedProject[]>(
+    relatedProjectsQuery,
+    { slug }
+  );
+
+  const project = {
+    title: sanityProject.title,
+    slug: sanityProject.slug,
+    category: sanityProject.categoryLabel || "Por Medida",
+    location: sanityProject.location || "Portugal",
+    year: sanityProject.year || "",
+    typeLabel: sanityProject.typeLabel || "Por Medida",
+    heroImage: sanityProject.heroImage
+      ? urlFor(sanityProject.heroImage).width(1800).height(1200).url()
+      : "/images/placeholder.jpg",
+    overviewImage: sanityProject.overviewImage
+      ? urlFor(sanityProject.overviewImage).width(1200).height(1200).url()
+      : sanityProject.heroImage
+      ? urlFor(sanityProject.heroImage).width(1200).height(1200).url()
+      : "/images/placeholder.jpg",
+    gallery:
+      sanityProject.gallery?.map((image) =>
+        urlFor(image).width(1400).height(1100).url()
+      ) || [],
+    description: sanityProject.description || "",
+    challenge: sanityProject.challenge || "",
+    solution: sanityProject.solution || "",
+    materials: sanityProject.materials || [],
+    finishes: sanityProject.finishes || [],
+    testimonial:
+      sanityProject.testimonialText && sanityProject.testimonialAuthor
+        ? {
+            text: sanityProject.testimonialText,
+            author: sanityProject.testimonialAuthor,
+          }
+        : undefined,
+    instagramImages:
+      sanityProject.instagramImages?.map((image) =>
+        urlFor(image).width(900).height(900).url()
+      ) || [],
+    instagramUrl: sanityProject.instagramUrl || "",
+  };
+
+  const relatedProjects = sanityRelatedProjects.map((item) => ({
+    slug: item.slug,
+    title: item.title,
+    category: item.typeLabel || item.categoryLabel || "Por Medida",
+    heroImage: item.heroImage
+      ? urlFor(item.heroImage).width(1200).height(900).url()
+      : "/images/placeholder.jpg",
+  }));
 
   return (
     <>
@@ -44,5 +105,4 @@ export default async function ProjectPage({
     </>
   );
 }
-
 

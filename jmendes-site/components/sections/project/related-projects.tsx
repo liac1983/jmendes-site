@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import type { Project } from "@/lib/project-types";
+
+type RelatedProject = {
+  slug: string;
+  title: string;
+  category: string;
+  heroImage: string;
+};
 
 type Props = {
-  projects: Project[];
+  projects: RelatedProject[];
   locale: string;
 };
 
@@ -14,7 +20,9 @@ export default function RelatedProjects({ projects, locale }: Props) {
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
         <div className="text-center">
-          <h2 className="text-5xl text-white md:text-6xl">Outros Projetos Semelhantes</h2>
+          <h2 className="text-5xl text-white md:text-6xl">
+            Outros Projetos Semelhantes
+          </h2>
           <p className="mt-4 text-xl text-[var(--muted)]">
             Explore mais trabalhos desta categoria
           </p>
@@ -35,7 +43,7 @@ export default function RelatedProjects({ projects, locale }: Props) {
                 />
               </div>
 
-              <p className="mt-5 text-sm tracking-[0.18em] text-gold uppercase">
+              <p className="mt-5 text-sm uppercase tracking-[0.18em] text-gold">
                 {project.category}
               </p>
 
@@ -49,4 +57,3 @@ export default function RelatedProjects({ projects, locale }: Props) {
     </section>
   );
 }
-
