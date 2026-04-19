@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ProductLine } from "@/data/product-lines";
+import {urlFor} from "@/sanity/lib/image";
+import type {ProductLine} from "@/types/product-line";
 
 type ProductLineSectionProps = {
   locale: string;
@@ -12,6 +13,9 @@ export default function ProductLineSection({
   product,
   reverse = false,
 }: ProductLineSectionProps) {
+  const availabilityLabel =
+    product.availability === "available" ? "Disponível" : "Indisponível";
+
   return (
     <section className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-20">
@@ -34,10 +38,10 @@ export default function ProductLineSection({
             </p>
 
             <div className="space-y-4">
-              <p className="text-[#C8A45D]">{product.availability}</p>
+              <p className="text-[#C8A45D]">{availabilityLabel}</p>
 
               <ul className="space-y-3 text-white/80">
-                {product.highlights.map((item) => (
+                {(product.highlights ?? []).map((item) => (
                   <li key={item}>✓ {item}</li>
                 ))}
               </ul>
@@ -54,11 +58,13 @@ export default function ProductLineSection({
 
           <div className="relative">
             <div className="absolute bottom-[-16px] right-[-16px] h-full w-full border border-[#5B4726]" />
-            <img
-              src={product.heroImage}
-              alt={product.title}
-              className="relative z-10 h-[520px] w-full object-cover"
-            />
+            {product.heroImage?.asset && (
+              <img
+                src={urlFor(product.heroImage).width(1200).height(900).fit("crop").url()}
+                alt={product.heroImage.alt || product.title}
+                className="relative z-10 h-[520px] w-full object-cover"
+              />
+            )}
           </div>
         </article>
       </div>

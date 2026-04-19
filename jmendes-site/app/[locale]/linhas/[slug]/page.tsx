@@ -1,30 +1,52 @@
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { productLines } from "@/data/product-lines"
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import {client} from "@/sanity/lib/client";
+import {
+  productLineBySlugQuery,
+  productLineSlugsQuery,
+} from "@/sanity/lib/queries";
+import {urlFor} from "@/sanity/lib/image";
+import type {ProductLine} from "@/types/product-line";
 
 type PageProps = {
-  params: Promise<{ slug: string }>
-}
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+};
+
+const locales = ["pt", "en", "fr", "es"];
 
 export async function generateStaticParams() {
-  return productLines.map((product) => ({
-    slug: product.slug,
-  }))
+  const slugs = await client.fetch<{slug: string}[]>(productLineSlugsQuery);
+
+  return locales.flatMap((locale) =>
+    slugs.map((item) => ({
+      locale,
+      slug: item.slug,
+    }))
+  );
 }
 
-export default async function ProductLineDetailPage({ params }: PageProps) {
-  const { slug } = await params
+export default async function ProductLineDetailPage({params}: PageProps) {
+  const {locale, slug} = await params;
 
-  const product = productLines.find((item) => item.slug === slug)
+  const product = await client.fetch<ProductLine | null>(
+    productLineBySlugQuery,
+    {slug}
+  );
 
-  if (!product) notFound()
+  if (!product) notFound();
+
+  const availabilityLabel =
+    product.availability === "available" ? "Disponível" : "Indisponível";
 
   return (
     <main className="bg-black text-white">
       <section className="border-b border-[#2A2116]">
         <div className="mx-auto max-w-7xl px-6 py-8">
           <Link
-            href="/linhas"
+            href={`/${locale}/linhas`}
             className="inline-flex items-center gap-2 text-white/70 transition hover:text-white"
           >
             <span>←</span>
@@ -35,11 +57,13 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
 
       <section className="relative min-h-[78vh] overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={product.heroImage}
-            alt={product.title}
-            className="h-full w-full object-cover opacity-45"
-          />
+          {product.heroImage?.asset && (
+            <img
+              src={urlFor(product.heroImage).width(1800).height(1100).fit("crop").url()}
+              alt={product.heroImage.alt || product.title}
+              className="h-full w-full object-cover opacity-45"
+            />
+          )}
           <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/30" />
         </div>
@@ -59,8 +83,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
             </p>
 
             <div className="inline-flex items-center gap-3 border border-[#C8A45D] px-6 py-3 text-[#C8A45D]">
-              <span>◌</span>
-              {product.availability}
+              {availabilityLabel}
             </div>
           </div>
         </div>
@@ -71,17 +94,19 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
           <div className="space-y-8">
             <h2 className="font-serif text-4xl md:text-5xl">Sobre o Modelo</h2>
             <p className="text-xl leading-relaxed text-white/75">
-              {product.shortDescription}
+              {product.aboutText}
             </p>
           </div>
 
           <div className="relative">
             <div className="absolute bottom-[-16px] right-[-16px] h-full w-full border border-[#5B4726]" />
-            <img
-              src={product.aboutImage}
-              alt={product.title}
-              className="relative z-10 h-[420px] w-full object-cover"
-            />
+            {product.aboutImage?.asset && (
+              <img
+                src={urlFor(product.aboutImage).width(1200).height(900).fit("crop").url()}
+                alt={product.aboutImage.alt || product.title}
+                className="relative z-10 h-[420px] w-full object-cover"
+              />
+            )}
           </div>
         </div>
       </section>
@@ -104,7 +129,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
               </h3>
 
               <ul className="space-y-5 text-xl text-white/75">
-                {product.materials.map((item) => (
+                {(product.materials ?? []).map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-2 w-2 bg-[#C8A45D]" />
                     <span>{item}</span>
@@ -119,7 +144,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
               </h3>
 
               <ul className="space-y-5 text-xl text-white/75">
-                {product.finishes.map((item) => (
+                {(product.finishes ?? []).map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-2 w-2 bg-[#C8A45D]" />
                     <span>{item}</span>
@@ -149,15 +174,15 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
               <div className="space-y-6 text-lg">
                 <div className="flex items-center justify-between border-b border-[#2A2116] pb-5">
                   <span className="text-white/70">Largura</span>
-                  <span>{product.dimensions.largura}</span>
+                  <span>{product.dimensions?.width}</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-[#2A2116] pb-5">
                   <span className="text-white/70">Altura</span>
-                  <span>{product.dimensions.altura}</span>
+                  <span>{product.dimensions?.height}</span>
                 </div>
                 <div className="flex items-center justify-between pb-2">
                   <span className="text-white/70">Profundidade</span>
-                  <span>{product.dimensions.profundidade}</span>
+                  <span>{product.dimensions?.depth}</span>
                 </div>
               </div>
             </div>
@@ -166,7 +191,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
               <h3 className="mb-8 font-serif text-3xl">Ficha Técnica</h3>
 
               <ul className="space-y-5 text-xl text-white/75">
-                {product.technicalFeatures.map((item) => (
+                {(product.technicalFeatures ?? []).map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#C8A45D]">◌</span>
                     <span>{item}</span>
@@ -188,14 +213,16 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
           </div>
 
           <div className="grid gap-8">
-            {product.gallery.map((image, index) => (
-              <img
-                key={image}
-                src={image}
-                alt={`${product.title} ${index + 1}`}
-                className="h-[520px] w-full object-cover"
-              />
-            ))}
+            {(product.gallery ?? []).map((image, index) =>
+              image?.asset ? (
+                <img
+                  key={`${product._id}-${index}`}
+                  src={urlFor(image).width(1600).height(1000).fit("crop").url()}
+                  alt={image.alt || `${product.title} ${index + 1}`}
+                  className="h-[520px] w-full object-cover"
+                />
+              ) : null
+            )}
           </div>
         </div>
       </section>
@@ -208,7 +235,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
             </h2>
 
             <ul className="space-y-6 text-xl text-white/75">
-              {product.advantages.map((item) => (
+              {(product.advantages ?? []).map((item) => (
                 <li key={item} className="flex gap-4">
                   <span className="text-[#C8A45D]">◌</span>
                   <span>{item}</span>
@@ -223,7 +250,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
             </h2>
 
             <ul className="space-y-6 text-xl text-white/75">
-              {product.idealFor.map((item) => (
+              {(product.idealFor ?? []).map((item) => (
                 <li key={item} className="flex gap-4">
                   <span className="mt-2 h-2 w-2 bg-[#C8A45D]" />
                   <span>{item}</span>
@@ -246,7 +273,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contacto"
+              href={`/${locale}/contacto`}
               className="inline-flex items-center justify-center gap-3 bg-[#C8A45D] px-8 py-4 text-lg font-medium text-black transition hover:opacity-90"
             >
               Pedir Informações
@@ -254,7 +281,7 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
             </Link>
 
             <Link
-              href="/linhas"
+              href={`/${locale}/linhas`}
               className="inline-flex items-center justify-center border border-[#C8A45D] px-8 py-4 text-lg font-medium text-[#C8A45D] transition hover:bg-[#C8A45D] hover:text-black"
             >
               Ver Mais Produtos
@@ -263,5 +290,6 @@ export default async function ProductLineDetailPage({ params }: PageProps) {
         </div>
       </section>
     </main>
-  )
+  );
 }
+

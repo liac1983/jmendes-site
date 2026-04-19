@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import {groq} from 'next-sanity'
 
 export const portfolioProjectsQuery = groq`
   *[_type == "project" && published == true] | order(order asc, _createdAt desc) {
@@ -50,3 +50,80 @@ export const relatedProjectsQuery = groq`
     heroImage
   }
 `;
+export const productLinesQuery = groq`
+  *[_type == "productLine" && isActive == true] | order(orderRank asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    category,
+    availability,
+    subtitle,
+    aboutText,
+    heroImage{
+      ...,
+      alt
+    },
+    aboutImage{
+      ...,
+      alt
+    },
+    gallery[]{
+      ...,
+      alt
+    },
+    highlights,
+    materials,
+    finishes,
+    dimensions{
+      width,
+      height,
+      depth
+    },
+    technicalFeatures,
+    advantages,
+    idealFor,
+    orderRank
+  }
+`
+
+export const productLineBySlugQuery = groq`
+  *[_type == "productLine" && slug.current == $slug && isActive == true][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    category,
+    availability,
+    subtitle,
+    aboutText,
+    heroImage{
+      ...,
+      alt
+    },
+    aboutImage{
+      ...,
+      alt
+    },
+    gallery[]{
+      ...,
+      alt
+    },
+    highlights,
+    materials,
+    finishes,
+    dimensions{
+      width,
+      height,
+      depth
+    },
+    technicalFeatures,
+    advantages,
+    idealFor,
+    orderRank
+  }
+`
+
+export const productLineSlugsQuery = groq`
+  *[_type == "productLine" && isActive == true && defined(slug.current)][]{
+    "slug": slug.current
+  }
+`
