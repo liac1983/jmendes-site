@@ -1,0 +1,11 @@
+{
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "process": "Processus",
+    "portfolio": "Portfolio",
+    "lines": "Lignes",
+    "services": "Services",
+    "contact": "Contact"
+  }
+}

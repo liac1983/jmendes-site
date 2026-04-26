@@ -1,13 +1,13 @@
+// data/navigation.ts
 export const navigation = [
-  { label: "Início", href: "" },
-  { label: "Sobre", href: "/sobre" },
-  { label: "Processo", href: "/processo" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Linhas", href: "/linhas" },
-  { label: "Serviços", href: "/servicos" },
-  { label: "Contacto", href: "/contacto" },
+  { label: "home", href: "" },
+  { label: "about", href: "/sobre" },
+  { label: "process", href: "/processo" },
+  { label: "portfolio", href: "/portfolio" },
+  { label: "lines", href: "/linhas" },
+  { label: "services", href: "/servicos" },
+  { label: "contact", href: "/contacto" },
 ];
 
 export const locales = ["pt", "en", "fr", "es"] as const;
 export type AppLocale = (typeof locales)[number];
-

@@ -41,4 +41,3 @@ export default function MobileMenu({ locale }: Props) {
     </div>
   );
 }
-
