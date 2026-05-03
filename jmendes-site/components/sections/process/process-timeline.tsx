@@ -1,24 +1,27 @@
+import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 
 const timelineItems = [
-  "Briefing com Cliente",
-  "Projeto 3D",
-  "Produção na Fábrica",
-  "Acabamentos",
-  "Entrega e Montagem",
+  "briefing",
+  "project3d",
+  "production",
+  "finishes",
+  "delivery",
 ];
 
 export default function ProcessTimeline() {
+  const t = useTranslations("Process.timeline");
+
   return (
     <section className="border-t border-[var(--border)] py-20 lg:py-24">
       <Container>
         <div className="mx-auto max-w-[1100px] text-center">
           <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[72px]">
-            Do Conceito à Realidade
+            {t("title")}
           </h2>
 
           <p className="mt-5 text-xl text-[var(--muted)]">
-            Prazo médio de execução: 4-8 semanas, dependendo da complexidade do projeto
+            {t("subtitle")}
           </p>
         </div>
 
@@ -33,7 +36,7 @@ export default function ProcessTimeline() {
                 </div>
 
                 <p className="mx-auto mt-5 max-w-[150px] text-xl leading-8 text-[var(--muted)]">
-                  {item}
+                  {t(`items.${item}`)}
                 </p>
               </div>
             ))}

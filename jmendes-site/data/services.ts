@@ -9,90 +9,47 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export type Service = {
-  title: string;
+  id: string;
   image: string;
-  description: string;
-  bullets: string[];
+  bulletKeys: string[];
   icon: LucideIcon;
 };
 
 export const services: Service[] = [
   {
-    title: "Mobiliário por Medida",
+    id: "customFurniture",
     image: "/images/servicos/medida.jpg",
-    description:
-      "Criamos peças únicas adaptadas exatamente às suas necessidades e ao seu espaço.",
-    bullets: [
-      "Medições no local",
-      "Desenho personalizado",
-      "Escolha de materiais premium",
-      "Acompanhamento completo do projeto",
-    ],
+    bulletKeys: ["measurements", "customDesign", "premiumMaterials", "projectSupport"],
     icon: Sofa,
   },
   {
-    title: "Design de Interiores",
+    id: "interiorDesign",
     image: "/images/servicos/interiores.jpeg",
-    description:
-      "Serviço completo de design com foco em funcionalidade e estética.",
-    bullets: [
-      "Conceito e moodboard",
-      "Seleção de materiais e cores",
-      "Coordenação com fornecedores",
-      "Supervisão de obra",
-    ],
+    bulletKeys: ["concept", "materials", "supplierCoordination", "siteSupervision"],
     icon: PencilRuler,
   },
   {
-    title: "Visualização 3D",
+    id: "visualization3d",
     image: "/images/servicos/3d.jpeg",
-    description:
-      "Renderizações fotorrealistas para visualizar o resultado antes de produzir.",
-    bullets: [
-      "Modelos 3D detalhados",
-      "Renders fotorrealistas",
-      "Diferentes perspetivas",
-      "Alterações rápidas",
-    ],
+    bulletKeys: ["detailedModels", "photorealisticRenders", "perspectives", "quickChanges"],
     icon: Cuboid,
   },
   {
-    title: "Produção Industrial",
+    id: "industrialProduction",
     image: "/images/servicos/producao.jpeg",
-    description:
-      "Capacidade de produção em série com qualidade consistente.",
-    bullets: [
-      "Equipamento CNC",
-      "Controlo rigoroso",
-      "Produção em escala",
-      "Prazos garantidos",
-    ],
+    bulletKeys: ["cncEquipment", "qualityControl", "scaleProduction", "guaranteedDeadlines"],
     icon: Factory,
   },
   {
-    title: "Entrega e Montagem",
+    id: "deliveryAssembly",
     image: "/images/servicos/montagem.jpeg",
-    description:
-      "Serviço completo de logística e instalação profissional.",
-    bullets: [
-      "Transporte seguro",
-      "Montagem profissional",
-      "Proteção do espaço",
-      "Limpeza final",
-    ],
+    bulletKeys: ["safeTransport", "professionalAssembly", "spaceProtection", "finalCleaning"],
     icon: Truck,
   },
   {
-    title: "Embasamento",
+    id: "fitting",
     image: "/images/servicos/embasamento.jpeg",
-    description:
-      "Acabamentos finais no local para garantir ajuste perfeito.",
-    bullets: [
-      "Ajustes finais",
-      "Instalação de ferragens",
-      "Nivelamento",
-      "Retoques finais",
-    ],
+    bulletKeys: ["finalAdjustments", "hardwareInstallation", "leveling", "finalRetouches"],
     icon: Wrench,
   },
 ];

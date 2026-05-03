@@ -1,6 +1,9 @@
+import { useTranslations } from "next-intl";
 import { stats } from "@/data/stats";
 
 export default function StatsSection() {
+  const t = useTranslations("About.stats");
+
   return (
     <section className="border-t border-[var(--border)] py-20">
       <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-10 px-6 text-center md:grid-cols-4">
@@ -8,7 +11,7 @@ export default function StatsSection() {
           <div key={i}>
             <p className="text-4xl text-gold">{item.value}</p>
             <p className="mt-2 text-sm text-[var(--muted)]">
-              {item.label}
+              {t(`items.${item.key}`)}
             </p>
           </div>
         ))}

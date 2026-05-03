@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type ProjectCardProps = {
   locale: string;
@@ -21,11 +22,13 @@ export default function ProjectCard({
   categoryLabel,
   testimonial,
 }: ProjectCardProps) {
+  const t = useTranslations("Portfolio.card");
+
   return (
     <Link
       href={`/${locale}/portfolio/${slug}`}
       className="group block"
-      aria-label={`Ver projeto ${title}`}
+      aria-label={t("ariaLabel", { title })}
     >
       <article>
         <div className="relative overflow-hidden bg-neutral-900">
@@ -48,7 +51,7 @@ export default function ProjectCard({
                 <span>★</span>
               </div>
               <p className="text-base leading-7 text-white">
-                "{testimonial.text}"
+                &quot;{testimonial.text}&quot;
               </p>
               <p className="mt-2 text-base text-[var(--gold)]">
                 - {testimonial.author}
@@ -70,4 +73,3 @@ export default function ProjectCard({
     </Link>
   );
 }
-

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 import IconBox from "@/components/ui/icon-box";
 import clsx from "clsx";
@@ -7,8 +8,7 @@ import clsx from "clsx";
 type Props = {
   reverse?: boolean;
   number: string;
-  title: string;
-  description: string;
+  stepKey: string;
   image: string;
   icon: LucideIcon;
 };
@@ -16,11 +16,13 @@ type Props = {
 export default function ProcessStep({
   reverse = false,
   number,
-  title,
-  description,
+  stepKey,
   image,
   icon,
 }: Props) {
+  const t = useTranslations("Process.steps");
+  const title = t(`${stepKey}.title`);
+
   return (
     <section className="py-18 lg:py-22">
       <Container>
@@ -43,7 +45,7 @@ export default function ProcessStep({
               </h2>
 
               <p className="mt-6 max-w-[580px] text-xl leading-9 text-[var(--muted)]">
-                {description}
+                {t(`${stepKey}.description`)}
               </p>
             </div>
           </div>

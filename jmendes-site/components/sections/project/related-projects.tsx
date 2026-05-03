@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 
 type RelatedProject = {
@@ -14,6 +15,8 @@ type Props = {
 };
 
 export default function RelatedProjects({ projects, locale }: Props) {
+  const t = useTranslations("Portfolio.project.related");
+
   if (!projects.length) return null;
 
   return (
@@ -21,10 +24,10 @@ export default function RelatedProjects({ projects, locale }: Props) {
       <Container>
         <div className="text-center">
           <h2 className="text-5xl text-white md:text-6xl">
-            Outros Projetos Semelhantes
+            {t("title")}
           </h2>
           <p className="mt-4 text-xl text-[var(--muted)]">
-            Explore mais trabalhos desta categoria
+            {t("subtitle")}
           </p>
         </div>
 

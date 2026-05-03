@@ -1,5 +1,7 @@
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 import {urlFor} from "@/sanity/lib/image";
+import {getProductLineCategoryLabelKey} from "@/lib/product-line-localization";
 import type {ProductLine} from "@/types/product-line";
 
 type ProductLineSectionProps = {
@@ -13,8 +15,10 @@ export default function ProductLineSection({
   product,
   reverse = false,
 }: ProductLineSectionProps) {
-  const availabilityLabel =
-    product.availability === "available" ? "Disponível" : "Indisponível";
+  const t = useTranslations("Lines.product");
+  const categoryT = useTranslations("Lines.labels.categories");
+  const availabilityLabel = t(`availability.${product.availability}`);
+  const categoryLabelKey = getProductLineCategoryLabelKey(product.category);
 
   return (
     <section className="bg-black text-white">
@@ -26,7 +30,9 @@ export default function ProductLineSection({
         >
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[#C8A45D]">
-              {product.category}
+              {categoryLabelKey
+                ? categoryT(categoryLabelKey)
+                : product.category}
             </p>
 
             <h2 className="font-serif text-4xl md:text-5xl">
@@ -51,7 +57,7 @@ export default function ProductLineSection({
               href={`/${locale}/linhas/${product.slug}`}
               className="inline-flex items-center gap-3 bg-[#C8A45D] px-8 py-4 text-base font-medium text-black transition hover:opacity-90"
             >
-              Ver detalhes
+              {t("details")}
               <span aria-hidden>→</span>
             </Link>
           </div>

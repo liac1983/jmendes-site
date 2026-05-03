@@ -1,11 +1,16 @@
 import Link from "next/link";
 import {notFound} from "next/navigation";
+import {getTranslations} from "next-intl/server";
 import {client} from "@/sanity/lib/client";
 import {
   productLineBySlugQuery,
   productLineSlugsQuery,
 } from "@/sanity/lib/queries";
 import {urlFor} from "@/sanity/lib/image";
+import {
+  getLocalizedProductLine,
+  getProductLineCategoryLabelKey,
+} from "@/lib/product-line-localization";
 import type {ProductLine} from "@/types/product-line";
 
 type PageProps = {
@@ -30,16 +35,20 @@ export async function generateStaticParams() {
 
 export default async function ProductLineDetailPage({params}: PageProps) {
   const {locale, slug} = await params;
+  const productT = await getTranslations("Lines.product");
+  const detailT = await getTranslations("Lines.detail");
+  const categoryT = await getTranslations("Lines.labels.categories");
 
-  const product = await client.fetch<ProductLine | null>(
+  const rawProduct = await client.fetch<ProductLine | null>(
     productLineBySlugQuery,
     {slug}
   );
 
-  if (!product) notFound();
+  if (!rawProduct) notFound();
 
-  const availabilityLabel =
-    product.availability === "available" ? "Disponível" : "Indisponível";
+  const product = getLocalizedProductLine(rawProduct, locale);
+  const availabilityLabel = productT(`availability.${product.availability}`);
+  const categoryLabelKey = getProductLineCategoryLabelKey(product.category);
 
   return (
     <main className="bg-black text-white">
@@ -50,7 +59,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
             className="inline-flex items-center gap-2 text-white/70 transition hover:text-white"
           >
             <span>←</span>
-            Voltar às Linhas
+            {detailT("back")}
           </Link>
         </div>
       </section>
@@ -71,7 +80,9 @@ export default async function ProductLineDetailPage({params}: PageProps) {
         <div className="relative mx-auto flex max-w-7xl items-center px-6 py-24 md:py-32">
           <div className="max-w-4xl space-y-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[#C8A45D]">
-              {product.category}
+              {categoryLabelKey
+                ? categoryT(categoryLabelKey)
+                : product.category}
             </p>
 
             <h1 className="font-serif text-5xl md:text-7xl">
@@ -92,7 +103,9 @@ export default async function ProductLineDetailPage({params}: PageProps) {
       <section className="border-b border-[#2A2116]">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2">
           <div className="space-y-8">
-            <h2 className="font-serif text-4xl md:text-5xl">Sobre o Modelo</h2>
+            <h2 className="font-serif text-4xl md:text-5xl">
+              {detailT("about.title")}
+            </h2>
             <p className="text-xl leading-relaxed text-white/75">
               {product.aboutText}
             </p>
@@ -115,17 +128,17 @@ export default async function ProductLineDetailPage({params}: PageProps) {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 text-center">
             <h2 className="font-serif text-4xl md:text-5xl">
-              Materiais & Acabamentos
+              {detailT("materials.title")}
             </h2>
             <p className="mt-4 text-lg text-white/60">
-              Especificações fixas de produção
+              {detailT("materials.subtitle")}
             </p>
           </div>
 
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="border border-[#2A2116] p-10">
               <h3 className="mb-8 font-serif text-3xl text-[#C8A45D]">
-                Materiais
+                {detailT("materials.materials")}
               </h3>
 
               <ul className="space-y-5 text-xl text-white/75">
@@ -140,7 +153,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
 
             <div className="border border-[#2A2116] p-10">
               <h3 className="mb-8 font-serif text-3xl text-[#C8A45D]">
-                Acabamentos
+                {detailT("materials.finishes")}
               </h3>
 
               <ul className="space-y-5 text-xl text-white/75">
@@ -160,35 +173,45 @@ export default async function ProductLineDetailPage({params}: PageProps) {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 text-center">
             <h2 className="font-serif text-4xl md:text-5xl">
-              Dimensões & Ficha Técnica
+              {detailT("technical.title")}
             </h2>
             <p className="mt-4 text-lg text-white/60">
-              Especificações detalhadas do produto
+              {detailT("technical.subtitle")}
             </p>
           </div>
 
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="border border-[#2A2116] p-10">
-              <h3 className="mb-10 font-serif text-3xl">Dimensões</h3>
+              <h3 className="mb-10 font-serif text-3xl">
+                {detailT("technical.dimensions")}
+              </h3>
 
               <div className="space-y-6 text-lg">
                 <div className="flex items-center justify-between border-b border-[#2A2116] pb-5">
-                  <span className="text-white/70">Largura</span>
+                  <span className="text-white/70">
+                    {detailT("technical.width")}
+                  </span>
                   <span>{product.dimensions?.width}</span>
                 </div>
                 <div className="flex items-center justify-between border-b border-[#2A2116] pb-5">
-                  <span className="text-white/70">Altura</span>
+                  <span className="text-white/70">
+                    {detailT("technical.height")}
+                  </span>
                   <span>{product.dimensions?.height}</span>
                 </div>
                 <div className="flex items-center justify-between pb-2">
-                  <span className="text-white/70">Profundidade</span>
+                  <span className="text-white/70">
+                    {detailT("technical.depth")}
+                  </span>
                   <span>{product.dimensions?.depth}</span>
                 </div>
               </div>
             </div>
 
             <div className="border border-[#2A2116] p-10">
-              <h3 className="mb-8 font-serif text-3xl">Ficha Técnica</h3>
+              <h3 className="mb-8 font-serif text-3xl">
+                {detailT("technical.sheet")}
+              </h3>
 
               <ul className="space-y-5 text-xl text-white/75">
                 {(product.technicalFeatures ?? []).map((item) => (
@@ -206,9 +229,11 @@ export default async function ProductLineDetailPage({params}: PageProps) {
       <section className="border-b border-[#2A2116]">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 text-center">
-            <h2 className="font-serif text-4xl md:text-5xl">Galeria</h2>
+            <h2 className="font-serif text-4xl md:text-5xl">
+              {detailT("gallery.title")}
+            </h2>
             <p className="mt-4 text-lg text-white/60">
-              Veja os detalhes do produto
+              {detailT("gallery.subtitle")}
             </p>
           </div>
 
@@ -231,7 +256,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2">
           <div>
             <h2 className="mb-10 font-serif text-4xl md:text-5xl">
-              Vantagens
+              {detailT("advantages")}
             </h2>
 
             <ul className="space-y-6 text-xl text-white/75">
@@ -246,7 +271,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
 
           <div>
             <h2 className="mb-10 font-serif text-4xl md:text-5xl">
-              Ideal Para
+              {detailT("idealFor")}
             </h2>
 
             <ul className="space-y-6 text-xl text-white/75">
@@ -264,11 +289,11 @@ export default async function ProductLineDetailPage({params}: PageProps) {
       <section>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2 className="font-serif text-5xl md:text-6xl">
-            Interessado neste produto?
+            {detailT("cta.title")}
           </h2>
 
           <p className="mt-6 text-xl text-white/70">
-            Entre em contacto connosco para mais informações sobre este produto
+            {detailT("cta.description")}
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -276,7 +301,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
               href={`/${locale}/contacto`}
               className="inline-flex items-center justify-center gap-3 bg-[#C8A45D] px-8 py-4 text-lg font-medium text-black transition hover:opacity-90"
             >
-              Pedir Informações
+              {detailT("cta.request")}
               <span>→</span>
             </Link>
 
@@ -284,7 +309,7 @@ export default async function ProductLineDetailPage({params}: PageProps) {
               href={`/${locale}/linhas`}
               className="inline-flex items-center justify-center border border-[#C8A45D] px-8 py-4 text-lg font-medium text-[#C8A45D] transition hover:bg-[#C8A45D] hover:text-black"
             >
-              Ver Mais Produtos
+              {detailT("cta.moreProducts")}
             </Link>
           </div>
         </div>
@@ -292,4 +317,3 @@ export default async function ProductLineDetailPage({params}: PageProps) {
     </main>
   );
 }
-

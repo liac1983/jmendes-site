@@ -1,4 +1,5 @@
 import Container from "@/components/ui/container";
+import { useTranslations } from "next-intl";
 import type { Project } from "@/lib/project-types";
 
 type Props = {
@@ -6,13 +7,15 @@ type Props = {
 };
 
 export default function ProjectGallery({ project }: Props) {
+  const t = useTranslations("Portfolio.project.gallery");
+
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
         <div className="text-center">
-          <h2 className="text-5xl text-white md:text-6xl">Galeria do Projeto</h2>
+          <h2 className="text-5xl text-white md:text-6xl">{t("title")}</h2>
           <p className="mt-4 text-xl text-[var(--muted)]">
-            Veja todos os detalhes deste projeto
+            {t("subtitle")}
           </p>
         </div>
 
@@ -31,4 +34,3 @@ export default function ProjectGallery({ project }: Props) {
     </section>
   );
 }
-

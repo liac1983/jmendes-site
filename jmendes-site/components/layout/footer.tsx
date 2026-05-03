@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
@@ -7,7 +8,10 @@ type Props = {
   locale: string;
 };
 
-export default function Footer({ locale }: Props) {
+export default async function Footer({ locale }: Props) {
+  const t = await getTranslations("Home.footer");
+  const navT = await getTranslations("Nav");
+
   return (
     <footer className="border-t border-[var(--border)] bg-black">
       <div className="mx-auto max-w-[1280px] px-6 py-16">
@@ -21,43 +25,43 @@ export default function Footer({ locale }: Props) {
               className="mb-6 h-14 w-auto object-contain"
             />
             <p className="max-w-xs text-sm leading-7 text-[var(--muted)]">
-              Fabricamos mobiliário com precisão, design e excelência desde 1995.
+              {t("description")}
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="mb-6 text-3xl text-gold">Links Rápidos</h3>
+            <h3 className="mb-6 text-3xl text-gold">{t("quickLinks")}</h3>
             <div className="flex flex-col gap-3">
               <Link href={`/${locale}/sobre`} className="text-white/80 hover:text-gold">
-                Sobre Nós
+                {navT("about")}
               </Link>
               <Link href={`/${locale}/processo`} className="text-white/80 hover:text-gold">
-                Processo
+                {navT("process")}
               </Link>
               <Link href={`/${locale}/portfolio`} className="text-white/80 hover:text-gold">
-                Portfolio
+                {navT("portfolio")}
               </Link>
               <Link href={`/${locale}/servicos`} className="text-white/80 hover:text-gold">
-                Serviços
+                {navT("services")}
               </Link>
             </div>
           </div>
 
           {/* Serviços */}
           <div>
-            <h3 className="mb-6 text-3xl text-gold">Serviços</h3>
+            <h3 className="mb-6 text-3xl text-gold">{t("services")}</h3>
             <div className="flex flex-col gap-3 text-white/80">
-              <p>Mobiliário por Medida</p>
-              <p>Projetos 3D</p>
-              <p>Produção em Série</p>
-              <p>Entrega e Montagem</p>
+              <p>{t("serviceItems.customFurniture")}</p>
+              <p>{t("serviceItems.projects3d")}</p>
+              <p>{t("serviceItems.seriesProduction")}</p>
+              <p>{t("serviceItems.delivery")}</p>
             </div>
           </div>
 
           {/* Contacto */}
           <div>
-            <h3 className="mb-6 text-3xl text-gold">Contacto</h3>
+            <h3 className="mb-6 text-3xl text-gold">{t("contact")}</h3>
             <div className="space-y-4 text-white/80">
               
               {/* Telefones */}
@@ -137,10 +141,9 @@ export default function Footer({ locale }: Props) {
 
         {/* Bottom */}
         <div className="mt-12 border-t border-[var(--border)] pt-8 text-center text-sm text-white/60">
-          © 2026 J. Mendes Mobiliário. Todos os direitos reservados.
+          {t("rights")}
         </div>
       </div>
     </footer>
   );
 }
-

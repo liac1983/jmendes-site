@@ -4,6 +4,7 @@ import Button from "@/components/ui/button";
 type Props = {
   locale: string;
   title: string;
+  highlight?: string;
   subtitle: string;
   buttonLabel: string;
   buttonHref: string;
@@ -12,6 +13,7 @@ type Props = {
 export default function CallToAction({
   locale,
   title,
+  highlight,
   subtitle,
   buttonLabel,
   buttonHref,
@@ -21,9 +23,9 @@ export default function CallToAction({
       <Container>
         <div className="mx-auto max-w-[920px] text-center">
           <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]">
-            {title.split("projeto ideal").length > 1 ? (
+            {highlight ? (
               <>
-                Pronto para criar o seu <span className="text-gold">projeto ideal</span>?
+                {title} <span className="text-gold">{highlight}</span>
               </>
             ) : (
               title

@@ -7,5 +7,483 @@
     "lines": "Lines",
     "services": "Services",
     "contact": "Contact"
+  },
+  "Home": {
+    "hero": {
+      "titleLine1": "We craft",
+      "titleLine2": "furniture with",
+      "titleLine3": "precision, design and",
+      "titleHighlight": "excellence",
+      "description": "Since 1995 creating unique furniture solutions, combining craftsmanship with cutting-edge technology.",
+      "ctaPrimary": "View Projects",
+      "ctaSecondary": "Request Quote"
+    },
+    "features": {
+      "production": {
+        "title": "In-House Production",
+        "description": "Industrial capacity with full quality control"
+      },
+      "projects3d": {
+        "title": "3D Projects",
+        "description": "Full visualization before production"
+      },
+      "custom": {
+        "title": "Custom Furniture",
+        "description": "Fully tailored solutions for each space"
+      },
+      "delivery": {
+        "title": "Delivery & Installation",
+        "description": "Complete service until final installation"
+      }
+    },
+    "featured": {
+      "title": "Featured Projects",
+      "description": "Examples of our work in custom furniture and series production",
+      "category": "Custom Made",
+      "viewAll": "View Full Portfolio",
+      "projects": {
+        "minimalKitchen": "Modern Minimalist Kitchen",
+        "islandKitchen": "Kitchen with Central Island",
+        "walkInCloset": "Luxury Walk-in Closet"
+      }
+    },
+    "cta": {
+      "title": "Ready to create your",
+      "highlight": "ideal project?",
+      "description": "Get in touch and discover how we can transform your space with premium furniture",
+      "button": "Start Project"
+    },
+    "footer": {
+      "description": "We craft furniture with precision, design and excellence since 1995.",
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "serviceItems": {
+        "customFurniture": "Custom Furniture",
+        "projects3d": "3D Projects",
+        "seriesProduction": "Series Production",
+        "delivery": "Delivery & Installation"
+      },
+      "contact": "Contact",
+      "rights": "© 2026 J. Mendes Furniture. All rights reserved."
+    }
+  },
+  "Portfolio": {
+    "hero": {
+      "title": "Portfolio",
+      "subtitle": "Real examples of our work in custom furniture and complete projects"
+    },
+    "filters": {
+      "todos": "All",
+      "cozinhas": "Kitchens",
+      "roupeiros": "Wardrobes",
+      "comercial": "Commercial",
+      "casas-completas": "Complete Homes"
+    },
+    "grid": {
+      "empty": "There are no projects in this category."
+    },
+    "card": {
+      "ariaLabel": "View project {title}"
+    },
+    "labels": {
+      "categories": {
+        "cozinhas": "Kitchens",
+        "roupeiros": "Wardrobes",
+        "comercial": "Commercial",
+        "casas-completas": "Complete Homes"
+      },
+      "types": {
+        "customMade": "Custom Made",
+        "completeProject": "Complete Project",
+        "commercial": "Commercial",
+        "kitchens": "Kitchens",
+        "wardrobes": "Wardrobes",
+        "completeHomes": "Complete Homes"
+      }
+    },
+    "project": {
+      "hero": {
+        "back": "Back to Portfolio",
+        "subtitle": "Project in {location}"
+      },
+      "overview": {
+        "title": "About the Project",
+        "location": "Location",
+        "year": "Year",
+        "type": "Type"
+      },
+      "gallery": {
+        "title": "Project Gallery",
+        "subtitle": "See every detail of this project"
+      },
+      "challengeSolution": {
+        "challenge": "Challenge",
+        "solution": "Solution"
+      },
+      "materials": {
+        "title": "Materials & Finishes",
+        "subtitle": "Premium quality in every detail",
+        "materials": "Materials",
+        "finishes": "Finishes"
+      },
+      "instagram": {
+        "title": "See on Instagram",
+        "subtitle": "Follow us for more inspiring projects",
+        "button": "View on Instagram"
+      },
+      "related": {
+        "title": "Other Similar Projects",
+        "subtitle": "Explore more work from this category"
+      },
+      "cta": {
+        "title": "Did you like this project?",
+        "description": "Get in touch with us to create something unique for your space",
+        "quote": "Request Quote",
+        "moreProjects": "View More Projects"
+      }
+    }
+  },
+  "Lines": {
+    "hero": {
+      "title": "Furniture Lines",
+      "subtitle": "In-house production with fast delivery. Premium quality in series.",
+      "badges": {
+        "production": "In-House Production",
+        "delivery": "Fast Delivery",
+        "warranty": "Warranty Included"
+      }
+    },
+    "product": {
+      "availability": {
+        "available": "Available",
+        "unavailable": "Unavailable"
+      },
+      "details": "View details"
+    },
+    "labels": {
+      "categories": {
+        "modularKitchens": "Modular Kitchens",
+        "modularWardrobes": "Modular Wardrobes",
+        "livingFurniture": "Living Room Furniture"
+      }
+    },
+    "advantages": {
+      "title": "Advantages of Our",
+      "titleHighlight": "Furniture Lines",
+      "subtitle": "Choosing series production does not mean compromising on quality",
+      "items": {
+        "fastDelivery": {
+          "title": "Fast Delivery",
+          "description": "Stock available for immediate delivery or production in 2-4 weeks"
+        },
+        "competitivePrices": {
+          "title": "Competitive Prices",
+          "description": "Scaled production lets us offer better value for money"
+        },
+        "guaranteedQuality": {
+          "title": "Guaranteed Quality",
+          "description": "The same quality and attention to detail as custom projects"
+        },
+        "customizable": {
+          "title": "Customizable",
+          "description": "Color, finish and dimension options to adapt to your space"
+        }
+      }
+    },
+    "detail": {
+      "back": "Back to Lines",
+      "about": {
+        "title": "About the Model"
+      },
+      "materials": {
+        "title": "Materials & Finishes",
+        "subtitle": "Fixed production specifications",
+        "materials": "Materials",
+        "finishes": "Finishes"
+      },
+      "technical": {
+        "title": "Dimensions & Technical Sheet",
+        "subtitle": "Detailed product specifications",
+        "dimensions": "Dimensions",
+        "width": "Width",
+        "height": "Height",
+        "depth": "Depth",
+        "sheet": "Technical Sheet"
+      },
+      "gallery": {
+        "title": "Gallery",
+        "subtitle": "See the product details"
+      },
+      "advantages": "Advantages",
+      "idealFor": "Ideal For",
+      "cta": {
+        "title": "Interested in this product?",
+        "description": "Get in touch with us for more information about this product",
+        "request": "Request Information",
+        "moreProducts": "View More Products"
+      }
+    }
+  },
+  "Services": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Complete furniture solutions, from concept to final installation"
+    },
+    "fullService": {
+      "title": "Full Service",
+      "subtitle": "From the first meeting to final installation",
+      "items": {
+        "customProjects": {
+          "title": "Custom Projects",
+          "lines": {
+            "customFurniture": "Custom furniture",
+            "interiorDesign": "Interior design",
+            "visualization3d": "3D visualization"
+          }
+        },
+        "production": {
+          "title": "Production",
+          "lines": {
+            "seriesManufacturing": "Series manufacturing",
+            "industrialCapacity": "Industrial capacity",
+            "qualityControl": "Quality control"
+          }
+        },
+        "installation": {
+          "title": "Installation",
+          "lines": {
+            "professionalAssembly": "Professional assembly",
+            "fitting": "Fitting",
+            "finalFinishes": "Final finishes"
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "description": "Get in touch and discover how we can transform your space",
+      "button": "Request Quote"
+    },
+    "items": {
+      "customFurniture": {
+        "title": "Custom Furniture",
+        "description": "We develop pieces tailored to each space, style and daily routine.",
+        "bullets": {
+          "measurements": "On-site measurements",
+          "customDesign": "Custom design",
+          "premiumMaterials": "Premium materials",
+          "projectSupport": "Project support"
+        }
+      },
+      "interiorDesign": {
+        "title": "Interior Design",
+        "description": "We create functional, cohesive interiors from the first idea to the final finishes.",
+        "bullets": {
+          "concept": "Visual concept",
+          "materials": "Material selection",
+          "supplierCoordination": "Supplier coordination",
+          "siteSupervision": "Site supervision"
+        }
+      },
+      "visualization3d": {
+        "title": "3D Visualization",
+        "description": "We turn concepts into realistic images so every detail can be approved before production.",
+        "bullets": {
+          "detailedModels": "Detailed models",
+          "photorealisticRenders": "Photorealistic renders",
+          "perspectives": "Space perspectives",
+          "quickChanges": "Fast revisions"
+        }
+      },
+      "industrialProduction": {
+        "title": "Industrial Production",
+        "description": "We manufacture with technical capacity, precision and rigorous control at every stage.",
+        "bullets": {
+          "cncEquipment": "CNC equipment",
+          "qualityControl": "Quality control",
+          "scaleProduction": "Scale production",
+          "guaranteedDeadlines": "Guaranteed deadlines"
+        }
+      },
+      "deliveryAssembly": {
+        "title": "Delivery & Assembly",
+        "description": "We handle safe transport, professional assembly and space protection through completion.",
+        "bullets": {
+          "safeTransport": "Safe transport",
+          "professionalAssembly": "Professional assembly",
+          "spaceProtection": "Space protection",
+          "finalCleaning": "Final cleaning"
+        }
+      },
+      "fitting": {
+        "title": "Fitting",
+        "description": "We take care of the final adjustments so every piece is level, stable and well finished.",
+        "bullets": {
+          "finalAdjustments": "Final adjustments",
+          "hardwareInstallation": "Hardware installation",
+          "leveling": "Leveling",
+          "finalRetouches": "Final retouches"
+        }
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "We are ready to bring your project to life. Get in touch with us."
+    },
+    "info": {
+      "title": "Information",
+      "phone": {
+        "title": "Phone"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "address": {
+        "title": "Address",
+        "line1": "Praça 20 de maio, 39"
+      },
+      "hours": {
+        "title": "Opening Hours",
+        "weekdays": "Monday to Friday: 8am - 12pm",
+        "weekend": "Saturday and Sunday: Closed"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "button": "Contact via WhatsApp"
+      }
+    },
+    "form": {
+      "title": "Request a Quote",
+      "subtitle": "Fill out the form and we will contact you shortly",
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "subjectPlaceholder": "Select...",
+      "messagePlaceholder": "Describe your project...",
+      "subjects": {
+        "customFurniture": "Custom Furniture",
+        "interiorDesign": "Interior Design",
+        "visualization3d": "3D Visualization",
+        "industrialProduction": "Industrial Production",
+        "deliveryAssembly": "Delivery & Assembly",
+        "other": "Other"
+      },
+      "validation": {
+        "nameRequired": "Name is required",
+        "invalidEmail": "Enter a valid email",
+        "subjectRequired": "Select a subject",
+        "messageTooShort": "Message is too short"
+      },
+      "success": "Message sent successfully.",
+      "error": "We could not send the message. Please try again.",
+      "submitting": "Sending...",
+      "submit": "Send Message"
+    },
+    "map": {
+      "title": "Location",
+      "iframeTitle": "Map showing J. Mendes Furniture location"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Three decades of experience in excellent furniture",
+      "imageAlt": "J. Mendes Furniture"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Founded in 1995, <brand>J. Mendes Mobiliário</brand> was born from a passion for carpentry and a commitment to excellence.",
+      "paragraph2": "We started as a small artisan workshop and grew to become a benchmark in the custom furniture industry.",
+      "paragraph3": "Today, we serve clients in Portugal and abroad, always with the same level of dedication and attention to detail.",
+      "imageAlt1": "Image from the history of J. Mendes Furniture",
+      "imageAlt2": "Image of the J. Mendes Furniture team"
+    },
+    "missionVision": {
+      "mission": {
+        "title": "Mission",
+        "description": "Create exceptional furniture that transforms spaces and exceeds expectations."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be a European benchmark in high-quality custom furniture."
+      },
+      "values": {
+        "title": "Values",
+        "description": "Excellence, innovation and commitment to the client in every project."
+      }
+    },
+    "coreValues": {
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "description": "Commitment to the highest quality"
+        },
+        "team": {
+          "title": "Specialized Team",
+          "description": "Experienced professionals"
+        },
+        "technology": {
+          "title": "Advanced Technology",
+          "description": "Latest-generation equipment"
+        },
+        "clientFocus": {
+          "title": "Client Focus",
+          "description": "Tailored solutions"
+        }
+      }
+    },
+    "stats": {
+      "items": {
+        "experience": "Years of Experience",
+        "projects": "Completed Projects",
+        "professionals": "Professionals",
+        "countries": "Countries Served"
+      }
+    }
+  },
+  "Process": {
+    "hero": {
+      "title": "Our Process",
+      "subtitle": "From the first contact to final installation, every stage is carefully planned to ensure excellence and complete satisfaction"
+    },
+    "steps": {
+      "briefing": {
+        "title": "Client Briefing",
+        "description": "An initial meeting to understand needs, preferences and budget. We analyze the space and discuss possibilities."
+      },
+      "project3d": {
+        "title": "3D Project",
+        "description": "Creation of photorealistic 3D models that let you see exactly how the furniture will look in the space before production."
+      },
+      "production": {
+        "title": "Factory Production",
+        "description": "Manufacturing with latest-generation CNC equipment. Rigorous quality control at every stage of the production process."
+      },
+      "finishes": {
+        "title": "Finishes",
+        "description": "Application of varnishes, lacquers and special finishes. Each piece is inspected and prepared for installation."
+      },
+      "delivery": {
+        "title": "Delivery & Installation",
+        "description": "Safe transport and professional installation. Final fitting and adjustments to ensure complete satisfaction."
+      }
+    },
+    "timeline": {
+      "title": "From Concept to Reality",
+      "subtitle": "Average execution time: 4-8 weeks, depending on project complexity",
+      "items": {
+        "briefing": "Client Briefing",
+        "project3d": "3D Project",
+        "production": "Factory Production",
+        "finishes": "Finishes",
+        "delivery": "Delivery & Installation"
+      }
+    }
   }
 }

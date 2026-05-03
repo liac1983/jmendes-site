@@ -7,5 +7,483 @@
     "lines": "Lignes",
     "services": "Services",
     "contact": "Contact"
+  },
+  "Home": {
+    "hero": {
+      "titleLine1": "Nous fabriquons",
+      "titleLine2": "du mobilier avec",
+      "titleLine3": "précision, design et",
+      "titleHighlight": "excellence",
+      "description": "Depuis 1995, nous créons des solutions uniques en mobilier, alliant savoir-faire artisanal et technologie de pointe.",
+      "ctaPrimary": "Voir les Projets",
+      "ctaSecondary": "Demander un Devis"
+    },
+    "features": {
+      "production": {
+        "title": "Production Interne",
+        "description": "Capacité industrielle avec contrôle total de la qualité"
+      },
+      "projects3d": {
+        "title": "Projets 3D",
+        "description": "Visualisation complète avant production"
+      },
+      "custom": {
+        "title": "Mobilier sur Mesure",
+        "description": "Personnalisation totale pour chaque espace"
+      },
+      "delivery": {
+        "title": "Livraison et Installation",
+        "description": "Service complet jusqu'à l'installation finale"
+      }
+    },
+    "featured": {
+      "title": "Projets en Vedette",
+      "description": "Exemples de notre travail en mobilier personnalisé et production en série",
+      "category": "Sur Mesure",
+      "viewAll": "Voir Tout le Portfolio",
+      "projects": {
+        "minimalKitchen": "Cuisine Moderne Minimaliste",
+        "islandKitchen": "Cuisine avec Îlot Central",
+        "walkInCloset": "Dressing Walk-in Luxueux"
+      }
+    },
+    "cta": {
+      "title": "Prêt à créer votre",
+      "highlight": "projet idéal ?",
+      "description": "Contactez-nous et découvrez comment nous pouvons transformer votre espace avec du mobilier d'excellence",
+      "button": "Démarrer le Projet"
+    },
+    "footer": {
+      "description": "Nous fabriquons du mobilier avec précision, design et excellence depuis 1995.",
+      "quickLinks": "Liens Rapides",
+      "services": "Services",
+      "serviceItems": {
+        "customFurniture": "Mobilier sur Mesure",
+        "projects3d": "Projets 3D",
+        "seriesProduction": "Production en Série",
+        "delivery": "Livraison et Installation"
+      },
+      "contact": "Contact",
+      "rights": "© 2026 J. Mendes Mobilier. Tous droits réservés."
+    }
+  },
+  "Portfolio": {
+    "hero": {
+      "title": "Portfolio",
+      "subtitle": "Exemples réels de notre travail en mobilier sur mesure et projets complets"
+    },
+    "filters": {
+      "todos": "Tous",
+      "cozinhas": "Cuisines",
+      "roupeiros": "Armoires",
+      "comercial": "Commercial",
+      "casas-completas": "Maisons Complètes"
+    },
+    "grid": {
+      "empty": "Il n'y a aucun projet dans cette catégorie."
+    },
+    "card": {
+      "ariaLabel": "Voir le projet {title}"
+    },
+    "labels": {
+      "categories": {
+        "cozinhas": "Cuisines",
+        "roupeiros": "Armoires",
+        "comercial": "Commercial",
+        "casas-completas": "Maisons Complètes"
+      },
+      "types": {
+        "customMade": "Sur Mesure",
+        "completeProject": "Projet Complet",
+        "commercial": "Commercial",
+        "kitchens": "Cuisines",
+        "wardrobes": "Armoires",
+        "completeHomes": "Maisons Complètes"
+      }
+    },
+    "project": {
+      "hero": {
+        "back": "Retour au Portfolio",
+        "subtitle": "Projet à {location}"
+      },
+      "overview": {
+        "title": "À Propos du Projet",
+        "location": "Localisation",
+        "year": "Année",
+        "type": "Type"
+      },
+      "gallery": {
+        "title": "Galerie du Projet",
+        "subtitle": "Découvrez tous les détails de ce projet"
+      },
+      "challengeSolution": {
+        "challenge": "Défi",
+        "solution": "Solution"
+      },
+      "materials": {
+        "title": "Matériaux & Finitions",
+        "subtitle": "Qualité premium dans chaque détail",
+        "materials": "Matériaux",
+        "finishes": "Finitions"
+      },
+      "instagram": {
+        "title": "Voir sur Instagram",
+        "subtitle": "Suivez-nous pour plus de projets inspirants",
+        "button": "Voir sur Instagram"
+      },
+      "related": {
+        "title": "Autres Projets Similaires",
+        "subtitle": "Explorez d'autres réalisations de cette catégorie"
+      },
+      "cta": {
+        "title": "Ce projet vous plaît ?",
+        "description": "Contactez-nous pour créer quelque chose d'unique pour votre espace",
+        "quote": "Demander un Devis",
+        "moreProjects": "Voir Plus de Projets"
+      }
+    }
+  },
+  "Lines": {
+    "hero": {
+      "title": "Lignes de Mobilier",
+      "subtitle": "Production interne avec livraison rapide. Qualité premium en série.",
+      "badges": {
+        "production": "Production Interne",
+        "delivery": "Livraison Rapide",
+        "warranty": "Garantie Incluse"
+      }
+    },
+    "product": {
+      "availability": {
+        "available": "Disponible",
+        "unavailable": "Indisponible"
+      },
+      "details": "Voir les détails"
+    },
+    "labels": {
+      "categories": {
+        "modularKitchens": "Cuisines Modulaires",
+        "modularWardrobes": "Armoires Modulaires",
+        "livingFurniture": "Mobilier de Salon"
+      }
+    },
+    "advantages": {
+      "title": "Avantages de Nos",
+      "titleHighlight": "Lignes de Mobilier",
+      "subtitle": "Choisir la production en série ne signifie pas renoncer à la qualité",
+      "items": {
+        "fastDelivery": {
+          "title": "Livraison Rapide",
+          "description": "Stock disponible pour livraison immédiate ou production en 2 à 4 semaines"
+        },
+        "competitivePrices": {
+          "title": "Prix Compétitifs",
+          "description": "La production à grande échelle permet d'offrir un meilleur rapport qualité-prix"
+        },
+        "guaranteedQuality": {
+          "title": "Qualité Garantie",
+          "description": "La même qualité et attention au détail que dans les projets personnalisés"
+        },
+        "customizable": {
+          "title": "Personnalisable",
+          "description": "Options de couleurs, finitions et dimensions pour s'adapter à votre espace"
+        }
+      }
+    },
+    "detail": {
+      "back": "Retour aux Lignes",
+      "about": {
+        "title": "À Propos du Modèle"
+      },
+      "materials": {
+        "title": "Matériaux & Finitions",
+        "subtitle": "Spécifications fixes de production",
+        "materials": "Matériaux",
+        "finishes": "Finitions"
+      },
+      "technical": {
+        "title": "Dimensions & Fiche Technique",
+        "subtitle": "Spécifications détaillées du produit",
+        "dimensions": "Dimensions",
+        "width": "Largeur",
+        "height": "Hauteur",
+        "depth": "Profondeur",
+        "sheet": "Fiche Technique"
+      },
+      "gallery": {
+        "title": "Galerie",
+        "subtitle": "Découvrez les détails du produit"
+      },
+      "advantages": "Avantages",
+      "idealFor": "Idéal Pour",
+      "cta": {
+        "title": "Intéressé par ce produit ?",
+        "description": "Contactez-nous pour plus d'informations sur ce produit",
+        "request": "Demander des Informations",
+        "moreProducts": "Voir Plus de Produits"
+      }
+    }
+  },
+  "Services": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Solutions complètes en mobilier, du concept à l'installation finale"
+    },
+    "fullService": {
+      "title": "Service Complet",
+      "subtitle": "De la première réunion à l'installation finale",
+      "items": {
+        "customProjects": {
+          "title": "Projets Personnalisés",
+          "lines": {
+            "customFurniture": "Mobilier sur mesure",
+            "interiorDesign": "Design d'intérieur",
+            "visualization3d": "Visualisation 3D"
+          }
+        },
+        "production": {
+          "title": "Production",
+          "lines": {
+            "seriesManufacturing": "Fabrication en série",
+            "industrialCapacity": "Capacité industrielle",
+            "qualityControl": "Contrôle qualité"
+          }
+        },
+        "installation": {
+          "title": "Installation",
+          "lines": {
+            "professionalAssembly": "Montage professionnel",
+            "fitting": "Ajustement final",
+            "finalFinishes": "Finitions finales"
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer votre projet ?",
+      "description": "Contactez-nous et découvrez comment nous pouvons transformer votre espace",
+      "button": "Demander un Devis"
+    },
+    "items": {
+      "customFurniture": {
+        "title": "Mobilier sur Mesure",
+        "description": "Nous développons des pièces adaptées à chaque espace, style et usage quotidien.",
+        "bullets": {
+          "measurements": "Prise de mesures",
+          "customDesign": "Design personnalisé",
+          "premiumMaterials": "Matériaux premium",
+          "projectSupport": "Suivi du projet"
+        }
+      },
+      "interiorDesign": {
+        "title": "Design d'Intérieur",
+        "description": "Nous créons des intérieurs fonctionnels et cohérents, de la première idée aux finitions.",
+        "bullets": {
+          "concept": "Concept visuel",
+          "materials": "Sélection des matériaux",
+          "supplierCoordination": "Coordination fournisseurs",
+          "siteSupervision": "Suivi de chantier"
+        }
+      },
+      "visualization3d": {
+        "title": "Visualisation 3D",
+        "description": "Nous transformons les concepts en images réalistes pour valider chaque détail avant production.",
+        "bullets": {
+          "detailedModels": "Modèles détaillés",
+          "photorealisticRenders": "Rendus photoréalistes",
+          "perspectives": "Perspectives de l'espace",
+          "quickChanges": "Modifications rapides"
+        }
+      },
+      "industrialProduction": {
+        "title": "Production Industrielle",
+        "description": "Nous fabriquons avec capacité technique, précision et contrôle rigoureux à chaque étape.",
+        "bullets": {
+          "cncEquipment": "Équipement CNC",
+          "qualityControl": "Contrôle qualité",
+          "scaleProduction": "Production en série",
+          "guaranteedDeadlines": "Délais garantis"
+        }
+      },
+      "deliveryAssembly": {
+        "title": "Livraison et Montage",
+        "description": "Nous assurons un transport sécurisé, un montage professionnel et la protection de l'espace.",
+        "bullets": {
+          "safeTransport": "Transport sécurisé",
+          "professionalAssembly": "Montage professionnel",
+          "spaceProtection": "Protection de l'espace",
+          "finalCleaning": "Nettoyage final"
+        }
+      },
+      "fitting": {
+        "title": "Ajustement Final",
+        "description": "Nous réalisons les derniers réglages pour que chaque pièce soit stable, nivelée et bien finie.",
+        "bullets": {
+          "finalAdjustments": "Réglages finaux",
+          "hardwareInstallation": "Pose des ferrures",
+          "leveling": "Mise à niveau",
+          "finalRetouches": "Retouches finales"
+        }
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "Nous sommes prêts à donner vie à votre projet. Contactez-nous."
+    },
+    "info": {
+      "title": "Informations",
+      "phone": {
+        "title": "Téléphone"
+      },
+      "email": {
+        "title": "E-mail"
+      },
+      "address": {
+        "title": "Adresse",
+        "line1": "Praça 20 de maio, 39"
+      },
+      "hours": {
+        "title": "Horaires",
+        "weekdays": "Du lundi au vendredi : 8h - 12h",
+        "weekend": "Samedi et dimanche : fermé"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "button": "Contacter via WhatsApp"
+      }
+    },
+    "form": {
+      "title": "Demander un Devis",
+      "subtitle": "Remplissez le formulaire et nous vous contacterons bientôt",
+      "labels": {
+        "name": "Nom",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "subject": "Sujet",
+        "message": "Message"
+      },
+      "subjectPlaceholder": "Sélectionnez...",
+      "messagePlaceholder": "Décrivez votre projet...",
+      "subjects": {
+        "customFurniture": "Mobilier sur Mesure",
+        "interiorDesign": "Design d'Intérieur",
+        "visualization3d": "Visualisation 3D",
+        "industrialProduction": "Production Industrielle",
+        "deliveryAssembly": "Livraison et Montage",
+        "other": "Autre"
+      },
+      "validation": {
+        "nameRequired": "Nom obligatoire",
+        "invalidEmail": "E-mail invalide",
+        "subjectRequired": "Sélectionnez un sujet",
+        "messageTooShort": "Message trop court"
+      },
+      "success": "Message envoyé avec succès.",
+      "error": "Impossible d'envoyer le message. Veuillez réessayer.",
+      "submitting": "Envoi...",
+      "submit": "Envoyer le Message"
+    },
+    "map": {
+      "title": "Localisation",
+      "iframeTitle": "Carte de localisation de J. Mendes Mobilier"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "À Propos de Nous",
+      "subtitle": "Trois décennies d'expérience dans le mobilier d'excellence",
+      "imageAlt": "J. Mendes Mobilier"
+    },
+    "story": {
+      "title": "Notre Histoire",
+      "paragraph1": "Fondée en 1995, <brand>J. Mendes Mobiliário</brand> est née d'une passion pour la menuiserie et d'un engagement envers l'excellence.",
+      "paragraph2": "Nous avons commencé comme un petit atelier artisanal et avons grandi jusqu'à devenir une référence dans l'industrie du mobilier personnalisé.",
+      "paragraph3": "Aujourd'hui, nous servons des clients au Portugal et à l'étranger, toujours avec le même niveau de dévouement et d'attention au détail.",
+      "imageAlt1": "Image de l'histoire de J. Mendes Mobilier",
+      "imageAlt2": "Image de l'équipe J. Mendes Mobilier"
+    },
+    "missionVision": {
+      "mission": {
+        "title": "Mission",
+        "description": "Créer du mobilier d'excellence qui transforme les espaces et dépasse les attentes."
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "Être une référence européenne en mobilier personnalisé de haute qualité."
+      },
+      "values": {
+        "title": "Valeurs",
+        "description": "Excellence, innovation et engagement envers le client dans chaque projet."
+      }
+    },
+    "coreValues": {
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "description": "Engagement envers la plus haute qualité"
+        },
+        "team": {
+          "title": "Équipe Spécialisée",
+          "description": "Professionnels expérimentés"
+        },
+        "technology": {
+          "title": "Technologie Avancée",
+          "description": "Équipement de dernière génération"
+        },
+        "clientFocus": {
+          "title": "Orientation Client",
+          "description": "Solutions personnalisées"
+        }
+      }
+    },
+    "stats": {
+      "items": {
+        "experience": "Années d'Expérience",
+        "projects": "Projets Réalisés",
+        "professionals": "Professionnels",
+        "countries": "Pays Desservis"
+      }
+    }
+  },
+  "Process": {
+    "hero": {
+      "title": "Notre Processus",
+      "subtitle": "Du premier contact à l'installation finale, chaque étape est soigneusement planifiée pour garantir l'excellence et une satisfaction totale"
+    },
+    "steps": {
+      "briefing": {
+        "title": "Briefing Client",
+        "description": "Réunion initiale pour comprendre les besoins, les goûts et le budget. Nous analysons l'espace et discutons des possibilités."
+      },
+      "project3d": {
+        "title": "Projet 3D",
+        "description": "Création de modèles 3D photoréalistes permettant de visualiser exactement le rendu du mobilier dans l'espace avant la production."
+      },
+      "production": {
+        "title": "Production en Usine",
+        "description": "Fabrication avec équipement CNC de dernière génération. Contrôle qualité rigoureux à chaque étape du processus de production."
+      },
+      "finishes": {
+        "title": "Finitions",
+        "description": "Application de vernis, laques et finitions spéciales. Chaque pièce est inspectée et préparée pour l'installation."
+      },
+      "delivery": {
+        "title": "Livraison et Installation",
+        "description": "Transport sécurisé et installation professionnelle. Ajustements finaux pour garantir une satisfaction totale."
+      }
+    },
+    "timeline": {
+      "title": "Du Concept à la Réalité",
+      "subtitle": "Délai moyen d'exécution : 4 à 8 semaines, selon la complexité du projet",
+      "items": {
+        "briefing": "Briefing Client",
+        "project3d": "Projet 3D",
+        "production": "Production en Usine",
+        "finishes": "Finitions",
+        "delivery": "Livraison et Installation"
+      }
+    }
   }
 }

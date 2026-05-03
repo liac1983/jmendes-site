@@ -10,7 +10,8 @@ export const portfolioProjectsQuery = groq`
     typeLabel,
     heroImage,
     testimonialAuthor,
-    testimonialText
+    testimonialText,
+    translations
   }
 `;
 
@@ -35,7 +36,8 @@ export const projectBySlugQuery = groq`
     testimonialAuthor,
     testimonialText,
     instagramImages,
-    instagramUrl
+    instagramUrl,
+    translations
   }
 `;
 
@@ -47,7 +49,8 @@ export const relatedProjectsQuery = groq`
     category,
     categoryLabel,
     typeLabel,
-    heroImage
+    heroImage,
+    translations
   }
 `;
 export const productLinesQuery = groq`
@@ -82,7 +85,8 @@ export const productLinesQuery = groq`
     technicalFeatures,
     advantages,
     idealFor,
-    orderRank
+    orderRank,
+    translations
   }
 `
 
@@ -118,7 +122,8 @@ export const productLineBySlugQuery = groq`
     technicalFeatures,
     advantages,
     idealFor,
-    orderRank
+    orderRank,
+    translations
   }
 `
 

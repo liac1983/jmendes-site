@@ -3,18 +3,21 @@ import SectionTitle from "@/components/ui/section-title";
 import ProjectCard from "@/components/ui/project-card";
 import { featuredProjects } from "@/data/home";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type Props = {
   locale: string;
 };
 
 export default function FeaturedProjects({ locale }: Props) {
+  const t = useTranslations("Home.featured");
+
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-24">
       <Container>
         <SectionTitle
-          title="Projetos em Destaque"
-          subtitle="Exemplos do nosso trabalho em mobiliário personalizado e produção em série"
+          title={t("title")}
+          subtitle={t("description")}
         />
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -24,8 +27,8 @@ export default function FeaturedProjects({ locale }: Props) {
               locale={locale}
               slug={project.slug}
               image={project.image}
-              categoryLabel={project.categoryLabel}
-              title={project.title}
+              categoryLabel={t("category")}
+              title={t(`projects.${project.key}`)}
             />
           ))}
         </div>
@@ -35,7 +38,7 @@ export default function FeaturedProjects({ locale }: Props) {
             href={`/${locale}/portfolio`}
             className="inline-flex items-center gap-3 text-2xl text-gold transition-opacity hover:opacity-80"
           >
-            Ver Todo o Portfolio
+            {t("viewAll")}
             <span aria-hidden>→</span>
           </Link>
         </div>
@@ -43,4 +46,3 @@ export default function FeaturedProjects({ locale }: Props) {
     </section>
   );
 }
-

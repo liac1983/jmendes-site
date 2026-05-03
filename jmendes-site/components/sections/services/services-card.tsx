@@ -1,5 +1,13 @@
 import Image from "next/image";
-import type { Service } from "@/data/services";
+import type { LucideIcon } from "lucide-react";
+
+type ServiceCardProps = {
+  title: string;
+  image: string;
+  description: string;
+  bullets: string[];
+  icon: LucideIcon;
+};
 
 export default function ServiceCard({
   title,
@@ -7,7 +15,7 @@ export default function ServiceCard({
   description,
   bullets,
   icon: Icon,
-}: Service) {
+}: ServiceCardProps) {
   return (
     <div>
       {/* imagem */}

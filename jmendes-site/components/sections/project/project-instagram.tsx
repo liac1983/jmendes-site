@@ -1,4 +1,5 @@
 import { FaInstagram } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 import type { Project } from "@/lib/project-types";
 
@@ -7,15 +8,17 @@ type Props = {
 };
 
 export default function ProjectInstagram({ project }: Props) {
+  const t = useTranslations("Portfolio.project.instagram");
+
   if (!project.instagramImages?.length || !project.instagramUrl) return null;
 
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
         <div className="text-center">
-          <h2 className="text-5xl text-white md:text-6xl">Veja no Instagram</h2>
+          <h2 className="text-5xl text-white md:text-6xl">{t("title")}</h2>
           <p className="mt-4 text-xl text-[var(--muted)]">
-            Siga-nos para mais projetos inspiradores
+            {t("subtitle")}
           </p>
         </div>
 
@@ -49,11 +52,10 @@ export default function ProjectInstagram({ project }: Props) {
             className="inline-flex h-[58px] items-center gap-3 border border-[var(--gold)] px-8 text-lg text-gold transition hover:bg-[var(--gold)] hover:text-black"
           >
             <FaInstagram className="h-5 w-5" />
-            Ver no Instagram
+            {t("button")}
           </a>
         </div>
       </Container>
     </section>
   );
 }
-

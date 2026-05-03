@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import ProjectCard from "@/components/ui/project-card";
 import Container from "@/components/ui/container";
 import PortfolioFilters from "./portfolio-filters";
@@ -33,6 +34,7 @@ export default function PortfolioGrid({
   locale,
   projects,
 }: PortfolioGridProps) {
+  const t = useTranslations("Portfolio.grid");
   const [activeCategory, setActiveCategory] =
     useState<PortfolioCategory>("todos");
 
@@ -50,19 +52,25 @@ export default function PortfolioGrid({
           onChange={setActiveCategory}
         />
 
-        <div className="mt-14 grid gap-x-8 gap-y-14 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              locale={locale}
-              slug={project.slug}
-              image={project.image}
-              title={project.title}
-              categoryLabel={project.type}
-              testimonial={project.testimonial}
-            />
-          ))}
-        </div>
+        {filteredProjects.length ? (
+          <div className="mt-14 grid gap-x-8 gap-y-14 lg:grid-cols-3">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                locale={locale}
+                slug={project.slug}
+                image={project.image}
+                title={project.title}
+                categoryLabel={project.type}
+                testimonial={project.testimonial}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-14 text-center text-xl text-[var(--muted)]">
+            {t("empty")}
+          </p>
+        )}
       </Container>
     </section>
   );

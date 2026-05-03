@@ -7,5 +7,483 @@
     "lines": "Líneas",
     "services": "Servicios",
     "contact": "Contacto"
+  },
+  "Home": {
+    "hero": {
+      "titleLine1": "Fabricamos",
+      "titleLine2": "mobiliario con",
+      "titleLine3": "precisión, diseño y",
+      "titleHighlight": "excelencia",
+      "description": "Desde 1995 creando soluciones únicas en mobiliario, combinando tradición artesanal con tecnología avanzada.",
+      "ctaPrimary": "Ver Proyectos",
+      "ctaSecondary": "Solicitar Presupuesto"
+    },
+    "features": {
+      "production": {
+        "title": "Producción Propia",
+        "description": "Capacidad industrial con control total de calidad"
+      },
+      "projects3d": {
+        "title": "Proyectos 3D",
+        "description": "Visualización completa antes de la producción"
+      },
+      "custom": {
+        "title": "Muebles a Medida",
+        "description": "Personalización total para cada espacio"
+      },
+      "delivery": {
+        "title": "Entrega e Instalación",
+        "description": "Servicio completo hasta la instalación final"
+      }
+    },
+    "featured": {
+      "title": "Proyectos Destacados",
+      "description": "Ejemplos de nuestro trabajo en mobiliario personalizado y producción en serie",
+      "category": "A Medida",
+      "viewAll": "Ver Todo el Portafolio",
+      "projects": {
+        "minimalKitchen": "Cocina Moderna Minimalista",
+        "islandKitchen": "Cocina con Isla Central",
+        "walkInCloset": "Walk-in Closet Lujoso"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para crear su",
+      "highlight": "proyecto ideal?",
+      "description": "Contáctenos y descubra cómo podemos transformar su espacio con mobiliario de excelencia",
+      "button": "Iniciar Proyecto"
+    },
+    "footer": {
+      "description": "Fabricamos mobiliario con precisión, diseño y excelencia desde 1995.",
+      "quickLinks": "Enlaces Rápidos",
+      "services": "Servicios",
+      "serviceItems": {
+        "customFurniture": "Muebles a Medida",
+        "projects3d": "Proyectos 3D",
+        "seriesProduction": "Producción en Serie",
+        "delivery": "Entrega e Instalación"
+      },
+      "contact": "Contacto",
+      "rights": "© 2026 J. Mendes Mobiliario. Todos los derechos reservados."
+    }
+  },
+  "Portfolio": {
+    "hero": {
+      "title": "Portafolio",
+      "subtitle": "Ejemplos reales de nuestro trabajo en mobiliario personalizado y proyectos completos"
+    },
+    "filters": {
+      "todos": "Todos",
+      "cozinhas": "Cocinas",
+      "roupeiros": "Armarios",
+      "comercial": "Comercial",
+      "casas-completas": "Casas Completas"
+    },
+    "grid": {
+      "empty": "No hay proyectos en esta categoría."
+    },
+    "card": {
+      "ariaLabel": "Ver proyecto {title}"
+    },
+    "labels": {
+      "categories": {
+        "cozinhas": "Cocinas",
+        "roupeiros": "Armarios",
+        "comercial": "Comercial",
+        "casas-completas": "Casas Completas"
+      },
+      "types": {
+        "customMade": "A Medida",
+        "completeProject": "Proyecto Completo",
+        "commercial": "Comercial",
+        "kitchens": "Cocinas",
+        "wardrobes": "Armarios",
+        "completeHomes": "Casas Completas"
+      }
+    },
+    "project": {
+      "hero": {
+        "back": "Volver al Portafolio",
+        "subtitle": "Proyecto en {location}"
+      },
+      "overview": {
+        "title": "Sobre el Proyecto",
+        "location": "Ubicación",
+        "year": "Año",
+        "type": "Tipo"
+      },
+      "gallery": {
+        "title": "Galería del Proyecto",
+        "subtitle": "Vea todos los detalles de este proyecto"
+      },
+      "challengeSolution": {
+        "challenge": "Reto",
+        "solution": "Solución"
+      },
+      "materials": {
+        "title": "Materiales y Acabados",
+        "subtitle": "Calidad premium en cada detalle",
+        "materials": "Materiales",
+        "finishes": "Acabados"
+      },
+      "instagram": {
+        "title": "Ver en Instagram",
+        "subtitle": "Síganos para más proyectos inspiradores",
+        "button": "Ver en Instagram"
+      },
+      "related": {
+        "title": "Otros Proyectos Similares",
+        "subtitle": "Explore más trabajos de esta categoría"
+      },
+      "cta": {
+        "title": "¿Le gustó este proyecto?",
+        "description": "Póngase en contacto con nosotros para crear algo único para su espacio",
+        "quote": "Solicitar Presupuesto",
+        "moreProjects": "Ver Más Proyectos"
+      }
+    }
+  },
+  "Lines": {
+    "hero": {
+      "title": "Líneas de Mobiliario",
+      "subtitle": "Producción propia con entrega rápida. Calidad premium en serie.",
+      "badges": {
+        "production": "Producción Propia",
+        "delivery": "Entrega Rápida",
+        "warranty": "Garantía Incluida"
+      }
+    },
+    "product": {
+      "availability": {
+        "available": "Disponible",
+        "unavailable": "No disponible"
+      },
+      "details": "Ver detalles"
+    },
+    "labels": {
+      "categories": {
+        "modularKitchens": "Cocinas Modulares",
+        "modularWardrobes": "Armarios Modulares",
+        "livingFurniture": "Mobiliario de Salón"
+      }
+    },
+    "advantages": {
+      "title": "Ventajas de Nuestras",
+      "titleHighlight": "Líneas de Mobiliario",
+      "subtitle": "Elegir producción en serie no significa renunciar a la calidad",
+      "items": {
+        "fastDelivery": {
+          "title": "Entrega Rápida",
+          "description": "Stock disponible para entrega inmediata o producción en 2-4 semanas"
+        },
+        "competitivePrices": {
+          "title": "Precios Competitivos",
+          "description": "La producción a escala permite ofrecer una mejor relación calidad-precio"
+        },
+        "guaranteedQuality": {
+          "title": "Calidad Garantizada",
+          "description": "La misma calidad y atención al detalle que en los proyectos personalizados"
+        },
+        "customizable": {
+          "title": "Personalizable",
+          "description": "Opciones de colores, acabados y dimensiones para adaptar a su espacio"
+        }
+      }
+    },
+    "detail": {
+      "back": "Volver a Líneas",
+      "about": {
+        "title": "Sobre el Modelo"
+      },
+      "materials": {
+        "title": "Materiales y Acabados",
+        "subtitle": "Especificaciones fijas de producción",
+        "materials": "Materiales",
+        "finishes": "Acabados"
+      },
+      "technical": {
+        "title": "Dimensiones y Ficha Técnica",
+        "subtitle": "Especificaciones detalladas del producto",
+        "dimensions": "Dimensiones",
+        "width": "Anchura",
+        "height": "Altura",
+        "depth": "Profundidad",
+        "sheet": "Ficha Técnica"
+      },
+      "gallery": {
+        "title": "Galería",
+        "subtitle": "Vea los detalles del producto"
+      },
+      "advantages": "Ventajas",
+      "idealFor": "Ideal Para",
+      "cta": {
+        "title": "¿Le interesa este producto?",
+        "description": "Póngase en contacto con nosotros para más información sobre este producto",
+        "request": "Solicitar Información",
+        "moreProducts": "Ver Más Productos"
+      }
+    }
+  },
+  "Services": {
+    "hero": {
+      "title": "Servicios",
+      "subtitle": "Soluciones completas en mobiliario, del concepto a la instalación final"
+    },
+    "fullService": {
+      "title": "Servicio Completo",
+      "subtitle": "Desde la primera reunión hasta la instalación final",
+      "items": {
+        "customProjects": {
+          "title": "Proyectos Personalizados",
+          "lines": {
+            "customFurniture": "Muebles a medida",
+            "interiorDesign": "Diseño de interiores",
+            "visualization3d": "Visualización 3D"
+          }
+        },
+        "production": {
+          "title": "Producción",
+          "lines": {
+            "seriesManufacturing": "Fabricación en serie",
+            "industrialCapacity": "Capacidad industrial",
+            "qualityControl": "Control de calidad"
+          }
+        },
+        "installation": {
+          "title": "Instalación",
+          "lines": {
+            "professionalAssembly": "Montaje profesional",
+            "fitting": "Ajuste final",
+            "finalFinishes": "Acabados finales"
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para empezar su proyecto?",
+      "description": "Póngase en contacto con nosotros y descubra cómo podemos transformar su espacio",
+      "button": "Solicitar Presupuesto"
+    },
+    "items": {
+      "customFurniture": {
+        "title": "Muebles a Medida",
+        "description": "Desarrollamos piezas adaptadas a cada espacio, estilo y rutina diaria.",
+        "bullets": {
+          "measurements": "Toma de medidas",
+          "customDesign": "Diseño personalizado",
+          "premiumMaterials": "Materiales premium",
+          "projectSupport": "Acompañamiento del proyecto"
+        }
+      },
+      "interiorDesign": {
+        "title": "Diseño de Interiores",
+        "description": "Creamos interiores funcionales y coherentes, desde la primera idea hasta los acabados.",
+        "bullets": {
+          "concept": "Concepto visual",
+          "materials": "Selección de materiales",
+          "supplierCoordination": "Coordinación de proveedores",
+          "siteSupervision": "Supervisión en obra"
+        }
+      },
+      "visualization3d": {
+        "title": "Visualización 3D",
+        "description": "Convertimos conceptos en imágenes realistas para validar cada detalle antes de producir.",
+        "bullets": {
+          "detailedModels": "Modelos detallados",
+          "photorealisticRenders": "Renders fotorrealistas",
+          "perspectives": "Perspectivas del espacio",
+          "quickChanges": "Cambios rápidos"
+        }
+      },
+      "industrialProduction": {
+        "title": "Producción Industrial",
+        "description": "Fabricamos con capacidad técnica, precisión y control riguroso en cada etapa.",
+        "bullets": {
+          "cncEquipment": "Equipamiento CNC",
+          "qualityControl": "Control de calidad",
+          "scaleProduction": "Producción en serie",
+          "guaranteedDeadlines": "Plazos garantizados"
+        }
+      },
+      "deliveryAssembly": {
+        "title": "Entrega y Montaje",
+        "description": "Garantizamos transporte seguro, montaje profesional y protección del espacio hasta el final.",
+        "bullets": {
+          "safeTransport": "Transporte seguro",
+          "professionalAssembly": "Montaje profesional",
+          "spaceProtection": "Protección del espacio",
+          "finalCleaning": "Limpieza final"
+        }
+      },
+      "fitting": {
+        "title": "Ajuste Final",
+        "description": "Realizamos los ajustes finales para que cada pieza quede nivelada, estable y bien acabada.",
+        "bullets": {
+          "finalAdjustments": "Ajustes finales",
+          "hardwareInstallation": "Instalación de herrajes",
+          "leveling": "Nivelación",
+          "finalRetouches": "Retoques finales"
+        }
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "title": "Contacto",
+      "subtitle": "Estamos listos para dar vida a su proyecto. Póngase en contacto con nosotros."
+    },
+    "info": {
+      "title": "Información",
+      "phone": {
+        "title": "Teléfono"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "address": {
+        "title": "Dirección",
+        "line1": "Praça 20 de maio, 39"
+      },
+      "hours": {
+        "title": "Horario",
+        "weekdays": "Lunes a Viernes: 8h - 12h",
+        "weekend": "Sábado y Domingo: Cerrado"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "button": "Contactar por WhatsApp"
+      }
+    },
+    "form": {
+      "title": "Solicitar Presupuesto",
+      "subtitle": "Complete el formulario y nos pondremos en contacto en breve",
+      "labels": {
+        "name": "Nombre",
+        "email": "Email",
+        "phone": "Teléfono",
+        "subject": "Asunto",
+        "message": "Mensaje"
+      },
+      "subjectPlaceholder": "Seleccione...",
+      "messagePlaceholder": "Describa su proyecto...",
+      "subjects": {
+        "customFurniture": "Muebles a Medida",
+        "interiorDesign": "Diseño de Interiores",
+        "visualization3d": "Visualización 3D",
+        "industrialProduction": "Producción Industrial",
+        "deliveryAssembly": "Entrega y Montaje",
+        "other": "Otro"
+      },
+      "validation": {
+        "nameRequired": "Nombre obligatorio",
+        "invalidEmail": "Email inválido",
+        "subjectRequired": "Seleccione un asunto",
+        "messageTooShort": "Mensaje demasiado corto"
+      },
+      "success": "Mensaje enviado con éxito.",
+      "error": "No fue posible enviar el mensaje. Inténtelo de nuevo.",
+      "submitting": "Enviando...",
+      "submit": "Enviar Mensaje"
+    },
+    "map": {
+      "title": "Ubicación",
+      "iframeTitle": "Mapa de la ubicación de J. Mendes Mobiliario"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "Sobre Nosotros",
+      "subtitle": "Tres décadas de experiencia en mobiliario de excelencia",
+      "imageAlt": "J. Mendes Mobiliario"
+    },
+    "story": {
+      "title": "Nuestra Historia",
+      "paragraph1": "Fundada en 1995, <brand>J. Mendes Mobiliário</brand> nació de la pasión por la carpintería y del compromiso con la excelencia.",
+      "paragraph2": "Empezamos como un pequeño taller artesanal y crecimos hasta convertirnos en una referencia en la industria del mobiliario personalizado.",
+      "paragraph3": "Hoy, servimos a clientes en Portugal y en el extranjero, siempre con el mismo nivel de dedicación y atención al detalle.",
+      "imageAlt1": "Imagen de la historia de J. Mendes Mobiliario",
+      "imageAlt2": "Imagen del equipo de J. Mendes Mobiliario"
+    },
+    "missionVision": {
+      "mission": {
+        "title": "Misión",
+        "description": "Crear mobiliario de excelencia que transforme espacios y supere expectativas."
+      },
+      "vision": {
+        "title": "Visión",
+        "description": "Ser una referencia europea en mobiliario personalizado de alta calidad."
+      },
+      "values": {
+        "title": "Valores",
+        "description": "Excelencia, innovación y compromiso con el cliente en cada proyecto."
+      }
+    },
+    "coreValues": {
+      "items": {
+        "excellence": {
+          "title": "Excelencia",
+          "description": "Compromiso con la más alta calidad"
+        },
+        "team": {
+          "title": "Equipo Especializado",
+          "description": "Profesionales con experiencia"
+        },
+        "technology": {
+          "title": "Tecnología Avanzada",
+          "description": "Equipamiento de última generación"
+        },
+        "clientFocus": {
+          "title": "Foco en el Cliente",
+          "description": "Soluciones personalizadas"
+        }
+      }
+    },
+    "stats": {
+      "items": {
+        "experience": "Años de Experiencia",
+        "projects": "Proyectos Realizados",
+        "professionals": "Profesionales",
+        "countries": "Países Atendidos"
+      }
+    }
+  },
+  "Process": {
+    "hero": {
+      "title": "Nuestro Proceso",
+      "subtitle": "Desde el primer contacto hasta la instalación final, cada etapa se planifica cuidadosamente para garantizar excelencia y satisfacción total"
+    },
+    "steps": {
+      "briefing": {
+        "title": "Briefing con el Cliente",
+        "description": "Reunión inicial para comprender las necesidades, gustos y presupuesto. Analizamos el espacio y discutimos posibilidades."
+      },
+      "project3d": {
+        "title": "Proyecto 3D",
+        "description": "Creación de modelos 3D fotorrealistas que permiten visualizar exactamente cómo quedará el mobiliario en el espacio antes de producir."
+      },
+      "production": {
+        "title": "Producción en Fábrica",
+        "description": "Fabricación con equipamiento CNC de última generación. Control riguroso de calidad en cada etapa del proceso productivo."
+      },
+      "finishes": {
+        "title": "Acabados",
+        "description": "Aplicación de barnices, lacas y acabados especiales. Cada pieza se inspecciona y se prepara para la instalación."
+      },
+      "delivery": {
+        "title": "Entrega e Instalación",
+        "description": "Transporte seguro e instalación profesional. Ajustes finales para garantizar satisfacción total."
+      }
+    },
+    "timeline": {
+      "title": "Del Concepto a la Realidad",
+      "subtitle": "Plazo medio de ejecución: 4-8 semanas, según la complejidad del proyecto",
+      "items": {
+        "briefing": "Briefing con el Cliente",
+        "project3d": "Proyecto 3D",
+        "production": "Producción en Fábrica",
+        "finishes": "Acabados",
+        "delivery": "Entrega e Instalación"
+      }
+    }
   }
 }

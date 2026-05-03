@@ -3,6 +3,7 @@ import ProductLineSection from "@/components/sections/lines/product-line-section
 import LinesAdvantages from "@/components/sections/lines/lines-advantages";
 import {client} from "@/sanity/lib/client";
 import {productLinesQuery} from "@/sanity/lib/queries";
+import {getLocalizedProductLine} from "@/lib/product-line-localization";
 import type {ProductLine} from "@/types/product-line";
 
 export default async function LinhasPage({
@@ -13,12 +14,15 @@ export default async function LinhasPage({
   const { locale } = await params;
 
   const productLines = await client.fetch<ProductLine[]>(productLinesQuery);
+  const localizedProductLines = productLines.map((line) =>
+    getLocalizedProductLine(line, locale)
+  );
 
   return (
     <main>
       <LinesHero />
 
-      {productLines.map((line, index) => (
+      {localizedProductLines.map((line, index) => (
         <ProductLineSection
           key={line._id}
           locale={locale}

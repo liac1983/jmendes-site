@@ -12,8 +12,7 @@ export default function ProcessoPage() {
         <ProcessStep
           key={step.number}
           number={step.number}
-          title={step.title}
-          description={step.description}
+          stepKey={step.key}
           image={step.image}
           icon={step.icon}
           reverse={index % 2 === 1}

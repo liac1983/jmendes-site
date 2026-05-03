@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import type { PortfolioCategory } from "./portfolio-grid";
 
 type Props = {
@@ -8,33 +9,35 @@ type Props = {
   onChange: (category: PortfolioCategory) => void;
 };
 
-const portfolioCategories: { value: PortfolioCategory; label: string }[] = [
-  { value: "todos", label: "Todos" },
-  { value: "cozinhas", label: "Cozinhas" },
-  { value: "roupeiros", label: "Roupeiros" },
-  { value: "comercial", label: "Comercial" },
-  { value: "casas-completas", label: "Casas Completas" },
+const portfolioCategories: PortfolioCategory[] = [
+  "todos",
+  "cozinhas",
+  "roupeiros",
+  "comercial",
+  "casas-completas",
 ];
 
 export default function PortfolioFilters({
   activeCategory,
   onChange,
 }: Props) {
+  const t = useTranslations("Portfolio.filters");
+
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {portfolioCategories.map((category) => (
         <button
-          key={category.value}
+          key={category}
           type="button"
-          onClick={() => onChange(category.value)}
+          onClick={() => onChange(category)}
           className={clsx(
             "inline-flex h-[54px] items-center justify-center border px-8 text-xl transition-all",
-            activeCategory === category.value
+            activeCategory === category
               ? "border-[var(--gold)] bg-[var(--gold)] text-black"
               : "border-[var(--border)] bg-transparent text-white hover:border-[var(--gold)] hover:text-[var(--gold)]"
           )}
         >
-          {category.label}
+          {t(category)}
         </button>
       ))}
     </div>

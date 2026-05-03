@@ -1,4 +1,5 @@
 import Container from "@/components/ui/container";
+import { useTranslations } from "next-intl";
 import { Calendar, MapPin, Square } from "lucide-react";
 import type { Project } from "@/lib/project-types";
 
@@ -7,12 +8,14 @@ type Props = {
 };
 
 export default function ProjectOverview({ project }: Props) {
+  const t = useTranslations("Portfolio.project.overview");
+
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <h2 className="text-5xl text-white md:text-6xl">Sobre o Projeto</h2>
+            <h2 className="text-5xl text-white md:text-6xl">{t("title")}</h2>
 
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--muted)]">
               {project.description}
@@ -21,19 +24,19 @@ export default function ProjectOverview({ project }: Props) {
             <div className="mt-10 space-y-5 text-lg text-white/90">
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-gold" />
-                <span className="text-[var(--muted)]">Localização:</span>
+                <span className="text-[var(--muted)]">{t("location")}:</span>
                 <strong>{project.location}</strong>
               </div>
 
               <div className="flex items-center gap-3">
                 <Calendar className="h-5 w-5 text-gold" />
-                <span className="text-[var(--muted)]">Ano:</span>
+                <span className="text-[var(--muted)]">{t("year")}:</span>
                 <strong>{project.year}</strong>
               </div>
 
               <div className="flex items-center gap-3">
                 <Square className="h-5 w-5 text-gold" />
-                <span className="text-[var(--muted)]">Tipo:</span>
+                <span className="text-[var(--muted)]">{t("type")}:</span>
                 <strong>{project.typeLabel}</strong>
               </div>
             </div>

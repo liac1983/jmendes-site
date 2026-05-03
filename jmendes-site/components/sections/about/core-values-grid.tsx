@@ -1,29 +1,28 @@
+import { useTranslations } from "next-intl";
 import { Award, Users, Cpu, Target } from "lucide-react";
 
 const values = [
   {
     icon: Award,
-    title: "Excelência",
-    desc: "Compromisso com a mais alta qualidade",
+    key: "excellence",
   },
   {
     icon: Users,
-    title: "Equipa Especializada",
-    desc: "Profissionais experientes",
+    key: "team",
   },
   {
     icon: Cpu,
-    title: "Tecnologia Avançada",
-    desc: "Equipamento de última geração",
+    key: "technology",
   },
   {
     icon: Target,
-    title: "Foco no Cliente",
-    desc: "Soluções personalizadas",
+    key: "clientFocus",
   },
 ];
 
 export default function CoreValuesGrid() {
+  const t = useTranslations("About.coreValues");
+
   return (
     <section className="py-24">
       <div className="mx-auto grid max-w-[1280px] gap-12 px-6 md:grid-cols-4">
@@ -36,8 +35,10 @@ export default function CoreValuesGrid() {
                 <Icon className="h-6 w-6 text-gold" />
               </div>
 
-              <h4 className="mb-2 text-xl">{item.title}</h4>
-              <p className="text-sm text-[var(--muted)]">{item.desc}</p>
+              <h4 className="mb-2 text-xl">{t(`items.${item.key}.title`)}</h4>
+              <p className="text-sm text-[var(--muted)]">
+                {t(`items.${item.key}.description`)}
+              </p>
             </div>
           );
         })}

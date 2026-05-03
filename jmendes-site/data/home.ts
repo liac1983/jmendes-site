@@ -7,23 +7,19 @@ import {
 
 export const homeFeatures = [
   {
-    title: "Produção Própria",
-    description: "Capacidade industrial com controlo total de qualidade",
+    key: "production",
     icon: Box,
   },
   {
-    title: "Projetos 3D",
-    description: "Visualização completa antes da produção",
+    key: "projects3d",
     icon: PenTool,
   },
   {
-    title: "Móveis por Medida",
-    description: "Personalização total para cada espaço",
+    key: "custom",
     icon: Ruler,
   },
   {
-    title: "Entrega e Montagem",
-    description: "Serviço completo até à instalação final",
+    key: "delivery",
     icon: Truck,
   },
 ];
@@ -31,20 +27,17 @@ export const homeFeatures = [
 export const featuredProjects = [
   {
     slug: "cozinha-moderna-minimalista",
-    title: "Cozinha Moderna Minimalista",
+    key: "minimalKitchen",
     image: "/images/portfolio/cozinha-1.jpg",
-    categoryLabel: "Por Medida",
   },
   {
     slug: "cozinha-com-ilha-central",
-    title: "Cozinha com Ilha Central",
+    key: "islandKitchen",
     image: "/images/portfolio/cozinha-2.jpg",
-    categoryLabel: "Por Medida",
   },
   {
     slug: "walk-in-closet-luxuoso",
-    title: "Walk-in Closet Luxuoso",
+    key: "walkInCloset",
     image: "/images/portfolio/closet-1.jpg",
-    categoryLabel: "Por Medida",
   },
 ];

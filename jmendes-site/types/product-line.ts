@@ -6,6 +6,23 @@ export type SanityImageWithAlt = {
   }
 }
 
+export type ProductLineTranslation = {
+  title?: string
+  subtitle?: string
+  aboutText?: string
+  highlights?: string[]
+  materials?: string[]
+  finishes?: string[]
+  dimensions?: {
+    width?: string
+    height?: string
+    depth?: string
+  }
+  technicalFeatures?: string[]
+  advantages?: string[]
+  idealFor?: string[]
+}
+
 export type ProductLine = {
   _id: string
   title: string
@@ -29,4 +46,7 @@ export type ProductLine = {
   advantages?: string[]
   idealFor?: string[]
   orderRank?: number
+  translations?: Partial<
+    Record<'pt' | 'en' | 'fr' | 'es', ProductLineTranslation>
+  >
 }

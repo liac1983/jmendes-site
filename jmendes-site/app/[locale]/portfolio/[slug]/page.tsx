@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import ProjectHero from "@/components/sections/project/project-hero";
 import ProjectOverview from "@/components/sections/project/project-overview";
 import ProjectGallery from "@/components/sections/project/project-gallery";
@@ -15,6 +16,10 @@ import {
   projectBySlugQuery,
   relatedProjectsQuery,
 } from "@/sanity/lib/queries";
+import {
+  getLocalizedProject,
+  getPortfolioLabel,
+} from "@/lib/portfolio-localization";
 import type {
   SanityProjectDetail,
   SanityRelatedProject,
@@ -29,6 +34,7 @@ type ProjectPageProps = {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { locale, slug } = await params;
+  const labelT = await getTranslations("Portfolio.labels");
 
   const sanityProject = await client.fetch<SanityProjectDetail | null>(
     projectBySlugQuery,
@@ -39,57 +45,79 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const localizedSanityProject = getLocalizedProject(sanityProject, locale);
+
   const sanityRelatedProjects = await client.fetch<SanityRelatedProject[]>(
     relatedProjectsQuery,
     { slug }
   );
 
   const project = {
-    title: sanityProject.title,
-    slug: sanityProject.slug,
-    category: sanityProject.categoryLabel || "Por Medida",
-    location: sanityProject.location || "Portugal",
-    year: sanityProject.year || "",
-    typeLabel: sanityProject.typeLabel || "Por Medida",
-    heroImage: sanityProject.heroImage
-      ? urlFor(sanityProject.heroImage).width(1800).height(1200).url()
+    title: localizedSanityProject.title,
+    slug: localizedSanityProject.slug,
+    category: getPortfolioLabel(
+      localizedSanityProject.categoryLabel,
+      localizedSanityProject.category,
+      labelT
+    ),
+    location: localizedSanityProject.location || "Portugal",
+    year: localizedSanityProject.year || "",
+    typeLabel: getPortfolioLabel(
+      localizedSanityProject.typeLabel || localizedSanityProject.categoryLabel,
+      localizedSanityProject.category,
+      labelT
+    ),
+    heroImage: localizedSanityProject.heroImage
+      ? urlFor(localizedSanityProject.heroImage).width(1800).height(1200).url()
       : "/images/placeholder.jpg",
-    overviewImage: sanityProject.overviewImage
-      ? urlFor(sanityProject.overviewImage).width(1200).height(1200).url()
-      : sanityProject.heroImage
-      ? urlFor(sanityProject.heroImage).width(1200).height(1200).url()
+    overviewImage: localizedSanityProject.overviewImage
+      ? urlFor(localizedSanityProject.overviewImage)
+          .width(1200)
+          .height(1200)
+          .url()
+      : localizedSanityProject.heroImage
+      ? urlFor(localizedSanityProject.heroImage).width(1200).height(1200).url()
       : "/images/placeholder.jpg",
     gallery:
-      sanityProject.gallery?.map((image) =>
+      localizedSanityProject.gallery?.map((image) =>
         urlFor(image).width(1400).height(1100).url()
       ) || [],
-    description: sanityProject.description || "",
-    challenge: sanityProject.challenge || "",
-    solution: sanityProject.solution || "",
-    materials: sanityProject.materials || [],
-    finishes: sanityProject.finishes || [],
+    description: localizedSanityProject.description || "",
+    challenge: localizedSanityProject.challenge || "",
+    solution: localizedSanityProject.solution || "",
+    materials: localizedSanityProject.materials || [],
+    finishes: localizedSanityProject.finishes || [],
     testimonial:
-      sanityProject.testimonialText && sanityProject.testimonialAuthor
+      localizedSanityProject.testimonialText &&
+      localizedSanityProject.testimonialAuthor
         ? {
-            text: sanityProject.testimonialText,
-            author: sanityProject.testimonialAuthor,
+            text: localizedSanityProject.testimonialText,
+            author: localizedSanityProject.testimonialAuthor,
           }
         : undefined,
     instagramImages:
-      sanityProject.instagramImages?.map((image) =>
+      localizedSanityProject.instagramImages?.map((image) =>
         urlFor(image).width(900).height(900).url()
       ) || [],
-    instagramUrl: sanityProject.instagramUrl || "",
+    instagramUrl: localizedSanityProject.instagramUrl || "",
   };
 
-  const relatedProjects = sanityRelatedProjects.map((item) => ({
-    slug: item.slug,
-    title: item.title,
-    category: item.typeLabel || item.categoryLabel || "Por Medida",
-    heroImage: item.heroImage
-      ? urlFor(item.heroImage).width(1200).height(900).url()
-      : "/images/placeholder.jpg",
-  }));
+  const relatedProjects = sanityRelatedProjects.map((item) => {
+    const localizedItem = getLocalizedProject(item, locale);
+
+    return {
+      slug: localizedItem.slug,
+      title: localizedItem.title,
+      category: getPortfolioLabel(
+        localizedItem.typeLabel || localizedItem.categoryLabel,
+        localizedItem.category,
+        labelT
+      ),
+      heroImage: localizedItem.heroImage
+        ? urlFor(localizedItem.heroImage).width(1200).height(900).url()
+        : "/images/placeholder.jpg",
+    };
+  });
 
   return (
     <>
@@ -105,4 +133,3 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     </>
   );
 }
-

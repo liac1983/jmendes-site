@@ -1,5 +1,92 @@
 import {defineField, defineType} from 'sanity'
 
+const translationLocales = [
+  {name: 'en', title: 'Inglês'},
+  {name: 'fr', title: 'Francês'},
+  {name: 'es', title: 'Espanhol'},
+]
+
+function translatedProductLineFields(localeTitle: string) {
+  return [
+    defineField({
+      name: 'title',
+      title: `Título (${localeTitle})`,
+      type: 'string',
+    }),
+    defineField({
+      name: 'subtitle',
+      title: `Subtítulo (${localeTitle})`,
+      type: 'string',
+      validation: (Rule) => Rule.max(120),
+    }),
+    defineField({
+      name: 'aboutText',
+      title: `Texto "Sobre o Modelo" (${localeTitle})`,
+      type: 'text',
+      rows: 6,
+    }),
+    defineField({
+      name: 'highlights',
+      title: `Destaques da listagem (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (Rule) => Rule.max(6),
+    }),
+    defineField({
+      name: 'materials',
+      title: `Materiais (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'finishes',
+      title: `Acabamentos (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'dimensions',
+      title: `Dimensões (${localeTitle})`,
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'width',
+          title: 'Largura',
+          type: 'string',
+        }),
+        defineField({
+          name: 'height',
+          title: 'Altura',
+          type: 'string',
+        }),
+        defineField({
+          name: 'depth',
+          title: 'Profundidade',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'technicalFeatures',
+      title: `Ficha Técnica (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'advantages',
+      title: `Vantagens (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'idealFor',
+      title: `Ideal Para (${localeTitle})`,
+      type: 'array',
+      of: [{type: 'string'}],
+    }),
+  ]
+}
+
 export const productLineType = defineType({
   name: 'productLine',
   title: 'Produtos das Linhas',
@@ -70,6 +157,30 @@ export const productLineType = defineType({
       type: 'text',
       rows: 6,
       validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'translations',
+      title: 'Traduções',
+      type: 'object',
+      description:
+        'Textos opcionais por idioma. Quando um campo fica vazio, o site usa o texto base em português.',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: translationLocales.map((locale) =>
+        defineField({
+          name: locale.name,
+          title: locale.title,
+          type: 'object',
+          options: {
+            collapsible: true,
+            collapsed: true,
+          },
+          fields: translatedProductLineFields(locale.title),
+        })
+      ),
     }),
 
     defineField({
@@ -209,4 +320,3 @@ export const productLineType = defineType({
     },
   },
 })
-

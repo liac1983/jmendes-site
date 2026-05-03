@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 import type { Project } from "@/lib/project-types";
 
@@ -8,6 +9,8 @@ type Props = {
 };
 
 export default function ProjectHero({ project, locale }: Props) {
+  const t = useTranslations("Portfolio.project.hero");
+
   return (
     <section className="border-b border-[var(--border)] bg-black">
       <Container>
@@ -16,7 +19,7 @@ export default function ProjectHero({ project, locale }: Props) {
             href={`/${locale}/portfolio`}
             className="text-base text-white/70 transition hover:text-gold"
           >
-            ← Voltar ao Portfolio
+            ← {t("back")}
           </Link>
         </div>
       </Container>
@@ -39,7 +42,7 @@ export default function ProjectHero({ project, locale }: Props) {
               {project.title}
             </h1>
             <p className="mt-6 text-2xl text-white/85">
-              Projeto por medida em {project.location}
+              {t("subtitle", { location: project.location })}
             </p>
           </div>
         </Container>
@@ -47,4 +50,3 @@ export default function ProjectHero({ project, locale }: Props) {
     </section>
   );
 }
-

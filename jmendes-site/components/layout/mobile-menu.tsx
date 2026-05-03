@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { navigation } from "@/data/navigation";
+import LanguageSwitcher from "./language-switcher";
 
 type Props = {
   locale: string;
@@ -11,6 +13,7 @@ type Props = {
 
 export default function MobileMenu({ locale }: Props) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("Nav");
 
   return (
     <div className="lg:hidden">
@@ -32,10 +35,18 @@ export default function MobileMenu({ locale }: Props) {
                 className="text-white/80 transition-colors hover:text-gold"
                 onClick={() => setOpen(false)}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
           </nav>
+          <div className="mt-6 border-t border-[var(--border)] pt-5">
+            <LanguageSwitcher
+              locale={locale}
+              className="text-base"
+              linkClassName="px-1 py-2"
+              onLocaleChange={() => setOpen(false)}
+            />
+          </div>
         </div>
       )}
     </div>

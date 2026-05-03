@@ -1,5 +1,23 @@
 import type { Image } from "sanity";
 
+export type SanityProjectTranslation = {
+  title?: string;
+  categoryLabel?: string;
+  location?: string;
+  typeLabel?: string;
+  description?: string;
+  challenge?: string;
+  solution?: string;
+  materials?: string[];
+  finishes?: string[];
+  testimonialAuthor?: string;
+  testimonialText?: string;
+};
+
+export type SanityProjectTranslations = Partial<
+  Record<"pt" | "en" | "fr" | "es", SanityProjectTranslation>
+>;
+
 export type SanityPortfolioProject = {
   _id: string;
   title: string;
@@ -10,6 +28,7 @@ export type SanityPortfolioProject = {
   heroImage: Image;
   testimonialAuthor?: string;
   testimonialText?: string;
+  translations?: SanityProjectTranslations;
 };
 
 export type SanityProjectDetail = {
@@ -33,6 +52,7 @@ export type SanityProjectDetail = {
   testimonialText?: string;
   instagramImages?: Image[];
   instagramUrl?: string;
+  translations?: SanityProjectTranslations;
 };
 
 export type SanityRelatedProject = {
@@ -43,4 +63,5 @@ export type SanityRelatedProject = {
   categoryLabel?: string;
   typeLabel?: string;
   heroImage: Image;
+  translations?: SanityProjectTranslations;
 };
