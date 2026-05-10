@@ -3,6 +3,7 @@ import {useTranslations} from "next-intl";
 import {urlFor} from "@/sanity/lib/image";
 import {getProductLineCategoryLabelKey} from "@/lib/product-line-localization";
 import type {ProductLine} from "@/types/product-line";
+import Reveal, {ImageReveal} from "@/components/ui/reveal";
 
 type ProductLineSectionProps = {
   locale: string;
@@ -29,47 +30,59 @@ export default function ProductLineSection({
           }`}
         >
           <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-[#C8A45D]">
-              {categoryLabelKey
-                ? categoryT(categoryLabelKey)
-                : product.category}
-            </p>
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.2em] text-[#C8A45D]">
+                {categoryLabelKey
+                  ? categoryT(categoryLabelKey)
+                  : product.category}
+              </p>
+            </Reveal>
 
-            <h2 className="font-serif text-4xl md:text-5xl">
-              {product.title}
-            </h2>
+            <Reveal delay={0.14}>
+              <h2 className="font-serif text-4xl md:text-5xl">
+                {product.title}
+              </h2>
+            </Reveal>
 
-            <p className="max-w-xl text-lg text-white/70">
-              {product.subtitle}
-            </p>
+            <Reveal delay={0.28}>
+              <p className="max-w-xl text-lg text-white/70">
+                {product.subtitle}
+              </p>
+            </Reveal>
 
-            <div className="space-y-4">
-              <p className="text-[#C8A45D]">{availabilityLabel}</p>
+            <Reveal delay={0.42}>
+              <div className="space-y-4">
+                <p className="text-[#C8A45D]">{availabilityLabel}</p>
 
-              <ul className="space-y-3 text-white/80">
-                {(product.highlights ?? []).map((item) => (
-                  <li key={item}>✓ {item}</li>
-                ))}
-              </ul>
-            </div>
+                <ul className="space-y-3 text-white/80">
+                  {(product.highlights ?? []).map((item) => (
+                    <li key={item}>✓ {item}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
 
-            <Link
-              href={`/${locale}/linhas/${product.slug}`}
-              className="inline-flex items-center gap-3 bg-[#C8A45D] px-8 py-4 text-base font-medium text-black transition hover:opacity-90"
-            >
-              {t("details")}
-              <span aria-hidden>→</span>
-            </Link>
+            <Reveal delay={0.56}>
+              <Link
+                href={`/${locale}/linhas/${product.slug}`}
+                className="premium-button inline-flex items-center gap-3 overflow-hidden bg-[#C8A45D] px-8 py-4 text-base font-medium text-black transition duration-500 ease-out hover:opacity-90"
+              >
+                {t("details")}
+                <span aria-hidden>→</span>
+              </Link>
+            </Reveal>
           </div>
 
           <div className="relative">
             <div className="absolute bottom-[-16px] right-[-16px] h-full w-full border border-[#5B4726]" />
             {product.heroImage?.asset && (
-              <img
-                src={urlFor(product.heroImage).width(1200).height(900).fit("crop").url()}
-                alt={product.heroImage.alt || product.title}
-                className="relative z-10 h-[520px] w-full object-cover"
-              />
+              <ImageReveal className="relative z-10">
+                <img
+                  src={urlFor(product.heroImage).width(1200).height(900).fit("crop").url()}
+                  alt={product.heroImage.alt || product.title}
+                  className="h-[520px] w-full object-cover"
+                />
+              </ImageReveal>
             )}
           </div>
         </article>

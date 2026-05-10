@@ -38,9 +38,9 @@
     },
     "featured": {
       "title": "Featured Projects",
-      "description": "Examples of our work in custom furniture and series production",
+      "description": "Restaurant projects with custom furniture, finishes and tailored atmospheres",
       "category": "Custom Made",
-      "viewAll": "View Full Portfolio",
+      "viewAll": "View Featured Projects",
       "projects": {
         "minimalKitchen": "Modern Minimalist Kitchen",
         "islandKitchen": "Kitchen with Central Island",
@@ -141,6 +141,26 @@
         "quote": "Request Quote",
         "moreProjects": "View More Projects"
       }
+    }
+  },
+  "FeaturedProjects": {
+    "index": {
+      "title": "Featured Projects",
+      "subtitle": "A selection of restaurants with their own identity, now managed in a dedicated backoffice area."
+    },
+    "detail": {
+      "back": "Back to projects",
+      "overview": "Overview",
+      "concept": "Concept",
+      "highlights": "Highlights",
+      "materials": "Materials",
+      "finishes": "Finishes",
+      "gallery": "Gallery",
+      "relatedTitle": "Other Featured Projects",
+      "relatedSubtitle": "More selected spaces",
+      "ctaTitle": "Want to create a space with this precision?",
+      "ctaDescription": "Talk to us about custom furniture, finishes and production tailored to your project.",
+      "ctaButton": "Request Quote"
     }
   },
   "Lines": {

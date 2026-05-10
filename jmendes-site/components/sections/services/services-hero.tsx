@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
+import Reveal from "@/components/ui/reveal";
 
 export default function ServicesHero() {
   const t = useTranslations("Services.hero");
@@ -8,13 +9,17 @@ export default function ServicesHero() {
     <section className="border-b border-[var(--border)] py-20">
       <Container>
         <div className="text-center">
-          <h1 className="text-6xl lg:text-[80px] text-white">
-            {t("title")}
-          </h1>
+          <Reveal>
+            <h1 className="text-6xl text-white lg:text-[80px]">
+              {t("title")}
+            </h1>
+          </Reveal>
 
-          <p className="mt-6 text-xl text-[var(--muted)]">
-            {t("subtitle")}
-          </p>
+          <Reveal delay={0.18}>
+            <p className="mt-6 text-xl text-[var(--muted)]">
+              {t("subtitle")}
+            </p>
+          </Reveal>
         </div>
       </Container>
     </section>

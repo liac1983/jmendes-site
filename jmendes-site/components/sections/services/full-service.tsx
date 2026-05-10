@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 import { PenTool, Factory, Sparkles } from "lucide-react";
+import Reveal from "@/components/ui/reveal";
 
 const items = [
   {
@@ -27,30 +28,36 @@ export default function FullService() {
     <section className="border-t border-[var(--border)] py-20">
       <Container>
         <div className="text-center">
-          <h2 className="text-5xl text-white">{t("title")}</h2>
+          <Reveal>
+            <h2 className="text-5xl text-white">{t("title")}</h2>
+          </Reveal>
 
-          <p className="mt-4 text-[var(--muted)]">
-            {t("subtitle")}
-          </p>
+          <Reveal delay={0.18}>
+            <p className="mt-4 text-[var(--muted)]">
+              {t("subtitle")}
+            </p>
+          </Reveal>
         </div>
 
         <div className="mt-16 grid gap-12 md:grid-cols-3 text-center">
-          {items.map((item) => (
-            <div key={item.key}>
-              <div className="mx-auto flex h-16 w-16 items-center justify-center border border-[var(--gold)] text-[var(--gold)]">
-                <item.icon />
-              </div>
+          {items.map((item, index) => (
+            <Reveal key={item.key} delay={0.12 + index * 0.12}>
+              <div className="group">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center border border-[var(--gold)] text-[var(--gold)] transition duration-700 ease-out group-hover:-translate-y-1 group-hover:bg-[var(--gold)] group-hover:text-black">
+                  <item.icon />
+                </div>
 
-              <h3 className="mt-6 text-xl text-white">
-                {t(`items.${item.key}.title`)}
-              </h3>
+                <h3 className="mt-6 text-xl text-white transition-colors duration-500 ease-out group-hover:text-[var(--gold)]">
+                  {t(`items.${item.key}.title`)}
+                </h3>
 
-              <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
-                {item.lineKeys.map((lineKey) => (
-                  <p key={lineKey}>{t(`items.${item.key}.lines.${lineKey}`)}</p>
-                ))}
+                <div className="mt-3 text-sm text-[var(--muted)] space-y-1">
+                  {item.lineKeys.map((lineKey) => (
+                    <p key={lineKey}>{t(`items.${item.key}.lines.${lineKey}`)}</p>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

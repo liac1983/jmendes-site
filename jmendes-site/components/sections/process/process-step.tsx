@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Container from "@/components/ui/container";
 import IconBox from "@/components/ui/icon-box";
 import clsx from "clsx";
+import Reveal, { ImageReveal } from "@/components/ui/reveal";
 
 type Props = {
   reverse?: boolean;
@@ -33,33 +34,41 @@ export default function ProcessStep({
           )}
         >
           <div className="relative">
-            <div className="absolute left-0 top-0 text-[110px] font-semibold leading-none text-[rgba(200,168,90,0.12)] md:text-[140px]">
-              {number}
-            </div>
+            <Reveal y={12}>
+              <div className="absolute left-0 top-0 text-[110px] font-semibold leading-none text-[rgba(200,168,90,0.12)] md:text-[140px]">
+                {number}
+              </div>
+            </Reveal>
 
             <div className="relative z-10 pt-12">
-              <IconBox icon={icon} className="mb-8 h-18 w-18" />
+              <Reveal delay={0.08}>
+                <IconBox icon={icon} className="mb-8 h-18 w-18" />
+              </Reveal>
 
-              <h2 className="max-w-[560px] text-4xl leading-tight text-[var(--foreground)] md:text-5xl">
-                {title}
-              </h2>
+              <Reveal delay={0.22}>
+                <h2 className="max-w-[560px] text-4xl leading-tight text-[var(--foreground)] md:text-5xl">
+                  {title}
+                </h2>
+              </Reveal>
 
-              <p className="mt-6 max-w-[580px] text-xl leading-9 text-[var(--muted)]">
-                {t(`${stepKey}.description`)}
-              </p>
+              <Reveal delay={0.38}>
+                <p className="mt-6 max-w-[580px] text-xl leading-9 text-[var(--muted)]">
+                  {t(`${stepKey}.description`)}
+                </p>
+              </Reveal>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-[560px]">
             <div className="absolute left-5 top-5 h-full w-full bg-[rgba(200,168,90,0.22)]" />
-            <div className="relative h-[360px] w-full overflow-hidden md:h-[420px]">
+            <ImageReveal className="relative h-[360px] w-full md:h-[420px]">
               <Image
                 src={image}
                 alt={title}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.035]"
               />
-            </div>
+            </ImageReveal>
           </div>
         </div>
       </Container>

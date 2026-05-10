@@ -13,6 +13,15 @@ export const structure: StructureResolver = (S) =>
         ),
 
       S.listItem()
+        .title('Projetos em Destaque')
+        .schemaType('featuredProject')
+        .child(
+          S.documentTypeList('featuredProject')
+            .title('Projetos em Destaque')
+            .defaultOrdering([{field: 'order', direction: 'asc'}])
+        ),
+
+      S.listItem()
         .title('Produtos das Linhas')
         .schemaType('productLine')
         .child(

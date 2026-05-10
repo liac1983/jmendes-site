@@ -16,7 +16,7 @@ export default function Button({
   className,
 }: ButtonProps) {
   const styles = clsx(
-    "inline-flex h-[64px] items-center justify-center px-8 text-[17px] font-medium transition-all duration-300",
+    "premium-button inline-flex h-[64px] items-center justify-center overflow-hidden px-8 text-[17px] font-medium transition-all duration-500 ease-out",
     variant === "primary" &&
       "bg-[var(--gold)] text-black hover:opacity-90",
     variant === "secondary" &&

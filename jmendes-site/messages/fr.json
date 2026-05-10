@@ -38,9 +38,9 @@
     },
     "featured": {
       "title": "Projets en Vedette",
-      "description": "Exemples de notre travail en mobilier personnalisé et production en série",
+      "description": "Projets de restauration avec mobilier, finitions et ambiances sur mesure",
       "category": "Sur Mesure",
-      "viewAll": "Voir Tout le Portfolio",
+      "viewAll": "Voir les Projets en Vedette",
       "projects": {
         "minimalKitchen": "Cuisine Moderne Minimaliste",
         "islandKitchen": "Cuisine avec Îlot Central",
@@ -141,6 +141,26 @@
         "quote": "Demander un Devis",
         "moreProjects": "Voir Plus de Projets"
       }
+    }
+  },
+  "FeaturedProjects": {
+    "index": {
+      "title": "Projets en Vedette",
+      "subtitle": "Une sélection de restaurants avec leur propre identité, désormais gérée dans une zone dédiée du backoffice."
+    },
+    "detail": {
+      "back": "Retour aux projets",
+      "overview": "Vue d'ensemble",
+      "concept": "Concept",
+      "highlights": "Points forts",
+      "materials": "Matériaux",
+      "finishes": "Finitions",
+      "gallery": "Galerie",
+      "relatedTitle": "Autres Projets en Vedette",
+      "relatedSubtitle": "Plus d'espaces sélectionnés",
+      "ctaTitle": "Vous souhaitez créer un espace avec cette précision ?",
+      "ctaDescription": "Parlez-nous de mobilier, finitions et production sur mesure pour votre projet.",
+      "ctaButton": "Demander un Devis"
     }
   },
   "Lines": {

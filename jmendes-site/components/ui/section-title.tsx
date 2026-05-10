@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Reveal from "./reveal";
 
 type SectionTitleProps = {
   title: string;
@@ -21,14 +22,18 @@ export default function SectionTitle({
         className
       )}
     >
-      <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]">
-        {title}
-      </h2>
+      <Reveal>
+        <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]">
+          {title}
+        </h2>
+      </Reveal>
 
       {subtitle && (
-        <p className="mx-auto mt-5 max-w-3xl text-xl leading-9 text-[var(--muted)]">
-          {subtitle}
-        </p>
+        <Reveal delay={0.18}>
+          <p className="mx-auto mt-5 max-w-3xl text-xl leading-9 text-[var(--muted)]">
+            {subtitle}
+          </p>
+        </Reveal>
       )}
     </div>
   );

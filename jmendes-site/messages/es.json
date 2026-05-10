@@ -38,9 +38,9 @@
     },
     "featured": {
       "title": "Proyectos Destacados",
-      "description": "Ejemplos de nuestro trabajo en mobiliario personalizado y producción en serie",
+      "description": "Proyectos de restauración con mobiliario, acabados y ambientes personalizados",
       "category": "A Medida",
-      "viewAll": "Ver Todo el Portafolio",
+      "viewAll": "Ver Proyectos Destacados",
       "projects": {
         "minimalKitchen": "Cocina Moderna Minimalista",
         "islandKitchen": "Cocina con Isla Central",
@@ -141,6 +141,26 @@
         "quote": "Solicitar Presupuesto",
         "moreProjects": "Ver Más Proyectos"
       }
+    }
+  },
+  "FeaturedProjects": {
+    "index": {
+      "title": "Proyectos Destacados",
+      "subtitle": "Una selección de restaurantes con identidad propia, ahora gestionados en un área independiente del backoffice."
+    },
+    "detail": {
+      "back": "Volver a los proyectos",
+      "overview": "Vista general",
+      "concept": "Concepto",
+      "highlights": "Destacados",
+      "materials": "Materiales",
+      "finishes": "Acabados",
+      "gallery": "Galería",
+      "relatedTitle": "Otros Proyectos Destacados",
+      "relatedSubtitle": "Más espacios seleccionados",
+      "ctaTitle": "¿Quiere crear un espacio con esta precisión?",
+      "ctaDescription": "Hable con nosotros sobre mobiliario, acabados y producción a medida para su proyecto.",
+      "ctaButton": "Solicitar Presupuesto"
     }
   },
   "Lines": {

@@ -10,12 +10,13 @@ export default function ServicesGrid() {
     <section className="py-20">
       <Container>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const title = t(`${service.id}.title`);
 
             return (
               <ServiceCard
                 key={service.id}
+                delay={index * 0.1}
                 image={service.image}
                 title={title}
                 description={t(`${service.id}.description`)}
