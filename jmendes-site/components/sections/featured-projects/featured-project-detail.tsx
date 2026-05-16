@@ -249,53 +249,6 @@ function renderHero(
     );
   }
 
-  if (project.styleVariant === "poissonchat") {
-    return (
-      <section className="border-b border-[var(--fp-border)] py-20 lg:py-28">
-        <Container>
-          <Reveal>
-            <BackLink labels={labels} locale={locale} />
-          </Reveal>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-            <Reveal>
-              <HeroTitle project={project} />
-            </Reveal>
-
-            <Reveal delay={0.12}>
-              <p className="max-w-xl text-lg leading-8 text-white/60">
-                {project.intro}
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-12 grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
-            <Reveal className="relative aspect-[16/9] overflow-hidden border border-[var(--fp-border)]">
-              <HeroImage project={project} theme={theme} priority />
-            </Reveal>
-            <div className="grid gap-4">
-              {project.gallery.slice(1, 3).map((image, index) => (
-                <Reveal
-                  key={image}
-                  delay={0.1 + index * 0.08}
-                  className="relative aspect-[4/3] overflow-hidden border border-[var(--fp-border)]"
-                >
-                  <Image
-                    src={image}
-                    alt={`${project.title} ${index + 2}`}
-                    fill
-                    sizes="(min-width: 1024px) 28vw, 100vw"
-                    className={clsx("object-cover", theme.imageTreatment)}
-                  />
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-    );
-  }
-
   if (project.styleVariant === "sense") {
     return (
       <section className="border-b border-[var(--fp-border)] py-20 lg:py-28">
@@ -374,7 +327,7 @@ function ProjectOverview({
         <Reveal delay={0.12}>
           <div className="grid gap-8 lg:grid-cols-[1fr_0.78fr] lg:items-start">
             <div>
-              <p className="text-3xl leading-tight text-white md:text-5xl">
+              <p className="text-xl leading-9 text-white md:text-2xl md:leading-10">
                 {project.intro}
               </p>
               <p className="mt-8 text-lg leading-9 text-white/60">

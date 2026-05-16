@@ -5,7 +5,6 @@ const advantageKeys = [
   "fastDelivery",
   "competitivePrices",
   "guaranteedQuality",
-  "customizable",
 ] as const;
 
 export default function LinesAdvantages() {
@@ -25,7 +24,7 @@ export default function LinesAdvantages() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-10 md:grid-cols-3">
           {advantageKeys.map((key) => (
             <div key={key} className="text-center">
               <h3 className="text-3xl text-[var(--gold)]">

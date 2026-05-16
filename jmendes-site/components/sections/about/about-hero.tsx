@@ -10,11 +10,13 @@ export default function AboutHero() {
         src="/images/sobre/hero.jpg"
         alt={t("imageAlt")}
         fill
+        priority
         className="object-cover"
       />
 
       {/* overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
       {/* conteúdo */}
       <div className="relative z-10 flex h-full items-center justify-center text-center">

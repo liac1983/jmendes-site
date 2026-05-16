@@ -310,7 +310,7 @@
         "description": "Transformamos conceitos em imagens realistas para validar cada detalhe antes da produção.",
         "bullets": {
           "detailedModels": "Modelos detalhados",
-          "photorealisticRenders": "Renders fotorrealistas",
+          "photorealisticRenders": "Renders fotos realistas",
           "perspectives": "Perspetivas do espaço",
           "quickChanges": "Alterações rápidas"
         }
@@ -479,7 +479,7 @@
       },
       "project3d": {
         "title": "Projeto 3D",
-        "description": "Criação de modelos 3D fotorrealistas que permitem visualizar exatamente como ficará o mobiliário no espaço antes de produzir."
+        "description": "Criação de modelos 3D fotos realistas que permitem visualizar exatamente como ficará o mobiliário no espaço antes de produzir."
       },
       "production": {
         "title": "Produção na Fábrica",
