@@ -119,14 +119,7 @@ export const productLineType = defineType({
       name: 'category',
       title: 'Categoria',
       type: 'string',
-      options: {
-        list: [
-          {title: 'Cozinhas Modulares', value: 'cozinhas-modulares'},
-          {title: 'Roupeiros Modulares', value: 'roupeiros-modulares'},
-          {title: 'Mobiliário de Sala', value: 'mobiliario-de-sala'},
-        ],
-        layout: 'dropdown',
-      },
+      description: 'Slug da categoria (minúsculas, hífens). Ex: cozinhas-modulares, roupeiros-modulares, mobiliario-de-sala.',
       validation: (Rule) => Rule.required(),
     }),
 

@@ -6,17 +6,11 @@ import ProjectCard from "@/components/ui/project-card";
 import Container from "@/components/ui/container";
 import PortfolioFilters from "./portfolio-filters";
 
-export type PortfolioCategory =
-  | "todos"
-  | "cozinhas"
-  | "roupeiros"
-  | "comercial"
-  | "casas-completas";
-
-type PortfolioProject = {
+export type PortfolioProject = {
   slug: string;
   title: string;
-  category: Exclude<PortfolioCategory, "todos">;
+  category: string;
+  categoryFilterLabel: string;
   type: string;
   image: string;
   testimonial?: {
@@ -30,18 +24,25 @@ type PortfolioGridProps = {
   projects: PortfolioProject[];
 };
 
-export default function PortfolioGrid({
-  locale,
-  projects,
-}: PortfolioGridProps) {
+export default function PortfolioGrid({ locale, projects }: PortfolioGridProps) {
   const t = useTranslations("Portfolio.grid");
-  const [activeCategory, setActiveCategory] =
-    useState<PortfolioCategory>("todos");
+  const [activeCategory, setActiveCategory] = useState("todos");
+
+  // Only show categories that have at least one project
+  const categories = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const p of projects) {
+      if (p.category && !seen.has(p.category)) {
+        seen.set(p.category, p.categoryFilterLabel);
+      }
+    }
+    return Array.from(seen.entries()).map(([value, label]) => ({ value, label }));
+  }, [projects]);
 
   const filteredProjects = useMemo(() => {
     return activeCategory === "todos"
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : projects.filter((p) => p.category === activeCategory);
   }, [activeCategory, projects]);
 
   return (
@@ -49,6 +50,7 @@ export default function PortfolioGrid({
       <Container>
         <PortfolioFilters
           activeCategory={activeCategory}
+          categories={categories}
           onChange={setActiveCategory}
         />
 

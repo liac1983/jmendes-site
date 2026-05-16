@@ -30,7 +30,7 @@ export type SanityPortfolioProject = {
   _id: string;
   title: string;
   slug: string;
-  category: "cozinhas" | "roupeiros" | "comercial" | "casas-completas";
+  category: string;
   categoryLabel?: string;
   typeLabel?: string;
   heroImage: Image;
@@ -43,7 +43,7 @@ export type SanityProjectDetail = {
   _id: string;
   title: string;
   slug: string;
-  category: "cozinhas" | "roupeiros" | "comercial" | "casas-completas";
+  category: string;
   categoryLabel?: string;
   location?: string;
   year?: string;
@@ -67,7 +67,7 @@ export type SanityRelatedProject = {
   _id: string;
   title: string;
   slug: string;
-  category: "cozinhas" | "roupeiros" | "comercial" | "casas-completas";
+  category: string;
   categoryLabel?: string;
   typeLabel?: string;
   heroImage: Image;

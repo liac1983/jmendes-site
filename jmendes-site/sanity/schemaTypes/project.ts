@@ -99,15 +99,7 @@ export const projectType = defineType({
       name: 'category',
       title: 'Categoria',
       type: 'string',
-      options: {
-        list: [
-          {title: 'Cozinhas', value: 'cozinhas'},
-          {title: 'Roupeiros', value: 'roupeiros'},
-          {title: 'Comercial', value: 'comercial'},
-          {title: 'Casas Completas', value: 'casas-completas'},
-        ],
-        layout: 'dropdown',
-      },
+      description: 'Slug da categoria (minúsculas, hífens). Ex: cozinhas, roupeiros, comercial, casas-completas, escritorios.',
       validation: (Rule) => Rule.required(),
     }),
 

@@ -1,5 +1,5 @@
 import PortfolioHero from "@/components/sections/portfolio/portfolio-hero";
-import PortfolioGrid from "@/components/sections/portfolio/portfolio-grid";
+import PortfolioGrid, { type PortfolioProject } from "@/components/sections/portfolio/portfolio-grid";
 import { getTranslations } from "next-intl/server";
 import { client } from "@/sanity/lib/client";
 import { portfolioProjectsQuery } from "@/sanity/lib/queries";
@@ -10,17 +10,12 @@ import {
 } from "@/lib/portfolio-localization";
 import type { SanityPortfolioProject } from "@/sanity/lib/types";
 
-type PortfolioPageProject = {
-  slug: string;
-  title: string;
-  category: "cozinhas" | "roupeiros" | "comercial" | "casas-completas";
-  type: string;
-  image: string;
-  testimonial?: {
-    text: string;
-    author: string;
-  };
-};
+function slugToLabel(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
 
 export default async function PortfolioPage({
   params,
@@ -34,13 +29,14 @@ export default async function PortfolioPage({
     portfolioProjectsQuery
   );
 
-  const projects: PortfolioPageProject[] = sanityProjects.map((project) => {
+  const projects: PortfolioProject[] = sanityProjects.map((project) => {
     const localizedProject = getLocalizedProject(project, locale);
 
     return {
       slug: localizedProject.slug,
       title: localizedProject.title,
       category: localizedProject.category,
+      categoryFilterLabel: slugToLabel(localizedProject.category),
       type: getPortfolioLabel(
         localizedProject.typeLabel || localizedProject.categoryLabel,
         localizedProject.category,
