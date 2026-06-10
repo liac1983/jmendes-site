@@ -22,9 +22,12 @@ export default async function FeaturedProjectsPage({
 }: FeaturedProjectsPageProps) {
   const { locale } = await params;
   const t = await getTranslations("FeaturedProjects.index");
-  const sanityProjects = await client.fetch<SanityFeaturedProject[]>(
-    featuredProjectsQuery
-  );
+  let sanityProjects: SanityFeaturedProject[] = [];
+  try {
+    sanityProjects = await client.fetch<SanityFeaturedProject[]>(featuredProjectsQuery);
+  } catch {
+    // Network error — fall back to local data
+  }
   const projects = sanityProjects.length
     ? sanityProjects.map((project) =>
         mapSanityFeaturedProjectCard(project, locale)

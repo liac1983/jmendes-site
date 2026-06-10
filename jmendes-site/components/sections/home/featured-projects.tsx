@@ -1,6 +1,5 @@
 import Container from "@/components/ui/container";
 import SectionTitle from "@/components/ui/section-title";
-import ProjectCard from "@/components/ui/project-card";
 import { localFeaturedProjects } from "@/data/featured-projects";
 import {
   mapLocalFeaturedProjectCard,
@@ -9,8 +8,8 @@ import {
 import { client } from "@/sanity/lib/client";
 import { featuredProjectsQuery } from "@/sanity/lib/queries";
 import type { SanityFeaturedProject } from "@/sanity/lib/types";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import FeaturedProjectsCarousel from "./featured-projects-carousel";
 
 type Props = {
   locale: string;
@@ -18,13 +17,16 @@ type Props = {
 
 export default async function FeaturedProjects({ locale }: Props) {
   const t = await getTranslations("Home.featured");
-  const sanityProjects = await client.fetch<SanityFeaturedProject[]>(
-    featuredProjectsQuery
-  );
+
+  let sanityProjects: SanityFeaturedProject[] = [];
+  try {
+    sanityProjects = await client.fetch<SanityFeaturedProject[]>(featuredProjectsQuery);
+  } catch {
+    // Network error — fall back to local data
+  }
+
   const projects = sanityProjects.length
-    ? sanityProjects.map((project) =>
-        mapSanityFeaturedProjectCard(project, locale)
-      )
+    ? sanityProjects.map((project) => mapSanityFeaturedProjectCard(project, locale))
     : localFeaturedProjects.map(mapLocalFeaturedProjectCard);
 
   return (
@@ -38,29 +40,14 @@ export default async function FeaturedProjects({ locale }: Props) {
           subtitle={t("description")}
         />
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              locale={locale}
-              slug={project.slug}
-              image={project.image}
-              categoryLabel={project.categoryLabel || t("category")}
-              title={project.title}
-              href={`/${locale}/projetos-destaque/${project.slug}`}
-            />
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link
-            href={`/${locale}/projetos-destaque`}
-            className="editorial-link inline-flex items-center gap-3 text-2xl text-gold transition-opacity hover:opacity-80"
-          >
-            {t("viewAll")}
-            <span aria-hidden>→</span>
-          </Link>
-        </div>
+        <FeaturedProjectsCarousel
+          projects={projects}
+          locale={locale}
+          viewAllLabel={t("viewAll")}
+          viewAllHref={`/${locale}/projetos-destaque`}
+          viewProjectLabel={t("viewProject")}
+          categoryFallback={t("category")}
+        />
       </Container>
     </section>
   );

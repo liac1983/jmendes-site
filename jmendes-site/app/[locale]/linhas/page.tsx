@@ -13,7 +13,12 @@ export default async function LinhasPage({
 }) {
   const { locale } = await params;
 
-  const productLines = await client.fetch<ProductLine[]>(productLinesQuery);
+  let productLines: ProductLine[] = [];
+  try {
+    productLines = await client.fetch<ProductLine[]>(productLinesQuery);
+  } catch {
+    // Network error — render empty lines page
+  }
   const localizedProductLines = productLines.map((line) =>
     getLocalizedProductLine(line, locale)
   );

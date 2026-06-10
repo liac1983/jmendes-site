@@ -32,10 +32,15 @@ export default async function FeaturedProjectPage({
 }: FeaturedProjectPageProps) {
   const { locale, slug } = await params;
   const t = await getTranslations("FeaturedProjects.detail");
-  const sanityProject = await client.fetch<SanityFeaturedProjectDetail | null>(
-    featuredProjectBySlugQuery,
-    { slug }
-  );
+  let sanityProject: SanityFeaturedProjectDetail | null = null;
+  try {
+    sanityProject = await client.fetch<SanityFeaturedProjectDetail | null>(
+      featuredProjectBySlugQuery,
+      { slug }
+    );
+  } catch {
+    // Network error — fall back to local data
+  }
   const localProject = getLocalFeaturedProject(slug);
 
   if (!sanityProject && !localProject) {

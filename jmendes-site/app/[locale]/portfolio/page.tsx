@@ -25,9 +25,12 @@ export default async function PortfolioPage({
   const { locale } = await params;
   const labelT = await getTranslations("Portfolio.labels");
 
-  const sanityProjects = await client.fetch<SanityPortfolioProject[]>(
-    portfolioProjectsQuery
-  );
+  let sanityProjects: SanityPortfolioProject[] = [];
+  try {
+    sanityProjects = await client.fetch<SanityPortfolioProject[]>(portfolioProjectsQuery);
+  } catch {
+    // Network error — render empty portfolio
+  }
 
   const projects: PortfolioProject[] = sanityProjects.map((project) => {
     const localizedProject = getLocalizedProject(project, locale);

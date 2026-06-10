@@ -45,17 +45,9 @@ export default async function Footer({ locale }: Props) {
               <Link href={`/${locale}/servicos`} className="text-white/80 hover:text-gold">
                 {navT("services")}
               </Link>
-            </div>
-          </div>
-
-          {/* Serviços */}
-          <div>
-            <h3 className="mb-6 text-3xl text-gold">{t("services")}</h3>
-            <div className="flex flex-col gap-3 text-white/80">
-              <p>{t("serviceItems.customFurniture")}</p>
-              <p>{t("serviceItems.projects3d")}</p>
-              <p>{t("serviceItems.seriesProduction")}</p>
-              <p>{t("serviceItems.delivery")}</p>
+              <Link href={`/${locale}/contacto`} className="text-white/80 hover:text-gold">
+                {navT("contact")}
+              </Link>
             </div>
           </div>
 

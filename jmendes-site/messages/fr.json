@@ -45,7 +45,8 @@
         "minimalKitchen": "Cuisine Moderne Minimaliste",
         "islandKitchen": "Cuisine avec Îlot Central",
         "walkInCloset": "Dressing Walk-in Luxueux"
-      }
+      },
+      "viewProject": "Voir le projet"
     },
     "cta": {
       "title": "Prêt à créer votre",

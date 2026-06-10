@@ -45,7 +45,8 @@
         "minimalKitchen": "Modern Minimalist Kitchen",
         "islandKitchen": "Kitchen with Central Island",
         "walkInCloset": "Luxury Walk-in Closet"
-      }
+      },
+      "viewProject": "View project"
     },
     "cta": {
       "title": "Ready to create your",
