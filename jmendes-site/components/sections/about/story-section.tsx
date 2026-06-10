@@ -16,21 +16,27 @@ export default function StorySection() {
 
           <Reveal delay={0.16}>
             <p className="text-[var(--muted)] leading-7 mb-6">
-              {t.rich("paragraph1", {
-                brand: (chunks) => <span className="text-gold">{chunks}</span>,
-              })}
+              {t("paragraph1")}
             </p>
           </Reveal>
 
           <Reveal delay={0.28}>
             <p className="text-[var(--muted)] leading-7 mb-6">
-              {t("paragraph2")}
+              {t.rich("paragraph2", {
+                brand: (chunks) => <span className="text-gold">{chunks}</span>,
+              })}
             </p>
           </Reveal>
 
           <Reveal delay={0.4}>
-            <p className="text-[var(--muted)] leading-7">
+            <p className="text-[var(--muted)] leading-7 mb-6">
               {t("paragraph3")}
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.52}>
+            <p className="text-[var(--muted)] leading-7">
+              {t("paragraph4")}
             </p>
           </Reveal>
         </div>

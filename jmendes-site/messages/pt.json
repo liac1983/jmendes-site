@@ -61,7 +61,7 @@
       "serviceItems": {
         "customFurniture": "Mobiliário por Medida",
         "projects3d": "Projetos 3D",
-        "seriesProduction": "Produção em Série",
+        "seriesProduction": "Produção de Mobiliário Personalizado",
         "delivery": "Entrega e Montagem"
       },
       "contact": "Contacto",
@@ -167,7 +167,7 @@
   "Lines": {
     "hero": {
       "title": "Linhas de Mobiliário",
-      "subtitle": "Produção própria com entrega rápida. Qualidade premium em série.",
+      "subtitle": "Produção própria com entrega rápida. Qualidade premium em cada peça.",
       "badges": {
         "production": "Produção Própria",
         "delivery": "Entrega Rápida",
@@ -191,7 +191,7 @@
     "advantages": {
       "title": "Vantagens das Nossas",
       "titleHighlight": "Linhas de Mobiliário",
-      "subtitle": "Porque escolher produção em série não significa abdicar de qualidade",
+      "subtitle": "Porque escolher as nossas linhas não significa abdicar de qualidade",
       "items": {
         "fastDelivery": {
           "title": "Entrega Rápida",
@@ -265,7 +265,7 @@
         "production": {
           "title": "Produção",
           "lines": {
-            "seriesManufacturing": "Fabrico em série",
+            "seriesManufacturing": "Fabrico de mobiliário personalizado",
             "industrialCapacity": "Capacidade industrial",
             "qualityControl": "Controlo de qualidade"
           }
@@ -274,7 +274,7 @@
           "title": "Instalação",
           "lines": {
             "professionalAssembly": "Montagem profissional",
-            "fitting": "Embasamento",
+            "fitting": "Embalamento",
             "finalFinishes": "Acabamentos finais"
           }
         }
@@ -337,7 +337,7 @@
         }
       },
       "fitting": {
-        "title": "Embasamento",
+        "title": "Embalamento",
         "description": "Tratamos dos ajustes finais para que cada peça fique nivelada, estável e bem acabada.",
         "bullets": {
           "finalAdjustments": "Ajustes finais",
@@ -419,11 +419,12 @@
     },
     "story": {
       "title": "A Nossa História",
-      "paragraph1": "Fundada em 2019, a <brand>J. Mendes Mobiliário</brand> nasceu da paixão pela marcenaria e do compromisso com a excelência.",
-      "paragraph2": "Começámos como uma pequena oficina artesanal e crescemos até nos tornarmos uma referência na indústria de mobiliário personalizado.",
-      "paragraph3": "Hoje, servimos clientes em Portugal e no estrangeiro, sempre com o mesmo nível de dedicação e atenção ao detalhe.",
+      "paragraph1": "Jaime Mendes trabalha com móveis desde os 12 anos. Tudo começou na empresa familiar do avô, que lhe transmitiu a paixão pela madeira e pela marcenaria — trabalhar a madeira é fazer arte, é transformar o que as pessoas idealizam em algo real e concreto.",
+      "paragraph2": "A <brand>J. Mendes Mobiliário</brand> nasceu de uma realização pessoal: um espaço de 50m², uma esquadrejadeira e uma copiadora, onde a maior parte do trabalho era manual. Com poucos meios, mas com a mesma essência e honestidade que nos define desde o primeiro dia, fomos evoluindo.",
+      "paragraph3": "Hoje a nossa fábrica de móveis conta com máquinas de última geração e uma equipa de jovens formada pelo próprio fundador — a quem foi transmitido não só o conhecimento técnico, mas também o amor genuíno pela marcenaria.",
       "imageAlt1": "Imagem da história da J. Mendes Mobiliário",
-      "imageAlt2": "Imagem da equipa J. Mendes Mobiliário"
+      "imageAlt2": "Imagem da equipa J. Mendes Mobiliário",
+      "paragraph4": "Focados em todo o tipo de mobiliário — de projetos residenciais a colaborações com arquitetos — continuamos a realizar os sonhos de quem nos procura."
     },
     "missionVision": {
       "mission": {
@@ -492,7 +493,7 @@
       },
       "delivery": {
         "title": "Entrega e Montagem",
-        "description": "Transporte seguro e montagem profissional. Embasamento final e ajustes para garantir satisfação total."
+        "description": "Transporte seguro e montagem profissional. Embalamento final e ajustes para garantir satisfação total."
       }
     },
     "timeline": {

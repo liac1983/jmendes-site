@@ -61,7 +61,7 @@
       "serviceItems": {
         "customFurniture": "Custom Furniture",
         "projects3d": "3D Projects",
-        "seriesProduction": "Series Production",
+        "seriesProduction": "Custom Furniture Production",
         "delivery": "Delivery & Installation"
       },
       "contact": "Contact",
@@ -167,7 +167,7 @@
   "Lines": {
     "hero": {
       "title": "Furniture Lines",
-      "subtitle": "In-house production with fast delivery. Premium quality in series.",
+      "subtitle": "In-house production with fast delivery. Premium quality in every piece.",
       "badges": {
         "production": "In-House Production",
         "delivery": "Fast Delivery",
@@ -191,7 +191,7 @@
     "advantages": {
       "title": "Advantages of Our",
       "titleHighlight": "Furniture Lines",
-      "subtitle": "Choosing series production does not mean compromising on quality",
+      "subtitle": "Choosing our furniture lines does not mean compromising on quality",
       "items": {
         "fastDelivery": {
           "title": "Fast Delivery",
@@ -265,7 +265,7 @@
         "production": {
           "title": "Production",
           "lines": {
-            "seriesManufacturing": "Series manufacturing",
+            "seriesManufacturing": "Custom furniture manufacturing",
             "industrialCapacity": "Industrial capacity",
             "qualityControl": "Quality control"
           }
@@ -419,11 +419,12 @@
     },
     "story": {
       "title": "Our Story",
-      "paragraph1": "Founded in 2019, <brand>J. Mendes Mobiliário</brand> was born from a passion for carpentry and a commitment to excellence.",
-      "paragraph2": "We started as a small artisan workshop and grew to become a benchmark in the custom furniture industry.",
-      "paragraph3": "Today, we serve clients in Portugal and abroad, always with the same level of dedication and attention to detail.",
+      "paragraph1": "Jaime Mendes has been working with furniture since the age of 12. It all began in his grandfather's family business, which passed on a passion for wood and carpentry — working with wood is making art, transforming what people imagine into something real and tangible.",
+      "paragraph2": "The <brand>J. Mendes Mobiliário</brand> was born from a personal pursuit: a 50m² space, a panel saw and a copying machine, where most of the work was done by hand. With modest means, but the same essence and honesty that defines us to this day, we kept growing.",
+      "paragraph3": "Today our furniture factory is equipped with state-of-the-art machinery and a team of young craftspeople trained by the founder himself — to whom he passed on not just technical knowledge, but a genuine love for carpentry.",
       "imageAlt1": "Image from the history of J. Mendes Furniture",
-      "imageAlt2": "Image of the J. Mendes Furniture team"
+      "imageAlt2": "Image of the J. Mendes Furniture team",
+      "paragraph4": "Focused on all types of furniture — from residential projects to collaborations with architects — we continue to bring the dreams of those who seek us to life."
     },
     "missionVision": {
       "mission": {

@@ -61,7 +61,7 @@
       "serviceItems": {
         "customFurniture": "Mobilier sur Mesure",
         "projects3d": "Projets 3D",
-        "seriesProduction": "Production en Série",
+        "seriesProduction": "Production de Mobilier Personnalisé",
         "delivery": "Livraison et Installation"
       },
       "contact": "Contact",
@@ -167,7 +167,7 @@
   "Lines": {
     "hero": {
       "title": "Lignes de Mobilier",
-      "subtitle": "Production interne avec livraison rapide. Qualité premium en série.",
+      "subtitle": "Production interne avec livraison rapide. Qualité premium dans chaque pièce.",
       "badges": {
         "production": "Production Interne",
         "delivery": "Livraison Rapide",
@@ -191,7 +191,7 @@
     "advantages": {
       "title": "Avantages de Nos",
       "titleHighlight": "Lignes de Mobilier",
-      "subtitle": "Choisir la production en série ne signifie pas renoncer à la qualité",
+      "subtitle": "Choisir nos lignes de mobilier ne signifie pas renoncer à la qualité",
       "items": {
         "fastDelivery": {
           "title": "Livraison Rapide",
@@ -265,7 +265,7 @@
         "production": {
           "title": "Production",
           "lines": {
-            "seriesManufacturing": "Fabrication en série",
+            "seriesManufacturing": "Fabrication de mobilier personnalisé",
             "industrialCapacity": "Capacité industrielle",
             "qualityControl": "Contrôle qualité"
           }
@@ -322,7 +322,7 @@
         "bullets": {
           "cncEquipment": "Équipement CNC",
           "qualityControl": "Contrôle qualité",
-          "scaleProduction": "Production en série",
+          "scaleProduction": "Production à grande échelle",
           "guaranteedDeadlines": "Délais garantis"
         }
       },
@@ -419,11 +419,12 @@
     },
     "story": {
       "title": "Notre Histoire",
-      "paragraph1": "Fondée en 2019, <brand>J. Mendes Mobiliário</brand> est née d'une passion pour la menuiserie et d'un engagement envers l'excellence.",
-      "paragraph2": "Nous avons commencé comme un petit atelier artisanal et avons grandi jusqu'à devenir une référence dans l'industrie du mobilier personnalisé.",
-      "paragraph3": "Aujourd'hui, nous servons des clients au Portugal et à l'étranger, toujours avec le même niveau de dévouement et d'attention au détail.",
+      "paragraph1": "Jaime Mendes travaille dans le meuble depuis l'âge de 12 ans. Tout a commencé dans l'entreprise familiale de son grand-père, qui lui a transmis la passion du bois et de la menuiserie — travailler le bois, c'est faire de l'art, c'est transformer ce que les gens imaginent en quelque chose de réel et de concret.",
+      "paragraph2": "La <brand>J. Mendes Mobiliário</brand> est née d'une réalisation personnelle : un espace de 50m², une scie à panneaux et une copieuse, où la majeure partie du travail était manuelle. Avec peu de moyens, mais avec la même essence et l'honnêteté qui nous définit depuis le premier jour, nous avons continué à évoluer.",
+      "paragraph3": "Aujourd'hui, notre usine de meubles dispose de machines de dernière génération et d'une équipe de jeunes formés par le fondateur lui-même — à qui il a transmis non seulement le savoir-faire technique, mais aussi l'amour sincère de la menuiserie.",
       "imageAlt1": "Image de l'histoire de J. Mendes Mobilier",
-      "imageAlt2": "Image de l'équipe J. Mendes Mobilier"
+      "imageAlt2": "Image de l'équipe J. Mendes Mobilier",
+      "paragraph4": "Spécialisés dans tous types de mobilier — des projets résidentiels aux collaborations avec des architectes — nous continuons à réaliser les rêves de ceux qui nous font confiance."
     },
     "missionVision": {
       "mission": {
