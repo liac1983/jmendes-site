@@ -119,3 +119,11 @@ export type SanityFeaturedProjectDetail = SanityFeaturedProject & {
   materials?: string[];
   finishes?: string[];
 };
+
+export type SanityCatalogo = {
+  _id: string;
+  nome: string;
+  pdfUrl: string;
+  capa: Image;
+  dataPublicacao?: string;
+};

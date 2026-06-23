@@ -3,9 +3,9 @@ export const navigation = [
   { label: "home", href: "" },
   { label: "about", href: "/sobre" },
   { label: "process", href: "/processo" },
-  { label: "portfolio", href: "/portfolio" },
-  { label: "lines", href: "/linhas" },
+  { label: "portfolio", href: "/projetos-destaque" },
   { label: "services", href: "/servicos" },
+  { label: "catalogos", href: "/catalogos" },
   { label: "contact", href: "/contacto" },
 ];
 

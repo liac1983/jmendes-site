@@ -3,10 +3,11 @@
     "home": "Home",
     "about": "About",
     "process": "Process",
-    "portfolio": "Portfolio",
+    "portfolio": "Projects",
     "lines": "Lines",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "catalogos": "Catalogues"
   },
   "Home": {
     "hero": {
@@ -506,6 +507,16 @@
         "finishes": "Finishes",
         "delivery": "Delivery & Installation"
       }
+    }
+  },
+  "Catalogos": {
+    "index": {
+      "title": "Catalogues",
+      "subtitle": "Download our product catalogues and get inspired for your next project.",
+      "empty": "No catalogues available at the moment."
+    },
+    "card": {
+      "ariaLabel": "Open catalogue {nome}"
     }
   }
 }

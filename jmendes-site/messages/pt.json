@@ -3,10 +3,11 @@
     "home": "Início",
     "about": "Sobre",
     "process": "Processo",
-    "portfolio": "Portfolio",
+    "portfolio": "Projetos",
     "lines": "Linhas",
     "services": "Serviços",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "catalogos": "Catálogos"
   },
   "Home": {
     "hero": {
@@ -506,6 +507,16 @@
         "finishes": "Acabamentos",
         "delivery": "Entrega e Montagem"
       }
+    }
+  },
+  "Catalogos": {
+    "index": {
+      "title": "Catálogos",
+      "subtitle": "Descarregue os nossos catálogos de produtos e inspire-se para o seu próximo projeto.",
+      "empty": "Não existem catálogos disponíveis de momento."
+    },
+    "card": {
+      "ariaLabel": "Abrir catálogo {nome}"
     }
   }
 }

@@ -46,7 +46,7 @@ export default function HomeHero({ locale }: Props) {
 
           <Reveal delay={0.54} viewportAmount={0.05}>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href={`/${locale}/portfolio`} className="min-w-[190px]">
+              <Button href={`/${locale}/projetos-destaque`} className="min-w-[190px]">
                 {t("ctaPrimary")}
               </Button>
 

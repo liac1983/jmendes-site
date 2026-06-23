@@ -219,3 +219,13 @@ export const productLineSlugsQuery = groq`
     "slug": slug.current
   }
 `
+
+export const catalogosQuery = groq`
+  *[_type == "catalogo" && visivel == true] | order(dataPublicacao desc) {
+    _id,
+    nome,
+    "pdfUrl": pdf.asset->url,
+    capa,
+    dataPublicacao
+  }
+`
