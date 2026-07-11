@@ -127,3 +127,25 @@ export type SanityCatalogo = {
   capa: Image;
   dataPublicacao?: string;
 };
+
+export type SanityGrupoRenderTranslation = {
+  titulo?: string;
+  descricao?: string;
+};
+
+export type SanityGrupoRenderTranslations = Partial<
+  Record<"en" | "fr" | "es", SanityGrupoRenderTranslation>
+>;
+
+export type SanityGrupoRender = {
+  _id: string;
+  titulo: string;
+  slug: string;
+  capa: Image;
+  translations?: SanityGrupoRenderTranslations;
+};
+
+export type SanityGrupoRenderDetail = SanityGrupoRender & {
+  descricao?: string;
+  galeria?: SanityImageWithAlt[];
+};

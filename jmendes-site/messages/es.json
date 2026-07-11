@@ -7,7 +7,8 @@
     "lines": "Líneas",
     "services": "Servicios",
     "contact": "Contacto",
-    "catalogos": "Catálogos"
+    "catalogos": "Catálogos",
+    "renders": "Proyectos 3D"
   },
   "Home": {
     "hero": {
@@ -517,6 +518,23 @@
     },
     "card": {
       "ariaLabel": "Abrir catálogo {nome}"
+    }
+  },
+  "Renders": {
+    "index": {
+      "title": "Proyectos 3D",
+      "subtitle": "Visualizaciones 3D de nuestros proyectos de mobiliario antes de la producción.",
+      "empty": "No hay renders disponibles en este momento."
+    },
+    "card": {
+      "ariaLabel": "Ver renders de {titulo}"
+    },
+    "detail": {
+      "back": "Volver a Proyectos 3D",
+      "gallery": "Galería",
+      "ctaTitle": "¿Quiere un proyecto como este?",
+      "ctaDescription": "Contáctenos y crearemos la visualización 3D de su espacio antes de la producción.",
+      "ctaButton": "Solicitar Presupuesto"
     }
   }
 }

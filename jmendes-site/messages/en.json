@@ -7,7 +7,8 @@
     "lines": "Lines",
     "services": "Services",
     "contact": "Contact",
-    "catalogos": "Catalogues"
+    "catalogos": "Catalogues",
+    "renders": "3D Projects"
   },
   "Home": {
     "hero": {
@@ -517,6 +518,23 @@
     },
     "card": {
       "ariaLabel": "Open catalogue {nome}"
+    }
+  },
+  "Renders": {
+    "index": {
+      "title": "3D Projects",
+      "subtitle": "3D visualizations of our furniture projects before production.",
+      "empty": "No renders available at the moment."
+    },
+    "card": {
+      "ariaLabel": "View renders of {titulo}"
+    },
+    "detail": {
+      "back": "Back to 3D Projects",
+      "gallery": "Gallery",
+      "ctaTitle": "Want a project like this?",
+      "ctaDescription": "Get in touch and we will create the 3D visualization of your space before production.",
+      "ctaButton": "Request Quote"
     }
   }
 }

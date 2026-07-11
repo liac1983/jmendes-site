@@ -229,3 +229,34 @@ export const catalogosQuery = groq`
     dataPublicacao
   }
 `
+
+export const gruposRenderQuery = groq`
+  *[_type == "grupoRender" && visivel == true] | order(ordem asc, _createdAt desc) {
+    _id,
+    titulo,
+    "slug": slug.current,
+    capa,
+    translations
+  }
+`
+
+export const grupoRenderBySlugQuery = groq`
+  *[_type == "grupoRender" && slug.current == $slug && visivel == true][0] {
+    _id,
+    titulo,
+    "slug": slug.current,
+    capa,
+    descricao,
+    galeria[]{
+      ...,
+      alt
+    },
+    translations
+  }
+`
+
+export const grupoRenderSlugsQuery = groq`
+  *[_type == "grupoRender" && visivel == true && defined(slug.current)][]{
+    "slug": slug.current
+  }
+`

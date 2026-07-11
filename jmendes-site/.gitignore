@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# catálogos pesados (servidos via Sanity/CDN, não versionar)
+/catalogos/*.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

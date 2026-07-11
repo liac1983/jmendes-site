@@ -38,4 +38,13 @@ export const structure: StructureResolver = (S) =>
             .title('Catálogos')
             .defaultOrdering([{field: 'dataPublicacao', direction: 'desc'}])
         ),
+
+      S.listItem()
+        .title('Renders')
+        .schemaType('grupoRender')
+        .child(
+          S.documentTypeList('grupoRender')
+            .title('Renders')
+            .defaultOrdering([{field: 'ordem', direction: 'asc'}])
+        ),
     ])
