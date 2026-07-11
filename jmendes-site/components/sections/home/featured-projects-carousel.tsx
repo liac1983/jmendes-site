@@ -60,7 +60,7 @@ export default function FeaturedProjectsCarousel({
               style={{ width: `${100 / total}%` }}
             >
               {/* Hero image */}
-              <div className="relative aspect-[4/3] w-full md:aspect-[16/9]">
+              <div className="relative aspect-[4/5] w-full sm:aspect-[4/3] md:aspect-[16/9]">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -71,7 +71,7 @@ export default function FeaturedProjectsCarousel({
                   priority
                 />
                 {/* Gradient overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/10 md:via-black/30 md:to-transparent" />
 
                 {/* Text overlay — bottom left */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14">
@@ -82,7 +82,7 @@ export default function FeaturedProjectsCarousel({
                     {project.title}
                   </h3>
                   {project.subtitle && (
-                    <p className="mb-5 max-w-lg text-sm text-white/70 md:text-base">
+                    <p className="mb-5 max-w-lg text-sm text-white/85 md:text-base">
                       {project.subtitle}
                     </p>
                   )}

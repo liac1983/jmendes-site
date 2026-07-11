@@ -7,7 +7,7 @@ export default function HomeFeatures() {
   const t = useTranslations("Home.features");
 
   return (
-    <section className="border-b border-[var(--border)] py-16 lg:py-20">
+    <section className="border-b border-[var(--border)] py-24 lg:py-32">
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {homeFeatures.map((feature) => (

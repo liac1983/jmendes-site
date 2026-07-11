@@ -32,7 +32,7 @@ export default async function FeaturedProjects({ locale }: Props) {
   return (
     <section
       id="projetos-destaque"
-      className="border-b border-[var(--border)] py-20 lg:py-24"
+      className="section-glow border-b border-[var(--border)] py-24 lg:py-32"
     >
       <Container>
         <SectionTitle

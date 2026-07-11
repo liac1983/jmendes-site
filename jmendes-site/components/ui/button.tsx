@@ -1,6 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { ReactNode } from "react";
+import Magnetic from "./magnetic";
 
 type ButtonProps = {
   children: ReactNode;
@@ -26,11 +27,17 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={styles}>
-        {children}
-      </Link>
+      <Magnetic>
+        <Link href={href} className={styles}>
+          {children}
+        </Link>
+      </Magnetic>
     );
   }
 
-  return <button className={styles}>{children}</button>;
+  return (
+    <Magnetic>
+      <button className={styles}>{children}</button>
+    </Magnetic>
+  );
 }

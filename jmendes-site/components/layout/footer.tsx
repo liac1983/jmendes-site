@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
+import { navigation } from "@/data/navigation";
 
 type Props = {
   locale: string;
@@ -33,21 +34,15 @@ export default async function Footer({ locale }: Props) {
           <div>
             <h3 className="mb-6 text-3xl text-gold">{t("quickLinks")}</h3>
             <div className="flex flex-col gap-3">
-              <Link href={`/${locale}/sobre`} className="text-white/80 hover:text-gold">
-                {navT("about")}
-              </Link>
-              <Link href={`/${locale}/processo`} className="text-white/80 hover:text-gold">
-                {navT("process")}
-              </Link>
-              <Link href={`/${locale}/portfolio`} className="text-white/80 hover:text-gold">
-                {navT("portfolio")}
-              </Link>
-              <Link href={`/${locale}/servicos`} className="text-white/80 hover:text-gold">
-                {navT("services")}
-              </Link>
-              <Link href={`/${locale}/contacto`} className="text-white/80 hover:text-gold">
-                {navT("contact")}
-              </Link>
+              {navigation.map((item) => (
+                <Link
+                  key={item.label}
+                  href={`/${locale}${item.href}`}
+                  className="text-white/80 hover:text-gold"
+                >
+                  {navT(item.label)}
+                </Link>
+              ))}
             </div>
           </div>
 

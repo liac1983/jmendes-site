@@ -24,25 +24,25 @@ export const processSteps: ProcessStepItem[] = [
   {
     number: "02",
     key: "project3d",
-    image: "/images/processo/projeto-3d.jpeg",
+    image: "/images/processo/F1930886-72E7-439B-B6AA-8E09DF9D74D7.jpeg",
     icon: PenTool,
   },
   {
     number: "03",
     key: "production",
-    image: "/images/processo/producao.png",
+    image: "/images/processo/0798A45C-A3DC-4E8D-BBA4-35B6CF69EBA2.jpeg",
     icon: Factory,
   },
   {
     number: "04",
     key: "finishes",
-    image: "/images/processo/acabamentos.png",
+    image: "/images/processo/F8481AFD-E6B2-4B87-A256-EB1546D705EC.jpeg",
     icon: Sparkles,
   },
   {
     number: "05",
     key: "delivery",
-    image: "/images/processo/entrega-montagem.jpg",
+    image: "/images/processo/DA1660C3-1669-4475-90FE-7F6F560D3791.png",
     icon: Truck,
   },
 ];

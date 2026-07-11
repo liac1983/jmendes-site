@@ -25,17 +25,20 @@ export default function Reveal({
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
+  // Estrutura DOM idêntica no servidor e no cliente; o respeito por
+  // prefers-reduced-motion é feito só via `transition` (instantânea),
+  // evitando hydration mismatch.
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: viewportAmount }}
-      transition={{ duration, delay, ease: editorialEase }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : duration,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: editorialEase,
+      }}
     >
       {children}
     </motion.div>
@@ -52,10 +55,6 @@ export function ImageReveal({
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
-  if (shouldReduceMotion) {
-    return <div className={clsx("relative overflow-hidden", className)}>{children}</div>;
-  }
-
   return (
     <motion.div
       className={clsx("relative overflow-hidden", className)}
@@ -69,7 +68,11 @@ export function ImageReveal({
           hidden: { opacity: 0, y, scale: 1.015 },
           visible: { opacity: 1, y: 0, scale: 1 },
         }}
-        transition={{ duration, delay, ease: editorialEase }}
+        transition={{
+          duration: shouldReduceMotion ? 0 : duration,
+          delay: shouldReduceMotion ? 0 : delay,
+          ease: editorialEase,
+        }}
       >
         {children}
       </motion.div>
@@ -80,7 +83,11 @@ export function ImageReveal({
           hidden: { y: 0 },
           visible: { y: "100%" },
         }}
-        transition={{ duration: duration + 0.12, delay, ease: editorialEase }}
+        transition={{
+          duration: shouldReduceMotion ? 0 : duration + 0.12,
+          delay: shouldReduceMotion ? 0 : delay,
+          ease: editorialEase,
+        }}
       />
     </motion.div>
   );

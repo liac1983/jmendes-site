@@ -24,7 +24,7 @@ export default function RenderCard({ locale, slug, titulo, capaUrl }: RenderCard
         aria-label={t("ariaLabel", { titulo })}
       >
         <article className="h-full">
-          <div className="relative overflow-hidden bg-neutral-900">
+          <div className="relative overflow-hidden bg-neutral-900 ring-1 ring-white/[0.06] transition-all duration-700 ease-out group-hover:ring-[var(--gold)]/40 group-hover:shadow-[0_28px_80px_-24px_rgba(200,168,90,0.45)]">
             <div className="relative h-[320px] w-full md:h-[360px]">
               <Image
                 src={capaUrl}

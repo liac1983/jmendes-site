@@ -30,7 +30,7 @@ export const services: Service[] = [
   },
   {
     id: "visualization3d",
-    image: "/images/servicos/3d.jpeg",
+    image: "/images/processo/F1930886-72E7-439B-B6AA-8E09DF9D74D7.jpeg",
     bulletKeys: ["detailedModels", "photorealisticRenders", "perspectives", "quickChanges"],
     icon: Cuboid,
   },

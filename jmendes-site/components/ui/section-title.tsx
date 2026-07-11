@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Reveal from "./reveal";
+import { WordReveal } from "./text-reveal";
 
 type SectionTitleProps = {
   title: string;
@@ -17,16 +18,16 @@ export default function SectionTitle({
   return (
     <div
       className={clsx(
-        "mb-14",
+        "mb-16 lg:mb-20",
         align === "center" ? "text-center" : "text-left",
         className
       )}
     >
-      <Reveal>
-        <h2 className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]">
-          {title}
-        </h2>
-      </Reveal>
+      <WordReveal
+        as="h2"
+        text={title}
+        className="text-5xl leading-tight text-[var(--foreground)] md:text-6xl lg:text-[76px]"
+      />
 
       {subtitle && (
         <Reveal delay={0.18}>
