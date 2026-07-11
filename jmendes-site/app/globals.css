@@ -58,17 +58,21 @@ body::after {
 /* 3. TIPOGRAFIA */
 /* ============================= */
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading), serif;
-  letter-spacing: -0.02em;
-}
+/* Dentro de @layer base para que as classes utilitárias do Tailwind
+   (text-white, text-gold, …) consigam sobrepor a cor base dos <p>. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), serif;
+    letter-spacing: -0.02em;
+  }
 
-p {
-  color: var(--muted);
-  line-height: 1.7;
+  p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
 }
 
 /* ============================= */

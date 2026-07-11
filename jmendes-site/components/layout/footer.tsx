@@ -16,6 +16,13 @@ export default async function Footer({ locale }: Props) {
   return (
     <footer className="border-t border-[var(--border)] bg-black">
       <div className="mx-auto max-w-[1280px] px-6 py-16">
+        {/* Assinatura */}
+        <div className="mb-16 max-w-3xl border-b border-[var(--border)] pb-14">
+          <h2 className="text-4xl leading-[1.05] text-[var(--foreground)] md:text-5xl lg:text-6xl">
+            {t("signature")}
+          </h2>
+        </div>
+
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
           {/* Logo */}

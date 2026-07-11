@@ -71,10 +71,10 @@ export default function FeaturedProjectsCarousel({
                   priority
                 />
                 {/* Gradient overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/10 md:via-black/30 md:to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
 
-                {/* Text overlay — bottom left */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14">
+                {/* Text overlay — bottom left. Sombra garante leitura sobre imagens claras. */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 [text-shadow:0_2px_14px_rgba(0,0,0,0.8)] md:p-10 lg:p-14">
                   <p className="mb-2 text-sm font-medium uppercase tracking-widest text-[var(--gold)]">
                     {project.categoryLabel || categoryFallback}
                   </p>
@@ -82,7 +82,7 @@ export default function FeaturedProjectsCarousel({
                     {project.title}
                   </h3>
                   {project.subtitle && (
-                    <p className="mb-5 max-w-lg text-sm text-white/85 md:text-base">
+                    <p className="mb-5 max-w-lg text-sm text-white md:text-base">
                       {project.subtitle}
                     </p>
                   )}

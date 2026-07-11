@@ -67,7 +67,19 @@
         "delivery": "Entrega e Instalación"
       },
       "contact": "Contacto",
-      "rights": "© 2026 J. Mendes Mobiliario. Todos los derechos reservados."
+      "rights": "© 2026 J. Mendes Mobiliario. Todos los derechos reservados.",
+      "signature": "Demos vida a su espacio."
+    },
+    "manifesto": {
+      "eyebrow": "Nuestra filosofía",
+      "title": "Más que mobiliario: creamos espacios con alma.",
+      "paragraph1": "En J. Mendes Mobiliário, cada pieza nace del encuentro entre la tradición del trabajo en madera y la precisión de la tecnología moderna. Diseñamos, producimos e instalamos mobiliario a medida — del primer boceto a la última bisagra.",
+      "paragraph2": "Creemos que un espacio bien pensado transforma la forma de vivir. Por eso tratamos cada proyecto como único: escuchamos, proponemos y ejecutamos con el rigor de quien firma lo que hace.",
+      "cta": "Conocer nuestra historia"
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "La confianza de quienes vivieron el proceso con nosotros."
     }
   },
   "Portfolio": {

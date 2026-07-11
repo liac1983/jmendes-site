@@ -43,7 +43,13 @@ export default function CountUpNumber({
 
     if (!element) return;
 
-    if (shouldReduceMotion) return;
+    // Movimento reduzido: salta para o valor final DEPOIS da hidratação
+    // (via efeito), para o HTML do servidor (0) coincidir com o 1.º render
+    // do cliente e não haver hydration mismatch.
+    if (shouldReduceMotion) {
+      setDisplayValue(target);
+      return;
+    }
 
     const start = () => setHasStarted(true);
 
@@ -95,12 +101,10 @@ export default function CountUpNumber({
     };
   }, [delay, duration, hasStarted, shouldReduceMotion, target]);
 
-  const visibleValue = shouldReduceMotion ? target : displayValue;
-
   return (
     <span ref={ref} aria-label={value}>
       {prefix}
-      {visibleValue}
+      {displayValue}
       {suffix}
     </span>
   );

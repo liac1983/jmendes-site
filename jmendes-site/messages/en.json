@@ -67,7 +67,19 @@
         "delivery": "Delivery & Installation"
       },
       "contact": "Contact",
-      "rights": "© 2026 J. Mendes Furniture. All rights reserved."
+      "rights": "© 2026 J. Mendes Furniture. All rights reserved.",
+      "signature": "Let's bring your space to life."
+    },
+    "manifesto": {
+      "eyebrow": "Our philosophy",
+      "title": "More than furniture — we create spaces with soul.",
+      "paragraph1": "At J. Mendes Mobiliário, every piece is born where woodworking tradition meets the precision of modern technology. We design, produce and install bespoke furniture — from the first sketch to the last hinge.",
+      "paragraph2": "We believe a well-considered space changes the way you live. That is why we treat every project as unique: we listen, we propose and we deliver with the rigour of those who sign their work.",
+      "cta": "Discover our story"
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "subtitle": "The trust of those who lived the process with us."
     }
   },
   "Portfolio": {
