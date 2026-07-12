@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { SITE_URL, business } from "@/lib/site";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -14,8 +15,27 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "J. Mendes Mobiliário",
-  description: "Mobiliário por medida com precisão, design e excelência.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "J. Mendes Mobiliário — Mobiliário por Medida",
+    template: "%s · J. Mendes Mobiliário",
+  },
+  description:
+    "Mobiliário por medida com precisão, design e excelência. Cozinhas, roupeiros, projetos 3D e obra completa em Paços de Ferreira.",
+  applicationName: business.name,
+  openGraph: {
+    type: "website",
+    siteName: business.name,
+    images: [{ url: business.ogImage, width: 1200, height: 630, alt: business.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [business.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

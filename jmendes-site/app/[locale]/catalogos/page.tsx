@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/ui/page-hero";
 import CatalogCard from "@/components/ui/catalog-card";
@@ -10,6 +12,15 @@ import { getTranslations } from "next-intl/server";
 type CatalogosPageProps = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "catalogos");
+}
 
 export default async function CatalogosPage({ params }: CatalogosPageProps) {
   const { locale } = await params;

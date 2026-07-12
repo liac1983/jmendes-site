@@ -543,5 +543,43 @@
       "ctaDescription": "Fale connosco e criamos a visualização 3D do seu espaço antes de produzir.",
       "ctaButton": "Pedir Orçamento"
     }
+  },
+  "Meta": {
+    "home": {
+      "title": "J. Mendes Mobiliário — Mobiliário por Medida e Projetos 3D",
+      "description": "Fabricamos mobiliário por medida em Paços de Ferreira desde 2019, unindo rigor artesanal e tecnologia. Cozinhas, roupeiros, projetos 3D e obra completa."
+    },
+    "sobre": {
+      "title": "Sobre",
+      "description": "Conheça a J. Mendes Mobiliário: a filosofia, a equipa e o rigor artesanal que colocamos em cada projeto de mobiliário por medida."
+    },
+    "processo": {
+      "title": "Processo",
+      "description": "Do briefing à instalação: o nosso processo de criação de mobiliário por medida, com projeto 3D, produção própria e acabamentos de excelência."
+    },
+    "projetos": {
+      "title": "Projetos em Destaque",
+      "description": "Explore projetos reais de mobiliário por medida e espaços completos assinados pela J. Mendes Mobiliário."
+    },
+    "servicos": {
+      "title": "Serviços",
+      "description": "Mobiliário por medida, design de interiores, visualização 3D, produção e montagem — tudo com a J. Mendes Mobiliário."
+    },
+    "linhas": {
+      "title": "Linhas de Mobiliário",
+      "description": "Linhas de mobiliário com produção própria e entrega rápida. Qualidade premium em cada peça."
+    },
+    "catalogos": {
+      "title": "Catálogos",
+      "description": "Descarregue os catálogos da J. Mendes Mobiliário e explore as nossas coleções de mobiliário por medida."
+    },
+    "renders": {
+      "title": "Projetos 3D",
+      "description": "Veja os nossos renders fotorrealistas e visualize o seu mobiliário no espaço antes de produzir."
+    },
+    "contacto": {
+      "title": "Contacto",
+      "description": "Fale com a J. Mendes Mobiliário em Paços de Ferreira e peça o seu orçamento de mobiliário por medida."
+    }
   }
 }

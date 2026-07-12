@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/ui/page-hero";
 import RenderCard from "@/components/ui/render-card";
@@ -11,6 +13,15 @@ import { getTranslations } from "next-intl/server";
 type RendersPageProps = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "renders");
+}
 
 export default async function RendersPage({ params }: RendersPageProps) {
   const { locale } = await params;

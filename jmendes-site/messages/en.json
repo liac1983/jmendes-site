@@ -543,5 +543,43 @@
       "ctaDescription": "Get in touch and we will create the 3D visualization of your space before production.",
       "ctaButton": "Request Quote"
     }
+  },
+  "Meta": {
+    "home": {
+      "title": "J. Mendes Mobiliário — Bespoke Furniture & 3D Projects",
+      "description": "We craft bespoke furniture in Paços de Ferreira, Portugal, since 2019, blending artisanal precision with technology. Kitchens, wardrobes, 3D projects and full fit-outs."
+    },
+    "sobre": {
+      "title": "About",
+      "description": "Meet J. Mendes Mobiliário: the philosophy, the team and the artisanal rigour behind every bespoke furniture project."
+    },
+    "processo": {
+      "title": "Process",
+      "description": "From briefing to installation: our bespoke furniture process, with 3D design, in-house production and premium finishes."
+    },
+    "projetos": {
+      "title": "Featured Projects",
+      "description": "Explore real bespoke furniture projects and complete spaces by J. Mendes Mobiliário."
+    },
+    "servicos": {
+      "title": "Services",
+      "description": "Bespoke furniture, interior design, 3D visualisation, production and installation — all with J. Mendes Mobiliário."
+    },
+    "linhas": {
+      "title": "Furniture Lines",
+      "description": "Furniture lines with in-house production and fast delivery. Premium quality in every piece."
+    },
+    "catalogos": {
+      "title": "Catalogues",
+      "description": "Download J. Mendes Mobiliário catalogues and explore our bespoke furniture collections."
+    },
+    "renders": {
+      "title": "3D Projects",
+      "description": "See our photorealistic renders and visualise your furniture in the space before production."
+    },
+    "contacto": {
+      "title": "Contact",
+      "description": "Get in touch with J. Mendes Mobiliário in Paços de Ferreira and request your bespoke furniture quote."
+    }
   }
 }

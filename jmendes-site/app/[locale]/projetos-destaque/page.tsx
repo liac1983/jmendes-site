@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import ProjectCard from "@/components/ui/project-card";
 import Container from "@/components/ui/container";
 import SectionTitle from "@/components/ui/section-title";
@@ -16,6 +18,15 @@ type FeaturedProjectsPageProps = {
     locale: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "projetos");
+}
 
 export default async function FeaturedProjectsPage({
   params,

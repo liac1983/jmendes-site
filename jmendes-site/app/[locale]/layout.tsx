@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import JsonLd from "@/components/seo/json-ld";
 
 export default async function LocaleLayout({
   children,
@@ -16,6 +17,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <JsonLd />
       <Header locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />

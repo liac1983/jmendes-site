@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import ServicesHero from "@/components/sections/services/services-hero";
 import ServicesGrid from "@/components/sections/services/services-grid";
 import FullService from "@/components/sections/services/full-service";
 import ServicesCTA from "@/components/sections/services/services-cta";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "servicos");
+}
 
 export default async function ServicosPage({
   params,

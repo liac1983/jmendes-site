@@ -543,5 +543,43 @@
       "ctaDescription": "Contáctenos y crearemos la visualización 3D de su espacio antes de la producción.",
       "ctaButton": "Solicitar Presupuesto"
     }
+  },
+  "Meta": {
+    "home": {
+      "title": "J. Mendes Mobiliário — Mobiliario a Medida y Proyectos 3D",
+      "description": "Fabricamos mobiliario a medida en Paços de Ferreira, Portugal, desde 2019, uniendo maestría artesanal y tecnología. Cocinas, armarios, proyectos 3D y obra completa."
+    },
+    "sobre": {
+      "title": "Sobre nosotros",
+      "description": "Conozca J. Mendes Mobiliário: la filosofía, el equipo y el rigor artesanal en cada proyecto de mobiliario a medida."
+    },
+    "processo": {
+      "title": "Proceso",
+      "description": "Del briefing a la instalación: nuestro proceso de mobiliario a medida, con diseño 3D, producción propia y acabados premium."
+    },
+    "projetos": {
+      "title": "Proyectos Destacados",
+      "description": "Explore proyectos reales de mobiliario a medida y espacios completos de J. Mendes Mobiliário."
+    },
+    "servicos": {
+      "title": "Servicios",
+      "description": "Mobiliario a medida, diseño de interiores, visualización 3D, producción y montaje — con J. Mendes Mobiliário."
+    },
+    "linhas": {
+      "title": "Líneas de Mobiliario",
+      "description": "Líneas de mobiliario con producción propia y entrega rápida. Calidad premium en cada pieza."
+    },
+    "catalogos": {
+      "title": "Catálogos",
+      "description": "Descargue los catálogos de J. Mendes Mobiliário y explore nuestras colecciones de mobiliario a medida."
+    },
+    "renders": {
+      "title": "Proyectos 3D",
+      "description": "Vea nuestros renders fotorrealistas y visualice su mobiliario en el espacio antes de producir."
+    },
+    "contacto": {
+      "title": "Contacto",
+      "description": "Contacte con J. Mendes Mobiliário en Paços de Ferreira y pida su presupuesto de mobiliario a medida."
+    }
   }
 }

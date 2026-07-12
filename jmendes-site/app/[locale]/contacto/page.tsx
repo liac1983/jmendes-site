@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Container from "@/components/ui/container";
 import ContactHero from "@/components/sections/contact/contact-hero";
 import ContactInfo from "@/components/sections/contact/contact-info";
 import ContactForm from "@/components/sections/contact/contact-form";
 import ContactMap from "@/components/sections/contact/contact-map";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "contacto");
+}
 
 export default function ContactoPage() {
   return (
