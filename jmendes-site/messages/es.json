@@ -67,7 +67,8 @@
         "delivery": "Entrega e Instalación"
       },
       "contact": "Contacto",
-      "rights": "© 2026 J. Mendes Mobiliario. Todos los derechos reservados."
+      "rights": "© 2026 J. Mendes Mobiliario. Todos los derechos reservados.",
+      "privacy": "Política de Privacidad"
     },
     "manifesto": {
       "eyebrow": "Nuestra filosofía",
@@ -580,6 +581,59 @@
     "contacto": {
       "title": "Contacto",
       "description": "Contacte con J. Mendes Mobiliário en Paços de Ferreira y pida su presupuesto de mobiliario a medida."
+    },
+    "privacidade": {
+      "title": "Política de Privacidad",
+      "description": "Cómo J. Mendes Mobiliário trata sus datos personales conforme al RGPD."
     }
+  },
+  "Privacy": {
+    "title": "Política de Privacidad",
+    "subtitle": "Cómo tratamos sus datos personales",
+    "lastUpdated": "Última actualización: julio de 2026",
+    "intro": "Su privacidad es importante para J. Mendes Mobiliário. Esta política explica qué datos personales recogemos, con qué fines y cuáles son sus derechos conforme al Reglamento General de Protección de Datos (RGPD).",
+    "sections": [
+      {
+        "heading": "Responsable del tratamiento",
+        "body": "Los datos personales recogidos a través de este sitio son tratados por J. Mendes Mobiliário, con domicilio en Praça 20 de maio, 39, 4590-182 Paços de Ferreira, Portugal. Para cualquier cuestión sobre protección de datos, contáctenos en geral@jaimemendes.com o en el +351 255 873 030."
+      },
+      {
+        "heading": "Qué datos recogemos",
+        "body": "Recogemos los datos que nos facilita voluntariamente a través del formulario de contacto — nombre, correo electrónico, número de teléfono (si lo indica) y el contenido de su mensaje. También recogemos datos técnicos estrictamente necesarios para el funcionamiento del sitio, como la preferencia de idioma."
+      },
+      {
+        "heading": "Finalidades y base legal",
+        "body": "Utilizamos sus datos para responder a sus solicitudes de contacto y presupuesto y para gestionar la relación resultante. La base legal es la ejecución de medidas precontractuales a petición suya y nuestro interés legítimo en responderle. Los datos técnicos del sitio se basan en el interés legítimo de garantizar su correcto funcionamiento."
+      },
+      {
+        "heading": "Cookies",
+        "body": "Este sitio utiliza únicamente cookies estrictamente necesarias para su funcionamiento (como recordar el idioma), que no requieren consentimiento. Actualmente no utilizamos cookies de análisis ni de marketing. En caso de usarlas, solicitaremos su consentimiento previo."
+      },
+      {
+        "heading": "Compartir datos y encargados",
+        "body": "No vendemos sus datos personales. Para prestar el servicio recurrimos a proveedores que tratan datos por cuenta nuestra con garantías adecuadas: Brevo (envío de los correos del formulario), Sanity (gestión de contenidos) y Vercel (alojamiento del sitio). Estos proveedores pueden tratar datos en servidores ubicados dentro o fuera del Espacio Económico Europeo, siempre con salvaguardas legales adecuadas."
+      },
+      {
+        "heading": "Conservación de los datos",
+        "body": "Conservamos sus datos solo durante el tiempo necesario para responder a su solicitud y cumplir eventuales obligaciones legales. Transcurrido ese plazo, los datos se eliminan o anonimizan."
+      },
+      {
+        "heading": "Sus derechos",
+        "body": "Como titular de los datos, tiene derecho a acceder, rectificar, suprimir, limitar u oponerse al tratamiento de sus datos, así como derecho a la portabilidad. Para ejercer estos derechos, contáctenos en geral@jaimemendes.com. También tiene derecho a presentar una reclamación ante la autoridad portuguesa de protección de datos (CNPD)."
+      },
+      {
+        "heading": "Seguridad",
+        "body": "Adoptamos medidas técnicas y organizativas adecuadas para proteger sus datos personales frente a accesos, pérdidas o divulgaciones no autorizados."
+      },
+      {
+        "heading": "Cambios en esta política",
+        "body": "Podemos actualizar esta política periódicamente. La versión vigente está siempre disponible en esta página, junto con su fecha de actualización."
+      }
+    ]
+  },
+  "Cookie": {
+    "message": "Este sitio solo utiliza cookies esenciales para su funcionamiento.",
+    "accept": "Aceptar",
+    "learnMore": "Saber más"
   }
 }

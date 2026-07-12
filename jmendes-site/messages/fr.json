@@ -67,7 +67,8 @@
         "delivery": "Livraison et Installation"
       },
       "contact": "Contact",
-      "rights": "© 2026 J. Mendes Mobilier. Tous droits réservés."
+      "rights": "© 2026 J. Mendes Mobilier. Tous droits réservés.",
+      "privacy": "Politique de Confidentialité"
     },
     "manifesto": {
       "eyebrow": "Notre philosophie",
@@ -580,6 +581,59 @@
     "contacto": {
       "title": "Contact",
       "description": "Contactez J. Mendes Mobiliário à Paços de Ferreira et demandez votre devis de mobilier sur mesure."
+    },
+    "privacidade": {
+      "title": "Politique de Confidentialité",
+      "description": "Comment J. Mendes Mobiliário traite vos données personnelles au titre du RGPD."
     }
+  },
+  "Privacy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Comment nous traitons vos données personnelles",
+    "lastUpdated": "Dernière mise à jour : juillet 2026",
+    "intro": "Votre vie privée est importante pour J. Mendes Mobiliário. Cette politique explique quelles données personnelles nous collectons, à quelles fins et quels sont vos droits au titre du Règlement Général sur la Protection des Données (RGPD).",
+    "sections": [
+      {
+        "heading": "Responsable du traitement",
+        "body": "Les données personnelles collectées via ce site sont traitées par J. Mendes Mobiliário, sise Praça 20 de maio, 39, 4590-182 Paços de Ferreira, Portugal. Pour toute question relative à la protection des données, contactez-nous à geral@jaimemendes.com ou au +351 255 873 030."
+      },
+      {
+        "heading": "Quelles données nous collectons",
+        "body": "Nous collectons les données que vous fournissez volontairement via le formulaire de contact — nom, adresse e-mail, numéro de téléphone (si indiqué) et le contenu de votre message. Nous collectons aussi des données techniques strictement nécessaires au fonctionnement du site, comme votre préférence de langue."
+      },
+      {
+        "heading": "Finalités et base légale",
+        "body": "Nous utilisons vos données pour répondre à vos demandes de contact et de devis et pour gérer la relation qui en découle. La base légale est l'exécution de mesures précontractuelles à votre demande et notre intérêt légitime à vous répondre. Les données techniques du site reposent sur notre intérêt légitime à en assurer le bon fonctionnement."
+      },
+      {
+        "heading": "Cookies",
+        "body": "Ce site n'utilise que des cookies strictement nécessaires à son fonctionnement (comme la mémorisation de la langue), qui ne requièrent pas de consentement. Nous n'utilisons pas actuellement de cookies d'analyse ou de marketing. Si nous venions à en utiliser, nous solliciterions votre consentement préalable."
+      },
+      {
+        "heading": "Partage des données et sous-traitants",
+        "body": "Nous ne vendons pas vos données personnelles. Pour fournir le service, nous faisons appel à des prestataires qui traitent les données pour notre compte avec des garanties appropriées : Brevo (envoi des e-mails du formulaire), Sanity (gestion de contenu) et Vercel (hébergement du site). Ces prestataires peuvent traiter des données sur des serveurs situés à l'intérieur ou à l'extérieur de l'Espace Économique Européen, toujours avec des garanties légales adéquates."
+      },
+      {
+        "heading": "Conservation des données",
+        "body": "Nous conservons vos données uniquement le temps nécessaire pour répondre à votre demande et respecter d'éventuelles obligations légales. Passé ce délai, les données sont supprimées ou anonymisées."
+      },
+      {
+        "heading": "Vos droits",
+        "body": "En tant que personne concernée, vous avez le droit d'accéder, de rectifier, d'effacer, de limiter ou de vous opposer au traitement de vos données, ainsi que le droit à la portabilité. Pour exercer ces droits, contactez-nous à geral@jaimemendes.com. Vous avez également le droit d'introduire une réclamation auprès de l'autorité portugaise de protection des données (CNPD)."
+      },
+      {
+        "heading": "Sécurité",
+        "body": "Nous adoptons des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès, perte ou divulgation non autorisés."
+      },
+      {
+        "heading": "Modifications de cette politique",
+        "body": "Nous pouvons mettre à jour cette politique périodiquement. La version en vigueur est toujours disponible sur cette page, avec sa date de mise à jour."
+      }
+    ]
+  },
+  "Cookie": {
+    "message": "Ce site n'utilise que des cookies essentiels à son fonctionnement.",
+    "accept": "Accepter",
+    "learnMore": "En savoir plus"
   }
 }

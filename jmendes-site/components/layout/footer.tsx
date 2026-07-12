@@ -127,8 +127,14 @@ export default async function Footer({ locale }: Props) {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-[var(--border)] pt-8 text-center text-sm text-white/60">
-          {t("rights")}
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[var(--border)] pt-8 text-sm text-white/60 sm:flex-row">
+          <span>{t("rights")}</span>
+          <Link
+            href={`/${locale}/privacidade`}
+            className="transition-colors hover:text-gold"
+          >
+            {t("privacy")}
+          </Link>
         </div>
       </div>
     </footer>

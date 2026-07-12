@@ -67,7 +67,8 @@
         "delivery": "Delivery & Installation"
       },
       "contact": "Contact",
-      "rights": "© 2026 J. Mendes Furniture. All rights reserved."
+      "rights": "© 2026 J. Mendes Furniture. All rights reserved.",
+      "privacy": "Privacy Policy"
     },
     "manifesto": {
       "eyebrow": "Our philosophy",
@@ -580,6 +581,59 @@
     "contacto": {
       "title": "Contact",
       "description": "Get in touch with J. Mendes Mobiliário in Paços de Ferreira and request your bespoke furniture quote."
+    },
+    "privacidade": {
+      "title": "Privacy Policy",
+      "description": "How J. Mendes Mobiliário handles your personal data under the GDPR."
     }
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we handle your personal data",
+    "lastUpdated": "Last updated: July 2026",
+    "intro": "Your privacy matters to J. Mendes Mobiliário. This policy explains what personal data we collect, for what purposes and what your rights are under the General Data Protection Regulation (GDPR).",
+    "sections": [
+      {
+        "heading": "Data controller",
+        "body": "Personal data collected through this website is processed by J. Mendes Mobiliário, located at Praça 20 de maio, 39, 4590-182 Paços de Ferreira, Portugal. For any data protection matter, contact us at geral@jaimemendes.com or +351 255 873 030."
+      },
+      {
+        "heading": "What data we collect",
+        "body": "We collect the data you voluntarily provide through the contact form — name, email address, phone number (if provided) and the content of your message. We also collect technical data strictly necessary for the website to function, such as your language preference."
+      },
+      {
+        "heading": "Purposes and legal basis",
+        "body": "We use your data to respond to your contact and quote requests and to manage the resulting relationship. The legal basis is the performance of pre-contractual steps at your request and our legitimate interest in replying to you. Technical site data relies on our legitimate interest in ensuring its proper operation."
+      },
+      {
+        "heading": "Cookies",
+        "body": "This website uses only strictly necessary cookies for its operation (such as remembering your language), which do not require consent. We do not currently use analytics or marketing cookies. Should we introduce them, we will request your prior consent."
+      },
+      {
+        "heading": "Data sharing and processors",
+        "body": "We do not sell your personal data. To provide the service we rely on providers that process data on our behalf with appropriate safeguards: Brevo (sending contact-form emails), Sanity (content management) and Vercel (website hosting). These providers may process data on servers located inside or outside the European Economic Area, always with adequate legal safeguards."
+      },
+      {
+        "heading": "Data retention",
+        "body": "We keep your data only for as long as necessary to respond to your request and to comply with any legal obligations. After that period, data is deleted or anonymised."
+      },
+      {
+        "heading": "Your rights",
+        "body": "As a data subject, you have the right to access, rectify, erase, restrict or object to the processing of your data, as well as the right to data portability. To exercise these rights, contact us at geral@jaimemendes.com. You also have the right to lodge a complaint with the Portuguese Data Protection Authority (CNPD)."
+      },
+      {
+        "heading": "Security",
+        "body": "We adopt appropriate technical and organisational measures to protect your personal data against unauthorised access, loss or disclosure."
+      },
+      {
+        "heading": "Changes to this policy",
+        "body": "We may update this policy from time to time. The current version is always available on this page, together with its update date."
+      }
+    ]
+  },
+  "Cookie": {
+    "message": "This website only uses cookies that are essential to its operation.",
+    "accept": "Accept",
+    "learnMore": "Learn more"
   }
 }

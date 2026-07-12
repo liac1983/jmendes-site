@@ -42,6 +42,7 @@ export const pagePaths = {
   catalogos: "/catalogos",
   renders: "/renders",
   contacto: "/contacto",
+  privacidade: "/privacidade",
 } as const;
 
 export type PageKey = keyof typeof pagePaths;

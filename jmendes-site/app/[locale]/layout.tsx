@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import JsonLd from "@/components/seo/json-ld";
+import CookieBanner from "@/components/legal/cookie-banner";
 
 export default async function LocaleLayout({
   children,
@@ -21,6 +22,7 @@ export default async function LocaleLayout({
       <Header locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />
+      <CookieBanner locale={locale} />
     </NextIntlClientProvider>
   );
 }
