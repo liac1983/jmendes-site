@@ -38,7 +38,7 @@ export default async function HomePage({
         highlight={t("highlight")}
         subtitle={t("description")}
         buttonLabel={t("button")}
-        buttonHref="/contacto"
+        buttonHref="/orcamento"
       />
     </>
   );

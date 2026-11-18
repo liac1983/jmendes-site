@@ -5,6 +5,7 @@ export const navigation = [
   { label: "process", href: "/processo" },
   { label: "portfolio", href: "/projetos-destaque" },
   { label: "services", href: "/servicos" },
+  { label: "materials", href: "/materiais" },
   { label: "catalogos", href: "/catalogos" },
   { label: "renders", href: "/renders" },
   { label: "contact", href: "/contacto" },

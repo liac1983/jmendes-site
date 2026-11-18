@@ -5,6 +5,7 @@ import Container from "@/components/ui/container";
 import IconBox from "@/components/ui/icon-box";
 import clsx from "clsx";
 import Reveal, { ImageReveal } from "@/components/ui/reveal";
+import { useSiteImage } from "@/lib/use-site-image";
 
 type Props = {
   reverse?: boolean;
@@ -23,6 +24,7 @@ export default function ProcessStep({
 }: Props) {
   const t = useTranslations("Process.steps");
   const title = t(`${stepKey}.title`);
+  const stepImage = useSiteImage(`processo.${stepKey}`, image);
 
   return (
     <section className="py-18 lg:py-22">
@@ -63,7 +65,7 @@ export default function ProcessStep({
             <div className="absolute left-5 top-5 h-full w-full bg-[rgba(200,168,90,0.22)]" />
             <ImageReveal className="relative h-[360px] w-full md:h-[420px]">
               <Image
-                src={image}
+                src={stepImage}
                 alt={title}
                 fill
                 className="object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.035]"

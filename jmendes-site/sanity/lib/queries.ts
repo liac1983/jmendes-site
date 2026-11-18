@@ -260,3 +260,26 @@ export const grupoRenderSlugsQuery = groq`
     "slug": slug.current
   }
 `
+
+// Textos e imagens editáveis no painel (sobrepõem-se aos que estão no código).
+export const siteTextsQuery = groq`
+  *[_type == "textoSite" && defined(chave)]{ chave, pt, en, fr, es }
+`;
+
+export const siteImagesQuery = groq`
+  *[_type == "imagemSite" && defined(chave) && defined(imagem.asset)]{ chave, imagem }
+`;
+
+export const materialsQuery = groq`
+  *[_type == "material" && visivel != false] | order(ordem asc, nome asc) {
+    _id,
+    nome,
+    categoria,
+    marca,
+    referencia,
+    descricao,
+    imagem,
+    cores[]{ _key, nome, hex, imagem },
+    traducoes
+  }
+`;

@@ -8,7 +8,9 @@
     "services": "Services",
     "contact": "Contact",
     "catalogos": "Catalogues",
-    "renders": "Projets 3D"
+    "renders": "Projets 3D",
+    "materials": "Matériaux",
+    "quote": "Devis"
   },
   "Home": {
     "hero": {
@@ -585,6 +587,14 @@
     "privacidade": {
       "title": "Politique de Confidentialité",
       "description": "Comment J. Mendes Mobiliário traite vos données personnelles au titre du RGPD."
+    },
+    "materiais": {
+      "title": "Tissus et finitions",
+      "description": "Les tissus, bois, laques, pierres et métaux avec lesquels nous travaillons. Choisissez les matériaux de votre meuble sur mesure et demandez un devis."
+    },
+    "orcamento": {
+      "title": "Demander un devis",
+      "description": "Envoyez-nous votre projet de cuisine, chambre, salle de bain ou maison complète, avec plans et dessins, et recevez un devis de mobilier sur mesure."
     }
   },
   "Privacy": {
@@ -635,5 +645,100 @@
     "message": "Ce site n'utilise que des cookies essentiels à son fonctionnement.",
     "accept": "Accepter",
     "learnMore": "En savoir plus"
+  },
+  "Quote": {
+    "hero": {
+      "title": "Demander un Devis",
+      "subtitle": "Parlez-nous de votre projet. Nous étudions chaque demande et répondons avec un devis sur mesure."
+    },
+    "intro": {
+      "title": "Comment ça marche",
+      "paragraph1": "Nous travaillons par projet : une cuisine, une chambre, une salle de bain, une maison complète ou un espace commercial.",
+      "paragraph2": "Plus vous nous en dites, plus le devis est précis. Si vous avez des plans, des mesures, des dessins ou des photos de l'espace, joignez-les à votre demande.",
+      "step1": "1. Nous recevons votre demande et étudions le projet.",
+      "step2": "2. Nous envoyons le devis et, si nécessaire, les dessins pour validation.",
+      "step3": "3. Après la commande, la production commence."
+    },
+    "form": {
+      "steps": {
+        "client": "Vos coordonnées",
+        "project": "Le projet"
+      },
+      "clientTypes": {
+        "particular": "Particulier",
+        "empresa": "Entreprise"
+      },
+      "labels": {
+        "company": "Nom de l'entreprise",
+        "name": "Nom",
+        "nif": "Numéro fiscal (TVA)",
+        "email": "Email",
+        "phone": "Téléphone",
+        "projectType": "Type de projet",
+        "location": "Lieu du chantier",
+        "message": "Description du projet",
+        "materials": "Matériaux souhaités",
+        "files": "Plans, dessins ou photos"
+      },
+      "projectTypePlaceholder": "Sélectionnez...",
+      "projectTypes": {
+        "kitchen": "Cuisine",
+        "bedroom": "Chambre",
+        "wardrobe": "Armoire / dressing",
+        "bathroom": "Salle de bain",
+        "laundry": "Buanderie",
+        "living": "Salon",
+        "fullHouse": "Maison complète",
+        "commercial": "Restaurant, hôtel ou commerce",
+        "other": "Autre"
+      },
+      "locationPlaceholder": "Ville ou code postal",
+      "messagePlaceholder": "Décrivez le projet : pièces, mesures approximatives, style, délais...",
+      "materialsPlaceholder": "Ex. : un tissu, un bois ou une couleur de notre page matériaux",
+      "files": {
+        "help": "PDF, JPG, PNG ou ZIP. Jusqu'à {max} fichiers et 4 Mo au total. Si vos fichiers sont plus lourds, envoyez la demande et nous vous écrirons pour les recevoir.",
+        "add": "Ajouter des fichiers",
+        "remove": "Retirer le fichier",
+        "wrongType": "Nous n'acceptons que des fichiers PDF, JPG, PNG ou ZIP.",
+        "tooMany": "Vous pouvez joindre au maximum {max} fichiers.",
+        "tooBig": "Les pièces jointes dépassent 4 Mo. Retirez un fichier ou envoyez-le plus tard par email."
+      },
+      "consent": "J'autorise J. Mendes Mobiliário à utiliser ces données pour préparer et envoyer le devis, conformément à la politique de confidentialité.",
+      "validation": {
+        "required": "Champ obligatoire",
+        "invalidEmail": "Email invalide",
+        "invalidNif": "Numéro fiscal invalide",
+        "messageTooShort": "Décrivez un peu plus le projet",
+        "consentRequired": "Vous devez accepter pour que nous puissions envoyer le devis"
+      },
+      "success": "Demande envoyée. Vous recevrez un email de confirmation et nous vous contacterons rapidement.",
+      "error": "Impossible d'envoyer la demande. Réessayez ou appelez-nous.",
+      "submitting": "Envoi...",
+      "submit": "Envoyer la demande de devis"
+    }
+  },
+  "Materials": {
+    "hero": {
+      "title": "Tissus et Finitions",
+      "subtitle": "Les matériaux qui donnent forme à chaque projet. Choisissez vos préférés et ajoutez-les à votre demande de devis."
+    },
+    "categories": {
+      "all": "Tous",
+      "tecidos": "Tissus",
+      "madeiras": "Bois et placages",
+      "lacagens": "Laques et couleurs",
+      "pedras": "Pierres et céramiques",
+      "metais": "Métaux",
+      "outros": "Autres"
+    },
+    "empty": "Nous préparons notre catalogue de matériaux. Revenez bientôt.",
+    "colors": "Couleurs disponibles",
+    "reference": "Réf.",
+    "close": "Fermer",
+    "askQuote": "Demander un devis avec ce matériau",
+    "cta": {
+      "text": "Vous ne trouvez pas ce que vous cherchez ? Nous travaillons avec beaucoup d'autres fournisseurs.",
+      "button": "Demander un devis"
+    }
   }
 }

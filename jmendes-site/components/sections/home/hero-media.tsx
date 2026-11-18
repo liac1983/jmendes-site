@@ -8,6 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { useSiteImage } from "@/lib/use-site-image";
 
 // Fundo do hero com parallax de scroll: a imagem desloca-se mais devagar que o
 // conteúdo. O contentor ocupa exatamente a secção (inset-0, altura definida —
@@ -16,6 +17,7 @@ import {
 // Com prefers-reduced-motion não há deslocamento.
 export default function HeroMedia() {
   const ref = useRef<HTMLDivElement>(null);
+  const heroImage = useSiteImage("inicio.hero", "/images/home/hero-workshop.jpg");
   const shouldReduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
@@ -32,7 +34,7 @@ export default function HeroMedia() {
     <div ref={ref} className="absolute inset-0 overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y, scale: 1.2 }}>
         <Image
-          src="/images/home/hero-workshop.jpg"
+          src={heroImage}
           alt="Oficina J. Mendes Mobiliário"
           fill
           priority

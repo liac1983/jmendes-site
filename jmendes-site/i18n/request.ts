@@ -1,6 +1,7 @@
 // i18n/request.ts
 import { getRequestConfig } from 'next-intl/server';
 import { locales, type AppLocale } from '@/data/navigation';
+import { withSiteContent } from '@/lib/site-content';
 
 const defaultLocale: AppLocale = 'pt';
 
@@ -14,6 +15,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: (await import(`../messages/${locale}.json`)).default
+    // Textos e imagens alterados no painel sobrepõem-se aos do código.
+    messages: await withSiteContent(
+      locale,
+      (await import(`../messages/${locale}.json`)).default
+    )
   };
 });

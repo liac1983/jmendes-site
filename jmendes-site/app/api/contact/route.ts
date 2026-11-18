@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/contact-schema";
 import { BrevoClient } from "@getbrevo/brevo";
+import { escapeHtml } from "@/lib/escape-html";
 
 const brevo = new BrevoClient({
   apiKey: process.env.BREVO_API_KEY || "",
@@ -55,14 +56,14 @@ export async function POST(request: Request) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; color: #111111;">
           <h2 style="margin-bottom: 24px;">Novo pedido de contacto</h2>
 
-          <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Telefone:</strong> ${phone || "Não indicado"}</p>
+          <p><strong>Nome:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          <p><strong>Telefone:</strong> ${escapeHtml(phone || "Não indicado")}</p>
           <p><strong>Assunto:</strong> ${subjectLabel}</p>
 
           <div style="margin-top: 24px;">
             <p><strong>Mensagem:</strong></p>
-            <p style="line-height: 1.7; white-space: pre-line;">${message}</p>
+            <p style="line-height: 1.7; white-space: pre-line;">${escapeHtml(message)}</p>
           </div>
         </div>
       `,
@@ -98,7 +99,7 @@ export async function POST(request: Request) {
             </div>
 
             <h1 style="font-size: 30px; line-height: 1.3; margin: 0 0 24px 0;">
-              Obrigado pelo seu contacto, ${name}
+              Obrigado pelo seu contacto, ${escapeHtml(name)}
             </h1>
 
             <p style="font-size: 18px; line-height: 1.7; margin: 0 0 16px 0;">

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Reveal, { ImageReveal } from "@/components/ui/reveal";
+import { useSiteImage } from "@/lib/use-site-image";
 
 export default function StorySection() {
   const t = useTranslations("About.story");
+  const image1 = useSiteImage("sobre.historia1", "/images/sobre/story-1.jpeg");
+  const image2 = useSiteImage("sobre.historia2", "/images/sobre/story-2.jpg");
 
   return (
     <section className="py-24">
@@ -45,7 +48,7 @@ export default function StorySection() {
         <div className="flex gap-6">
           <ImageReveal className="w-1/2">
             <Image
-              src="/images/sobre/story-1.jpeg"
+              src={image1}
               alt={t("imageAlt1")}
               width={1024}
               height={1280}
@@ -55,7 +58,7 @@ export default function StorySection() {
           </ImageReveal>
           <ImageReveal className="mt-10 w-1/2" delay={0.18}>
             <Image
-              src="/images/sobre/story-2.jpg"
+              src={image2}
               alt={t("imageAlt2")}
               width={576}
               height={720}

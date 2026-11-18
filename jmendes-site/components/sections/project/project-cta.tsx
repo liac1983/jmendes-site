@@ -23,7 +23,7 @@ export default function ProjectCta({ locale }: Props) {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
             <Link
-              href={`/${locale}/contacto`}
+              href={`/${locale}/orcamento`}
               className="inline-flex h-[62px] items-center gap-3 bg-[var(--gold)] px-8 text-lg font-medium text-black transition-opacity hover:opacity-90"
             >
               {t("quote")} →
