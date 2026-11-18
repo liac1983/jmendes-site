@@ -26,6 +26,8 @@ function getSubjectLabel(subject: string) {
 
 export async function POST(request: Request) {
   try {
+    // Logótipo servido pelo próprio site, no endereço onde o formulário foi enviado.
+    const logoUrl = `${new URL(request.url).origin}/logo.jpg`;
     const body = await request.json();
     const parsed = contactSchema.safeParse(body);
 
@@ -92,7 +94,7 @@ export async function POST(request: Request) {
 
             <div style="text-align: center; margin-bottom: 32px;">
               <img 
-                src="https://jmendes.vercel.app/logo.jpg" 
+                src="${logoUrl}" 
                 alt="J Mendes Mobiliário"
                 style="max-width: 180px; height: auto;"
               />

@@ -23,6 +23,8 @@ function row(label: string, value: string) {
 
 export async function POST(request: Request) {
   try {
+    // Logótipo servido pelo próprio site, no endereço onde o formulário foi enviado.
+    const logoUrl = `${new URL(request.url).origin}/logo.jpg`;
     const form = await request.formData();
 
     const parsed = quoteSchema.safeParse({
@@ -109,7 +111,7 @@ export async function POST(request: Request) {
         <div style="background-color: #f7f7f7; padding: 32px 16px;">
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px 32px; color: #111111;">
             <div style="text-align: center; margin-bottom: 32px;">
-              <img src="https://jmendes.vercel.app/logo.jpg" alt="J Mendes Mobiliário" style="max-width: 180px; height: auto;" />
+              <img src="${logoUrl}" alt="J Mendes Mobiliário" style="max-width: 180px; height: auto;" />
             </div>
             <h1 style="font-size: 28px; line-height: 1.3; margin: 0 0 24px 0;">
               Obrigado, ${escapeHtml(d.name)}
