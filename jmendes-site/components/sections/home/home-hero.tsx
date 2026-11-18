@@ -46,7 +46,7 @@ export default function HomeHero({ locale }: Props) {
               </Button>
 
               <Button
-                href={`/${locale}/contacto`}
+                href={`/${locale}/orcamento`}
                 variant="secondary"
                 className="min-w-[210px]"
               >

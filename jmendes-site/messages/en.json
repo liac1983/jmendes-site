@@ -8,7 +8,9 @@
     "services": "Services",
     "contact": "Contact",
     "catalogos": "Catalogues",
-    "renders": "3D Projects"
+    "renders": "3D Projects",
+    "materials": "Materials",
+    "quote": "Quote"
   },
   "Home": {
     "hero": {
@@ -585,6 +587,14 @@
     "privacidade": {
       "title": "Privacy Policy",
       "description": "How J. Mendes Mobiliário handles your personal data under the GDPR."
+    },
+    "materiais": {
+      "title": "Fabrics and finishes",
+      "description": "The fabrics, woods, lacquers, stones and metals we work with. Choose the materials for your custom furniture and request a quote."
+    },
+    "orcamento": {
+      "title": "Request a quote",
+      "description": "Send us your kitchen, bedroom, bathroom or full-home project, with plans and drawings, and receive a quote for custom furniture."
     }
   },
   "Privacy": {
@@ -635,5 +645,100 @@
     "message": "This website only uses cookies that are essential to its operation.",
     "accept": "Accept",
     "learnMore": "Learn more"
+  },
+  "Quote": {
+    "hero": {
+      "title": "Request a Quote",
+      "subtitle": "Tell us about your project. We review every request and reply with a tailored quote."
+    },
+    "intro": {
+      "title": "How it works",
+      "paragraph1": "We work by project: a kitchen, a bedroom, a bathroom, a whole house or a commercial space.",
+      "paragraph2": "The more you tell us, the more accurate the quote. If you have plans, measurements, drawings or photos of the space, attach them to your request.",
+      "step1": "1. We receive your request and review the project.",
+      "step2": "2. We send the quote and, if needed, drawings for approval.",
+      "step3": "3. Once the order is confirmed, production begins."
+    },
+    "form": {
+      "steps": {
+        "client": "Your details",
+        "project": "The project"
+      },
+      "clientTypes": {
+        "particular": "Private client",
+        "empresa": "Company"
+      },
+      "labels": {
+        "company": "Company name",
+        "name": "Name",
+        "nif": "Tax number (VAT)",
+        "email": "Email",
+        "phone": "Phone",
+        "projectType": "Project type",
+        "location": "Project location",
+        "message": "Project description",
+        "materials": "Materials of interest",
+        "files": "Plans, drawings or photos"
+      },
+      "projectTypePlaceholder": "Select...",
+      "projectTypes": {
+        "kitchen": "Kitchen",
+        "bedroom": "Bedroom",
+        "wardrobe": "Wardrobe / walk-in closet",
+        "bathroom": "Bathroom",
+        "laundry": "Laundry room",
+        "living": "Living room",
+        "fullHouse": "Whole house",
+        "commercial": "Restaurant, hotel or retail",
+        "other": "Other"
+      },
+      "locationPlaceholder": "Town or postcode",
+      "messagePlaceholder": "Describe the project: rooms, approximate measurements, style, deadlines...",
+      "materialsPlaceholder": "E.g. a fabric, wood or colour from our materials page",
+      "files": {
+        "help": "PDF, JPG, PNG or ZIP. Up to {max} files and 4 MB in total. If your files are larger, send the request and we will email you to receive them.",
+        "add": "Add files",
+        "remove": "Remove file",
+        "wrongType": "We only accept PDF, JPG, PNG or ZIP files.",
+        "tooMany": "You can attach up to {max} files.",
+        "tooBig": "The attachments exceed 4 MB. Remove a file or send it later by email."
+      },
+      "consent": "I authorise J. Mendes Mobiliário to use this data to prepare and send the quote, in accordance with the privacy policy.",
+      "validation": {
+        "required": "Required field",
+        "invalidEmail": "Invalid email",
+        "invalidNif": "Invalid tax number",
+        "messageTooShort": "Please describe the project a little more",
+        "consentRequired": "You must accept so we can send the quote"
+      },
+      "success": "Request sent. You will receive a confirmation email and we will be in touch soon.",
+      "error": "We could not send your request. Please try again or call us.",
+      "submitting": "Sending...",
+      "submit": "Send quote request"
+    }
+  },
+  "Materials": {
+    "hero": {
+      "title": "Fabrics and Finishes",
+      "subtitle": "The materials that shape each project. Pick your favourites and include them in your quote request."
+    },
+    "categories": {
+      "all": "All",
+      "tecidos": "Fabrics",
+      "madeiras": "Woods and veneers",
+      "lacagens": "Lacquers and colours",
+      "pedras": "Stones and ceramics",
+      "metais": "Metals",
+      "outros": "Other"
+    },
+    "empty": "We are preparing our materials catalogue. Please come back soon.",
+    "colors": "Available colours",
+    "reference": "Ref.",
+    "close": "Close",
+    "askQuote": "Request a quote with this material",
+    "cta": {
+      "text": "Can't find what you're looking for? We work with many other suppliers.",
+      "button": "Request a quote"
+    }
   }
 }

@@ -47,4 +47,25 @@ export const structure: StructureResolver = (S) =>
             .title('Renders')
             .defaultOrdering([{field: 'ordem', direction: 'asc'}])
         ),
+
+      S.listItem()
+        .title('Tecidos e acabamentos')
+        .schemaType('material')
+        .child(
+          S.documentTypeList('material')
+            .title('Tecidos e acabamentos')
+            .defaultOrdering([{field: 'ordem', direction: 'asc'}])
+        ),
+
+      S.divider(),
+
+      S.listItem()
+        .title('Textos do site')
+        .schemaType('textoSite')
+        .child(S.documentTypeList('textoSite').title('Textos do site')),
+
+      S.listItem()
+        .title('Imagens do site')
+        .schemaType('imagemSite')
+        .child(S.documentTypeList('imagemSite').title('Imagens do site')),
     ])

@@ -8,7 +8,9 @@
     "services": "Serviços",
     "contact": "Contacto",
     "catalogos": "Catálogos",
-    "renders": "Projetos 3D"
+    "renders": "Projetos 3D",
+    "materials": "Materiais",
+    "quote": "Orçamento"
   },
   "Home": {
     "hero": {
@@ -585,6 +587,14 @@
     "privacidade": {
       "title": "Política de Privacidade",
       "description": "Como a J. Mendes Mobiliário trata os seus dados pessoais, ao abrigo do RGPD."
+    },
+    "materiais": {
+      "title": "Tecidos e acabamentos",
+      "description": "Tecidos, madeiras, lacagens, pedras e metais com que trabalhamos. Escolha os materiais do seu móvel por medida e peça orçamento."
+    },
+    "orcamento": {
+      "title": "Pedir orçamento",
+      "description": "Envie-nos o seu projeto de cozinha, quarto, casa de banho ou casa completa, com plantas e desenhos, e receba um orçamento de mobiliário por medida."
     }
   },
   "Privacy": {
@@ -635,5 +645,100 @@
     "message": "Este site utiliza apenas cookies essenciais ao seu funcionamento.",
     "accept": "Aceitar",
     "learnMore": "Saber mais"
+  },
+  "Quote": {
+    "hero": {
+      "title": "Pedir Orçamento",
+      "subtitle": "Conte-nos o seu projeto. Analisamos cada pedido e respondemos com um orçamento à medida."
+    },
+    "intro": {
+      "title": "Como funciona",
+      "paragraph1": "Trabalhamos por projeto: uma cozinha, um quarto, uma casa de banho, uma casa completa ou um espaço comercial.",
+      "paragraph2": "Quanto mais nos disser, mais rigoroso é o orçamento. Se tiver plantas, medidas, desenhos ou fotografias do espaço, anexe-os ao pedido.",
+      "step1": "1. Recebemos o seu pedido e analisamos o projeto.",
+      "step2": "2. Enviamos o orçamento e, se for preciso, os desenhos para aprovação.",
+      "step3": "3. Depois da adjudicação, começamos a produção."
+    },
+    "form": {
+      "steps": {
+        "client": "Os seus dados",
+        "project": "O projeto"
+      },
+      "clientTypes": {
+        "particular": "Particular",
+        "empresa": "Empresa"
+      },
+      "labels": {
+        "company": "Nome da empresa",
+        "name": "Nome",
+        "nif": "Contribuinte (NIF)",
+        "email": "Email",
+        "phone": "Telefone",
+        "projectType": "Tipo de projeto",
+        "location": "Local da obra",
+        "message": "Descrição do projeto",
+        "materials": "Materiais de interesse",
+        "files": "Plantas, desenhos ou fotografias"
+      },
+      "projectTypePlaceholder": "Selecione...",
+      "projectTypes": {
+        "kitchen": "Cozinha",
+        "bedroom": "Quarto",
+        "wardrobe": "Roupeiro / closet",
+        "bathroom": "Casa de banho",
+        "laundry": "Lavandaria",
+        "living": "Sala",
+        "fullHouse": "Casa completa",
+        "commercial": "Restauração, hotelaria ou comércio",
+        "other": "Outro"
+      },
+      "locationPlaceholder": "Localidade ou código postal",
+      "messagePlaceholder": "Descreva o projeto: divisões, medidas aproximadas, estilo, prazos...",
+      "materialsPlaceholder": "Ex.: tecido, madeira ou cor que viu na página de materiais",
+      "files": {
+        "help": "PDF, JPG, PNG ou ZIP. Até {max} ficheiros e 4 MB no total. Se os ficheiros forem maiores, envie o pedido e mandamos-lhe um email para os receber.",
+        "add": "Adicionar ficheiros",
+        "remove": "Remover ficheiro",
+        "wrongType": "Só aceitamos ficheiros PDF, JPG, PNG ou ZIP.",
+        "tooMany": "Pode anexar no máximo {max} ficheiros.",
+        "tooBig": "Os anexos passam de 4 MB. Retire algum ficheiro ou envie-o mais tarde por email."
+      },
+      "consent": "Autorizo a J. Mendes Mobiliário a usar estes dados para preparar e enviar o orçamento, de acordo com a política de privacidade.",
+      "validation": {
+        "required": "Campo obrigatório",
+        "invalidEmail": "Email inválido",
+        "invalidNif": "Contribuinte inválido",
+        "messageTooShort": "Descreva um pouco mais o projeto",
+        "consentRequired": "É preciso aceitar para enviarmos o orçamento"
+      },
+      "success": "Pedido enviado. Vai receber um email de confirmação e entraremos em contacto em breve.",
+      "error": "Não foi possível enviar o pedido. Tente novamente ou contacte-nos por telefone.",
+      "submitting": "A enviar...",
+      "submit": "Enviar pedido de orçamento"
+    }
+  },
+  "Materials": {
+    "hero": {
+      "title": "Tecidos e Acabamentos",
+      "subtitle": "Os materiais com que damos forma a cada projeto. Escolha os que mais gosta e inclua-os no seu pedido de orçamento."
+    },
+    "categories": {
+      "all": "Todos",
+      "tecidos": "Tecidos",
+      "madeiras": "Madeiras e folheados",
+      "lacagens": "Lacagens e cores",
+      "pedras": "Pedras e cerâmicas",
+      "metais": "Metais",
+      "outros": "Outros"
+    },
+    "empty": "Estamos a preparar o nosso catálogo de materiais. Volte em breve.",
+    "colors": "Cores disponíveis",
+    "reference": "Ref.",
+    "close": "Fechar",
+    "askQuote": "Pedir orçamento com este material",
+    "cta": {
+      "text": "Não encontrou o que procura? Trabalhamos com muitos outros fornecedores.",
+      "button": "Pedir orçamento"
+    }
   }
 }

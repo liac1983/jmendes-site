@@ -5,6 +5,8 @@ import ServiceCard from "./services-card";
 
 export default function ServicesGrid() {
   const t = useTranslations("Services.items");
+  // Imagens trocadas no painel (Sanity → "Imagens do site"); ver lib/site-image-slots.ts
+  const images = useTranslations("SiteImages");
 
   return (
     <section className="py-20">
@@ -17,7 +19,11 @@ export default function ServicesGrid() {
               <ServiceCard
                 key={service.id}
                 delay={index * 0.1}
-                image={service.image}
+                image={
+                  images.has(`servicos.${service.id}`)
+                    ? images(`servicos.${service.id}`)
+                    : service.image
+                }
                 title={title}
                 description={t(`${service.id}.description`)}
                 bullets={service.bulletKeys.map((bulletKey) =>

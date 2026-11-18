@@ -41,6 +41,8 @@ export const pagePaths = {
   linhas: "/linhas",
   catalogos: "/catalogos",
   renders: "/renders",
+  materiais: "/materiais",
+  orcamento: "/orcamento",
   contacto: "/contacto",
   privacidade: "/privacidade",
 } as const;

@@ -23,7 +23,7 @@ export default function ServicesCTA({ locale }: { locale: string }) {
 
         <Reveal delay={0.36}>
           <Link
-            href={`/${locale}/contacto`}
+            href={`/${locale}/orcamento`}
             className="premium-button mt-8 inline-block overflow-hidden bg-[var(--gold)] px-8 py-4 text-black font-medium transition duration-500 ease-out hover:opacity-90"
           >
             {t("button")} →

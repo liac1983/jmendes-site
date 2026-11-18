@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useSiteImage } from "@/lib/use-site-image";
 
 export default function AboutHero() {
   const t = useTranslations("About.hero");
+  const heroImage = useSiteImage("sobre.hero", "/images/sobre/hero.jpg");
 
   return (
     <section className="relative h-[70vh] w-full">
       <Image
-        src="/images/sobre/hero.jpg"
+        src={heroImage}
         alt={t("imageAlt")}
         fill
         priority
