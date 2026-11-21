@@ -10,6 +10,16 @@ type Props = {
 export default function ProjectMaterials({ project }: Props) {
   const t = useTranslations("Portfolio.project.materials");
 
+  // Só mostra as caixas com itens; sem nenhuma, a secção não aparece.
+  const boxes = [
+    { key: "material", title: t("materials"), items: project.materials ?? [] },
+    { key: "finish", title: t("finishes"), items: project.finishes ?? [] },
+  ]
+    .map((box) => ({ ...box, items: box.items.filter((item) => item?.trim()) }))
+    .filter((box) => box.items.length > 0);
+
+  if (boxes.length === 0) return null;
+
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
@@ -22,42 +32,28 @@ export default function ProjectMaterials({ project }: Props) {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
-          <Reveal delay={0.12}>
-            <div className="border border-[var(--border)] p-10 transition duration-700 ease-out hover:border-[rgba(200,168,90,0.36)] hover:bg-white/[0.02]">
-              <h3 className="text-4xl text-gold">{t("materials")}</h3>
+        <div
+          className={`mt-14 grid gap-8 ${boxes.length > 1 ? "lg:grid-cols-2" : "mx-auto max-w-2xl"}`}
+        >
+          {boxes.map((box, boxIndex) => (
+            <Reveal key={box.key} delay={0.12 * (boxIndex + 1)}>
+              <div className="border border-[var(--border)] p-10 transition duration-700 ease-out hover:border-[rgba(200,168,90,0.36)] hover:bg-white/[0.02]">
+                <h3 className="text-4xl text-gold">{box.title}</h3>
 
-              <ul className="mt-8 space-y-5">
-                {project.materials.map((item, index) => (
-                  <li
-                    key={`${project.slug}-material-${index}`}
-                    className="group flex items-start gap-3 text-xl text-[var(--muted)] transition-colors duration-500 ease-out hover:text-white"
-                  >
-                    <span className="mt-2 h-2 w-2 bg-[var(--gold)] transition-transform duration-500 ease-out group-hover:scale-125" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.24}>
-            <div className="border border-[var(--border)] p-10 transition duration-700 ease-out hover:border-[rgba(200,168,90,0.36)] hover:bg-white/[0.02]">
-              <h3 className="text-4xl text-gold">{t("finishes")}</h3>
-
-              <ul className="mt-8 space-y-5">
-                {project.finishes.map((item, index) => (
-                  <li
-                    key={`${project.slug}-finish-${index}`}
-                    className="group flex items-start gap-3 text-xl text-[var(--muted)] transition-colors duration-500 ease-out hover:text-white"
-                  >
-                    <span className="mt-2 h-2 w-2 bg-[var(--gold)] transition-transform duration-500 ease-out group-hover:scale-125" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+                <ul className="mt-8 space-y-5">
+                  {box.items.map((item, index) => (
+                    <li
+                      key={`${project.slug}-${box.key}-${index}`}
+                      className="group flex items-start gap-3 text-xl text-[var(--muted)] transition-colors duration-500 ease-out hover:text-white"
+                    >
+                      <span className="mt-2 h-2 w-2 bg-[var(--gold)] transition-transform duration-500 ease-out group-hover:scale-125" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>
