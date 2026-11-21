@@ -10,6 +10,8 @@ type Props = {
 export default function ProjectGallery({ project }: Props) {
   const t = useTranslations("Portfolio.project.gallery");
 
+  if (!project.gallery?.length) return null;
+
   return (
     <section className="border-b border-[var(--border)] py-20 lg:py-28">
       <Container>
