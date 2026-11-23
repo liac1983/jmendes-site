@@ -712,6 +712,7 @@
         "consentRequired": "You must accept so we can send the quote"
       },
       "success": "Request sent. You will receive a confirmation email and we will be in touch soon.",
+      "tooMany": "We received several requests in a row. Please wait a little and try again, or call us.",
       "error": "We could not send your request. Please try again or call us.",
       "submitting": "Sending...",
       "submit": "Send quote request"

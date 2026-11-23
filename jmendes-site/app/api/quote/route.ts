@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { BrevoClient } from "@getbrevo/brevo";
 import { escapeHtml } from "@/lib/escape-html";
+import { allowRequest, clientIp, markSent, wasSent } from "@/lib/form-guard";
 import {
   QUOTE_ALLOWED_EXTENSIONS,
   QUOTE_MAX_FILES,
@@ -26,6 +27,11 @@ export async function POST(request: Request) {
     // Logótipo servido pelo próprio site, no endereço onde o formulário foi enviado.
     const logoUrl = `${new URL(request.url).origin}/logo.jpg`;
     const form = await request.formData();
+
+    // Campo escondido: uma pessoa não o vê, por isso só um robô o preenche.
+    if (form.get("extra_info")) {
+      return NextResponse.json({ error: "invalid" }, { status: 400 });
+    }
 
     const parsed = quoteSchema.safeParse({
       clientType: form.get("clientType"),
@@ -64,6 +70,20 @@ export async function POST(request: Request) {
     }
 
     const d = parsed.data;
+
+    // O mesmo pedido repetido (por exemplo, por falha de rede) não é enviado outra vez.
+    const requestId = String(form.get("requestId") ?? "").slice(0, 64);
+    if (requestId && wasSent(requestId)) {
+      return NextResponse.json({ success: true });
+    }
+
+    if (
+      !allowRequest(`ip:${clientIp(request)}`, 5, 10 * 60 * 1000) ||
+      !allowRequest(`email:${d.email.toLowerCase()}`, 3, 60 * 60 * 1000)
+    ) {
+      return NextResponse.json({ error: "rate" }, { status: 429 });
+    }
+
     const projectLabel = projectTypeLabelsPt[d.projectType];
     const clientLabel = d.clientType === "empresa" ? "Empresa" : "Particular";
 
@@ -104,34 +124,41 @@ export async function POST(request: Request) {
       ...(attachment.length ? { attachment } : {}),
     });
 
-    // 2) Confirmação para o cliente
-    await brevo.transactionalEmails.sendTransacEmail({
-      subject: "Recebemos o seu pedido de orçamento",
-      htmlContent: `
-        <div style="background-color: #f7f7f7; padding: 32px 16px;">
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px 32px; color: #111111;">
-            <div style="text-align: center; margin-bottom: 32px;">
-              <img src="${logoUrl}" alt="J Mendes Mobiliário" style="max-width: 180px; height: auto;" />
-            </div>
-            <h1 style="font-size: 28px; line-height: 1.3; margin: 0 0 24px 0;">
-              Obrigado, ${escapeHtml(d.name)}
-            </h1>
-            <p style="font-size: 17px; line-height: 1.7; margin: 0 0 16px 0;">
-              Recebemos o seu pedido de orçamento (${escapeHtml(projectLabel)}).
-            </p>
-            <p style="font-size: 17px; line-height: 1.7; margin: 0 0 32px 0;">
-              Vamos analisar o projeto e entraremos em contacto consigo com a maior brevidade possível.
-            </p>
-            <div style="border-top: 1px solid #e5e5e5; padding-top: 24px; margin-top: 24px;">
-              <p style="font-size: 16px; line-height: 1.7; margin: 0 0 8px 0;">Com os melhores cumprimentos,</p>
-              <p style="font-size: 18px; font-weight: 700; margin: 0;">J Mendes Mobiliário</p>
+    if (requestId) markSent(requestId);
+
+    // 2) Confirmação para o cliente. Se falhar, o pedido já chegou à J. Mendes:
+    // não se mostra erro, para o cliente não o enviar outra vez.
+    try {
+      await brevo.transactionalEmails.sendTransacEmail({
+        subject: "Recebemos o seu pedido de orçamento",
+        htmlContent: `
+          <div style="background-color: #f7f7f7; padding: 32px 16px;">
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px 32px; color: #111111;">
+              <div style="text-align: center; margin-bottom: 32px;">
+                <img src="${logoUrl}" alt="J Mendes Mobiliário" style="max-width: 180px; height: auto;" />
+              </div>
+              <h1 style="font-size: 28px; line-height: 1.3; margin: 0 0 24px 0;">
+                Obrigado, ${escapeHtml(d.name)}
+              </h1>
+              <p style="font-size: 17px; line-height: 1.7; margin: 0 0 16px 0;">
+                Recebemos o seu pedido de orçamento (${escapeHtml(projectLabel)}).
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; margin: 0 0 32px 0;">
+                Vamos analisar o projeto e entraremos em contacto consigo com a maior brevidade possível.
+              </p>
+              <div style="border-top: 1px solid #e5e5e5; padding-top: 24px; margin-top: 24px;">
+                <p style="font-size: 16px; line-height: 1.7; margin: 0 0 8px 0;">Com os melhores cumprimentos,</p>
+                <p style="font-size: 18px; font-weight: 700; margin: 0;">J Mendes Mobiliário</p>
+              </div>
             </div>
           </div>
-        </div>
-      `,
-      sender: { name: "J Mendes Mobiliário", email: fromEmail },
-      to: [{ email: d.email, name: d.name }],
-    });
+        `,
+        sender: { name: "J Mendes Mobiliário", email: fromEmail },
+        to: [{ email: d.email, name: d.name }],
+      });
+    } catch (error) {
+      console.error("Pedido recebido, mas a confirmação ao cliente falhou:", error);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

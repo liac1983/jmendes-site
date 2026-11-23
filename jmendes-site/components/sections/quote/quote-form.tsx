@@ -33,6 +33,8 @@ export default function QuoteForm({ initialMaterials = "" }: Props) {
   const t = useTranslations("Quote.form");
   const v = useTranslations("Quote.form.validation");
   const fileInput = useRef<HTMLInputElement>(null);
+  const honeypot = useRef<HTMLInputElement>(null);
+  const requestId = useRef<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [fileError, setFileError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,19 +96,25 @@ export default function QuoteForm({ initialMaterials = "" }: Props) {
       if (value !== undefined && value !== null) body.append(key, String(value));
     }
     files.forEach((file) => body.append("files", file));
+    // Mantém-se entre tentativas e muda depois de um envio com sucesso.
+    requestId.current ??= crypto.randomUUID();
+    body.append("requestId", requestId.current);
+    body.append("extra_info", honeypot.current?.value ?? "");
 
     try {
       const response = await fetch("/api/quote", { method: "POST", body });
       if (!response.ok) {
         const payload = await response.json().catch(() => ({}));
-        throw new Error(payload.error === "files" ? "files" : "send");
+        throw new Error(["files", "rate"].includes(payload.error) ? payload.error : "send");
       }
       setIsSuccess(true);
+      requestId.current = null;
       setFiles([]);
       reset({ clientType: "particular", materials: "" });
     } catch (error) {
+      const code = error instanceof Error ? error.message : "";
       setServerError(
-        error instanceof Error && error.message === "files" ? t("files.tooBig") : t("error")
+        code === "files" ? t("files.tooBig") : code === "rate" ? t("tooMany") : t("error")
       );
     } finally {
       setIsSubmitting(false);
@@ -116,6 +124,11 @@ export default function QuoteForm({ initialMaterials = "" }: Props) {
   return (
     <div className="border border-[var(--border)] p-8 md:p-12">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-10" noValidate>
+        {/* Armadilha para robôs: fora do ecrã, do teclado e dos leitores de ecrã. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <input ref={honeypot} type="text" name="extra_info" tabIndex={-1} autoComplete="off" />
+        </div>
+
         {/* 1. Quem pede */}
         <fieldset className="space-y-6">
           <legend className="mb-6 text-2xl text-gold">{t("steps.client")}</legend>
@@ -147,7 +160,7 @@ export default function QuoteForm({ initialMaterials = "" }: Props) {
           <div className="grid gap-6 md:grid-cols-2">
             <div>
               <label className={labelClass}>{t("labels.name")} *</label>
-              <input {...register("name")} className={fieldClass} autoComplete="name" />
+              <input {...register("name")} maxLength={100} className={fieldClass} autoComplete="name" />
               {errors.name && <p className="mt-2 text-sm text-red-400">{errors.name.message}</p>}
             </div>
             <div>

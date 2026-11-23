@@ -47,7 +47,7 @@ export function createQuoteSchema(messages: QuoteValidationMessages = defaultMes
   return z
     .object({
       clientType: z.enum(["particular", "empresa"]),
-      name: z.string().trim().min(2, messages.required),
+      name: z.string().trim().min(2, messages.required).max(100),
       company: z.string().trim().optional(),
       nif: z
         .string()
