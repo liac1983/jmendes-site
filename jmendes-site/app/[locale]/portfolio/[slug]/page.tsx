@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const sanityRelatedProjects = await client.fetch<SanityRelatedProject[]>(
     relatedProjectsQuery,
-    { slug }
+    { slug, category: sanityProject.category ?? "" }
   );
 
   const project = {
