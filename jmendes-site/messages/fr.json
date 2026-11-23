@@ -712,6 +712,7 @@
         "consentRequired": "Vous devez accepter pour que nous puissions envoyer le devis"
       },
       "success": "Demande envoyée. Vous recevrez un email de confirmation et nous vous contacterons rapidement.",
+      "tooMany": "Nous avons reçu plusieurs demandes à la suite. Patientez un peu et réessayez, ou appelez-nous.",
       "error": "Impossible d'envoyer la demande. Réessayez ou appelez-nous.",
       "submitting": "Envoi...",
       "submit": "Envoyer la demande de devis"

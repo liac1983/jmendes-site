@@ -712,6 +712,7 @@
         "consentRequired": "Debe aceptar para que podamos enviar el presupuesto"
       },
       "success": "Solicitud enviada. Recibirá un email de confirmación y nos pondremos en contacto pronto.",
+      "tooMany": "Hemos recibido varias solicitudes seguidas. Espere un poco e inténtelo de nuevo, o llámenos.",
       "error": "No se ha podido enviar la solicitud. Inténtelo de nuevo o llámenos.",
       "submitting": "Enviando...",
       "submit": "Enviar solicitud de presupuesto"

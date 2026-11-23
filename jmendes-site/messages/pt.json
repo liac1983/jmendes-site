@@ -712,6 +712,7 @@
         "consentRequired": "É preciso aceitar para enviarmos o orçamento"
       },
       "success": "Pedido enviado. Vai receber um email de confirmação e entraremos em contacto em breve.",
+      "tooMany": "Recebemos vários pedidos seguidos. Aguarde um pouco e tente novamente, ou ligue-nos.",
       "error": "Não foi possível enviar o pedido. Tente novamente ou contacte-nos por telefone.",
       "submitting": "A enviar...",
       "submit": "Enviar pedido de orçamento"
