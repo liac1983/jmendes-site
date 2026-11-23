@@ -42,7 +42,7 @@ export const projectBySlugQuery = groq`
 `;
 
 export const relatedProjectsQuery = groq`
-  *[_type == "project" && published == true && slug.current != $slug] | order(order asc, _createdAt desc)[0...3]{
+  *[_type == "project" && published == true && slug.current != $slug && category == $category] | order(order asc, _createdAt desc)[0...3]{
     _id,
     title,
     "slug": slug.current,
