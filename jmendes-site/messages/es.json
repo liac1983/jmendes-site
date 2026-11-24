@@ -103,7 +103,9 @@
         "cozinhas": "Cocinas",
         "roupeiros": "Armarios",
         "comercial": "Comercial",
-        "casas-completas": "Casas Completas"
+        "casas-completas": "Casas Completas",
+        "entradas": "Recibidores",
+        "moveis-por-medida": "Muebles a Medida"
       },
       "types": {
         "customMade": "A Medida",
@@ -142,7 +144,9 @@
       "instagram": {
         "title": "Ver en Instagram",
         "subtitle": "Síganos para más proyectos inspiradores",
-        "button": "Ver en Instagram"
+        "button": "Ver en Instagram",
+        "facebookTitle": "Ver en Facebook",
+        "facebookButton": "Ver en Facebook"
       },
       "related": {
         "title": "Otros Proyectos Similares",
@@ -416,7 +420,8 @@
       "success": "Mensaje enviado con éxito.",
       "error": "No fue posible enviar el mensaje. Inténtelo de nuevo.",
       "submitting": "Enviando...",
-      "submit": "Enviar Mensaje"
+      "submit": "Enviar Mensaje",
+      "tooMany": "Hemos recibido varios mensajes seguidos. Espere un poco e inténtelo de nuevo, o llámenos."
     },
     "map": {
       "title": "Ubicación",
@@ -553,7 +558,7 @@
       "description": "Fabricamos mobiliario a medida en Paços de Ferreira, Portugal, desde 2019, uniendo maestría artesanal y tecnología. Cocinas, armarios, proyectos 3D y obra completa."
     },
     "sobre": {
-      "title": "Sobre nosotros",
+      "title": "Fábrica de Muebles en Paços de Ferreira, Portugal",
       "description": "Conozca J. Mendes Mobiliário: la filosofía, el equipo y el rigor artesanal en cada proyecto de mobiliario a medida."
     },
     "processo": {
@@ -565,7 +570,7 @@
       "description": "Explore proyectos reales de mobiliario a medida y espacios completos de J. Mendes Mobiliário."
     },
     "servicos": {
-      "title": "Servicios",
+      "title": "Servicios de Mobiliario a Medida",
       "description": "Mobiliario a medida, diseño de interiores, visualización 3D, producción y montaje — con J. Mendes Mobiliário."
     },
     "linhas": {
@@ -581,7 +586,7 @@
       "description": "Vea nuestros renders fotorrealistas y visualice su mobiliario en el espacio antes de producir."
     },
     "contacto": {
-      "title": "Contacto",
+      "title": "Contacto en Paços de Ferreira",
       "description": "Contacte con J. Mendes Mobiliário en Paços de Ferreira y pida su presupuesto de mobiliario a medida."
     },
     "privacidade": {
@@ -593,8 +598,12 @@
       "description": "Los tejidos, maderas, lacados, piedras y metales con los que trabajamos. Elija los materiales de su mueble a medida y pida presupuesto."
     },
     "orcamento": {
-      "title": "Pedir presupuesto",
+      "title": "Pedir Presupuesto de Mobiliario a Medida",
       "description": "Envíenos su proyecto de cocina, dormitorio, baño o casa completa, con planos y dibujos, y reciba un presupuesto de mobiliario a medida."
+    },
+    "portfolio": {
+      "title": "Portafolio de Mobiliario a Medida",
+      "description": "Proyectos de mobiliario a medida de J. Mendes: cocinas, armarios, vestidores, recibidores y restaurantes, en Portugal y en París."
     }
   },
   "Privacy": {
@@ -639,12 +648,19 @@
         "heading": "Cambios en esta política",
         "body": "Podemos actualizar esta política periódicamente. La versión vigente está siempre disponible en esta página, junto con su fecha de actualización."
       }
-    ]
+    ],
+    "analytics": {
+      "cookies": "Este sitio utiliza cookies estrictamente necesarias para su funcionamiento (como recordar el idioma), que no requieren consentimiento. Si acepta, utilizamos también Google Analytics, que guarda cookies para recoger datos estadísticos sobre el uso del sitio. Google Analytics solo se carga después de que lo acepte y puede retirar su consentimiento en cualquier momento, con el botón al final de esta página.",
+      "sharing": "Si acepta las cookies de análisis, recurrimos también a Google (Google Analytics)."
+    }
   },
   "Cookie": {
     "message": "Este sitio solo utiliza cookies esenciales para su funcionamiento.",
     "accept": "Aceptar",
-    "learnMore": "Saber más"
+    "learnMore": "Saber más",
+    "analyticsMessage": "Usamos cookies esenciales y, si acepta, cookies de Google Analytics para entender cómo se utiliza el sitio.",
+    "reject": "Rechazar",
+    "settings": "Cambiar preferencias de cookies"
   },
   "Quote": {
     "hero": {

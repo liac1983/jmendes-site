@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [business.ogImage],
   },
+  // Código do Google Search Console (opção «etiqueta HTML»).
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   robots: {
     index: true,
     follow: true,

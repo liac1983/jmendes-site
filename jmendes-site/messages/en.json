@@ -103,7 +103,9 @@
         "cozinhas": "Kitchens",
         "roupeiros": "Wardrobes",
         "comercial": "Commercial",
-        "casas-completas": "Complete Homes"
+        "casas-completas": "Complete Homes",
+        "entradas": "Entrance Halls",
+        "moveis-por-medida": "Custom Furniture"
       },
       "types": {
         "customMade": "Custom Made",
@@ -142,7 +144,9 @@
       "instagram": {
         "title": "See on Instagram",
         "subtitle": "Follow us for more inspiring projects",
-        "button": "View on Instagram"
+        "button": "View on Instagram",
+        "facebookTitle": "See on Facebook",
+        "facebookButton": "View on Facebook"
       },
       "related": {
         "title": "Other Similar Projects",
@@ -416,7 +420,8 @@
       "success": "Message sent successfully.",
       "error": "We could not send the message. Please try again.",
       "submitting": "Sending...",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "tooMany": "We received several messages in a row. Please wait a little and try again, or call us."
     },
     "map": {
       "title": "Location",
@@ -553,7 +558,7 @@
       "description": "We craft bespoke furniture in Paços de Ferreira, Portugal, since 2019, blending artisanal precision with technology. Kitchens, wardrobes, 3D projects and full fit-outs."
     },
     "sobre": {
-      "title": "About",
+      "title": "Furniture Maker in Paços de Ferreira, Portugal",
       "description": "Meet J. Mendes Mobiliário: the philosophy, the team and the artisanal rigour behind every bespoke furniture project."
     },
     "processo": {
@@ -565,7 +570,7 @@
       "description": "Explore real bespoke furniture projects and complete spaces by J. Mendes Mobiliário."
     },
     "servicos": {
-      "title": "Services",
+      "title": "Bespoke Furniture Services",
       "description": "Bespoke furniture, interior design, 3D visualisation, production and installation — all with J. Mendes Mobiliário."
     },
     "linhas": {
@@ -581,7 +586,7 @@
       "description": "See our photorealistic renders and visualise your furniture in the space before production."
     },
     "contacto": {
-      "title": "Contact",
+      "title": "Contact in Paços de Ferreira",
       "description": "Get in touch with J. Mendes Mobiliário in Paços de Ferreira and request your bespoke furniture quote."
     },
     "privacidade": {
@@ -593,8 +598,12 @@
       "description": "The fabrics, woods, lacquers, stones and metals we work with. Choose the materials for your custom furniture and request a quote."
     },
     "orcamento": {
-      "title": "Request a quote",
+      "title": "Request a Bespoke Furniture Quote",
       "description": "Send us your kitchen, bedroom, bathroom or full-home project, with plans and drawings, and receive a quote for custom furniture."
+    },
+    "portfolio": {
+      "title": "Bespoke Furniture Portfolio",
+      "description": "Bespoke furniture projects by J. Mendes: kitchens, wardrobes, walk-in closets, entrance halls and restaurants, in Portugal and Paris."
     }
   },
   "Privacy": {
@@ -639,12 +648,19 @@
         "heading": "Changes to this policy",
         "body": "We may update this policy from time to time. The current version is always available on this page, together with its update date."
       }
-    ]
+    ],
+    "analytics": {
+      "cookies": "This website uses strictly necessary cookies for its operation (such as remembering your language), which do not require consent. If you accept, we also use Google Analytics, which stores cookies to collect statistical data about how the website is used. Google Analytics is only loaded after you accept it, and you can withdraw your consent at any time using the button at the end of this page.",
+      "sharing": "If you accept analytics cookies, we also rely on Google (Google Analytics)."
+    }
   },
   "Cookie": {
     "message": "This website only uses cookies that are essential to its operation.",
     "accept": "Accept",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "analyticsMessage": "We use essential cookies and, if you accept, Google Analytics cookies to understand how the website is used.",
+    "reject": "Reject",
+    "settings": "Change cookie preferences"
   },
   "Quote": {
     "hero": {

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/container";
 import PageHero from "@/components/ui/page-hero";
+import CookieSettings from "@/components/legal/cookie-settings";
+import { GA_ID } from "@/lib/analytics";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -13,6 +15,10 @@ export async function generateMetadata({
   return pageMetadata(locale, "privacidade");
 }
 
+// Posição, em Privacy.sections, dos textos que mudam quando há Analytics.
+const COOKIES_SECTION = 3;
+const SHARING_SECTION = 4;
+
 type Section = { heading: string; body: string };
 
 export default async function PrivacidadePage({
@@ -22,7 +28,14 @@ export default async function PrivacidadePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Privacy" });
-  const sections = t.raw("sections") as Section[];
+  const sections = (t.raw("sections") as Section[]).map((section, index) => {
+    if (!GA_ID) return section;
+    if (index === COOKIES_SECTION) return { ...section, body: t("analytics.cookies") };
+    if (index === SHARING_SECTION) {
+      return { ...section, body: `${section.body} ${t("analytics.sharing")}` };
+    }
+    return section;
+  });
 
   return (
     <main>
@@ -48,6 +61,8 @@ export default async function PrivacidadePage({
                 </div>
               ))}
             </div>
+
+            <CookieSettings />
           </div>
         </Container>
       </section>
