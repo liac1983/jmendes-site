@@ -7,5 +7,7 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ["/", "/(pt|en|fr|es)/:path*"],
+  // Tudo menos a API, o painel, os ficheiros internos e os ficheiros com extensão.
+  // Um endereço sem língua (ex.: /portfolio) é encaminhado para a versão com língua.
+  matcher: ["/((?!api|studio|_next|_vercel|.*\\..*).*)"],
 };

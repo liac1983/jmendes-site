@@ -609,7 +609,7 @@
   "Privacy": {
     "title": "Privacy Policy",
     "subtitle": "How we handle your personal data",
-    "lastUpdated": "Last updated: July 2026",
+    "lastUpdated": "Last updated: November 2026",
     "intro": "Your privacy matters to J. Mendes Mobiliário. This policy explains what personal data we collect, for what purposes and what your rights are under the General Data Protection Regulation (GDPR).",
     "sections": [
       {
@@ -618,7 +618,7 @@
       },
       {
         "heading": "What data we collect",
-        "body": "We collect the data you voluntarily provide through the contact form — name, email address, phone number (if provided) and the content of your message. We also collect technical data strictly necessary for the website to function, such as your language preference."
+        "body": "We collect the data you voluntarily provide. In the contact form: name, email address, phone number (if provided) and the content of your message. In the quote request: name, company (if applicable), tax number, email address, phone number, project location, project type, materials of interest, your message and any files you attach, such as plans, photographs or documents. We also collect technical data necessary for the operation and security of the website, such as your language preference and the IP address from which a form is submitted, used to limit abusive submissions."
       },
       {
         "heading": "Purposes and legal basis",
@@ -630,7 +630,7 @@
       },
       {
         "heading": "Data sharing and processors",
-        "body": "We do not sell your personal data. To provide the service we rely on providers that process data on our behalf with appropriate safeguards: Brevo (sending contact-form emails), Sanity (content management) and Vercel (website hosting). These providers may process data on servers located inside or outside the European Economic Area, always with adequate legal safeguards."
+        "body": "We do not sell your personal data. To provide the service we rely on providers that process data on our behalf with appropriate safeguards: Brevo (sending form emails, including attachments), Sanity (content management) and Vercel (website hosting). These providers may process data on servers located inside or outside the European Economic Area, always with adequate legal safeguards."
       },
       {
         "heading": "Data retention",
