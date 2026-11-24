@@ -1,6 +1,8 @@
 import PortfolioHero from "@/components/sections/portfolio/portfolio-hero";
 import PortfolioGrid, { type PortfolioProject } from "@/components/sections/portfolio/portfolio-grid";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 import { client } from "@/sanity/lib/client";
 import { portfolioProjectsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
@@ -15,6 +17,15 @@ function slugToLabel(slug: string): string {
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "portfolio");
 }
 
 export default async function PortfolioPage({
@@ -39,7 +50,9 @@ export default async function PortfolioPage({
       slug: localizedProject.slug,
       title: localizedProject.title,
       category: localizedProject.category,
-      categoryFilterLabel: slugToLabel(localizedProject.category),
+      categoryFilterLabel: labelT.has(`categories.${localizedProject.category}`)
+        ? labelT(`categories.${localizedProject.category}`)
+        : slugToLabel(localizedProject.category),
       type: getPortfolioLabel(
         localizedProject.typeLabel || localizedProject.categoryLabel,
         localizedProject.category,

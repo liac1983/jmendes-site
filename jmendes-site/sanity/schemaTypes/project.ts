@@ -99,7 +99,7 @@ export const projectType = defineType({
       name: 'category',
       title: 'Categoria',
       type: 'string',
-      description: 'Slug da categoria (minúsculas, hífens). Ex: cozinhas, roupeiros, comercial, casas-completas, escritorios.',
+      description: 'Slug da categoria (minúsculas, hífens). Ex: cozinhas, roupeiros, comercial, casas-completas, escritorios, entradas, moveis-por-medida.',
       validation: (Rule) => Rule.required(),
     }),
 
@@ -232,7 +232,7 @@ export const projectType = defineType({
 
     defineField({
       name: 'instagramUrl',
-      title: 'URL do Instagram',
+      title: 'Ligação à publicação (Instagram ou Facebook)',
       type: 'url',
     }),
 

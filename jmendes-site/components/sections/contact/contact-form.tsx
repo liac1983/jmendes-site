@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Send } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -10,6 +10,8 @@ import { createContactSchema, type ContactFormData } from "@/lib/contact-schema"
 export default function ContactForm() {
   const t = useTranslations("Contact.form");
   const validationT = useTranslations("Contact.form.validation");
+  const honeypot = useRef<HTMLInputElement>(null);
+  const requestId = useRef<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [serverError, setServerError] = useState("");
@@ -42,23 +44,32 @@ export default function ContactForm() {
     setServerError("");
     setIsSuccess(false);
 
+    // Mantém-se entre tentativas e muda depois de um envio com sucesso.
+    requestId.current ??= crypto.randomUUID();
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          requestId: requestId.current,
+          extra_info: honeypot.current?.value ?? "",
+        }),
       });
 
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        throw new Error(response.status === 429 ? "rate" : "send");
       }
 
       setIsSuccess(true);
+      requestId.current = null;
       reset();
-    } catch {
-      setServerError(t("error"));
+    } catch (error) {
+      const tooMany = error instanceof Error && error.message === "rate";
+      setServerError(tooMany ? t("tooMany") : t("error"));
     } finally {
       setIsSubmitting(false);
     }
@@ -72,6 +83,11 @@ export default function ContactForm() {
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-10 space-y-8">
+        {/* Armadilha para robôs: fora do ecrã, do teclado e dos leitores de ecrã. */}
+        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+          <input ref={honeypot} type="text" name="extra_info" tabIndex={-1} autoComplete="off" />
+        </div>
+
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label className="mb-3 block text-base text-white">
@@ -79,6 +95,7 @@ export default function ContactForm() {
             </label>
             <input
               {...register("name")}
+              maxLength={100}
               className="h-[56px] w-full border border-[var(--border)] bg-transparent px-4 text-white outline-none focus:border-[var(--gold)]"
             />
             {errors.name && (
@@ -108,6 +125,7 @@ export default function ContactForm() {
             </label>
             <input
               {...register("phone")}
+              maxLength={40}
               className="h-[56px] w-full border border-[var(--border)] bg-transparent px-4 text-white outline-none focus:border-[var(--gold)]"
             />
           </div>

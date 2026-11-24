@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import ProjectHero from "@/components/sections/project/project-hero";
@@ -11,6 +12,7 @@ import RelatedProjects from "@/components/sections/project/related-projects";
 import ProjectCta from "@/components/sections/project/project-cta";
 
 import { client } from "@/sanity/lib/client";
+import { detailMetadata } from "@/lib/seo";
 import { urlFor } from "@/sanity/lib/image";
 import {
   projectBySlugQuery,
@@ -31,6 +33,21 @@ type ProjectPageProps = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const found = await client.fetch<SanityProjectDetail | null>(projectBySlugQuery, { slug });
+  if (!found) return {};
+
+  const project = getLocalizedProject(found, locale);
+  return detailMetadata(locale, `/portfolio/${slug}`, {
+    title: project.title,
+    description: project.description,
+    image: project.heroImage
+      ? urlFor(project.heroImage).width(1200).height(630).url()
+      : undefined,
+  });
+}
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { locale, slug } = await params;

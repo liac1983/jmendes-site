@@ -41,6 +41,13 @@ export const projectBySlugQuery = groq`
   }
 `;
 
+export const projectSlugsQuery = groq`
+  *[_type == "project" && published == true && defined(slug.current)]{
+    "slug": slug.current,
+    "updatedAt": _updatedAt
+  }
+`;
+
 export const relatedProjectsQuery = groq`
   *[_type == "project" && published == true && slug.current != $slug && category == $category] | order(order asc, _createdAt desc)[0...3]{
     _id,

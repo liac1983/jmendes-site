@@ -36,6 +36,7 @@ export const pagePaths = {
   home: "",
   sobre: "/sobre",
   processo: "/processo",
+  portfolio: "/portfolio",
   projetos: "/projetos-destaque",
   servicos: "/servicos",
   linhas: "/linhas",

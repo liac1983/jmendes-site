@@ -13,11 +13,11 @@ export function createContactSchema(
   messages: ContactValidationMessages = defaultValidationMessages
 ) {
   return z.object({
-    name: z.string().min(2, messages.nameRequired),
+    name: z.string().trim().min(2, messages.nameRequired).max(100),
     email: z.string().email(messages.invalidEmail),
-    phone: z.string().optional(),
+    phone: z.string().max(40).optional(),
     subject: z.string().min(1, messages.subjectRequired),
-    message: z.string().min(10, messages.messageTooShort),
+    message: z.string().trim().min(10, messages.messageTooShort).max(5000),
   });
 }
 
