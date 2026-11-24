@@ -609,7 +609,7 @@
   "Privacy": {
     "title": "Politique de Confidentialité",
     "subtitle": "Comment nous traitons vos données personnelles",
-    "lastUpdated": "Dernière mise à jour : juillet 2026",
+    "lastUpdated": "Dernière mise à jour : novembre 2026",
     "intro": "Votre vie privée est importante pour J. Mendes Mobiliário. Cette politique explique quelles données personnelles nous collectons, à quelles fins et quels sont vos droits au titre du Règlement Général sur la Protection des Données (RGPD).",
     "sections": [
       {
@@ -618,7 +618,7 @@
       },
       {
         "heading": "Quelles données nous collectons",
-        "body": "Nous collectons les données que vous fournissez volontairement via le formulaire de contact — nom, adresse e-mail, numéro de téléphone (si indiqué) et le contenu de votre message. Nous collectons aussi des données techniques strictement nécessaires au fonctionnement du site, comme votre préférence de langue."
+        "body": "Nous collectons les données que vous fournissez volontairement. Dans le formulaire de contact : nom, adresse e-mail, numéro de téléphone (si indiqué) et le contenu de votre message. Dans la demande de devis : nom, entreprise (le cas échéant), numéro fiscal, adresse e-mail, numéro de téléphone, lieu du chantier, type de projet, matériaux souhaités, votre message et les fichiers que vous joignez, tels que plans, photographies ou documents. Nous collectons aussi des données techniques nécessaires au fonctionnement et à la sécurité du site, comme votre préférence de langue et l'adresse IP depuis laquelle un formulaire est envoyé, utilisée pour limiter les envois abusifs."
       },
       {
         "heading": "Finalités et base légale",
@@ -630,7 +630,7 @@
       },
       {
         "heading": "Partage des données et sous-traitants",
-        "body": "Nous ne vendons pas vos données personnelles. Pour fournir le service, nous faisons appel à des prestataires qui traitent les données pour notre compte avec des garanties appropriées : Brevo (envoi des e-mails du formulaire), Sanity (gestion de contenu) et Vercel (hébergement du site). Ces prestataires peuvent traiter des données sur des serveurs situés à l'intérieur ou à l'extérieur de l'Espace Économique Européen, toujours avec des garanties légales adéquates."
+        "body": "Nous ne vendons pas vos données personnelles. Pour fournir le service, nous faisons appel à des prestataires qui traitent les données pour notre compte avec des garanties appropriées : Brevo (envoi des e-mails des formulaires, pièces jointes comprises), Sanity (gestion de contenu) et Vercel (hébergement du site). Ces prestataires peuvent traiter des données sur des serveurs situés à l'intérieur ou à l'extérieur de l'Espace Économique Européen, toujours avec des garanties légales adéquates."
       },
       {
         "heading": "Conservation des données",

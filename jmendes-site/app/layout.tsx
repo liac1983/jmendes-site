@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { SITE_URL, business } from "@/lib/site";
@@ -42,14 +43,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <html
-      lang="pt"
+      lang={locale}
       className={`${headingFont.variable} ${bodyFont.variable} h-full`}
     >
       <body className="min-h-full bg-[var(--background)] text-[var(--foreground)]">

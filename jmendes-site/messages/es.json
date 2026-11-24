@@ -609,7 +609,7 @@
   "Privacy": {
     "title": "Política de Privacidad",
     "subtitle": "Cómo tratamos sus datos personales",
-    "lastUpdated": "Última actualización: julio de 2026",
+    "lastUpdated": "Última actualización: noviembre de 2026",
     "intro": "Su privacidad es importante para J. Mendes Mobiliário. Esta política explica qué datos personales recogemos, con qué fines y cuáles son sus derechos conforme al Reglamento General de Protección de Datos (RGPD).",
     "sections": [
       {
@@ -618,7 +618,7 @@
       },
       {
         "heading": "Qué datos recogemos",
-        "body": "Recogemos los datos que nos facilita voluntariamente a través del formulario de contacto — nombre, correo electrónico, número de teléfono (si lo indica) y el contenido de su mensaje. También recogemos datos técnicos estrictamente necesarios para el funcionamiento del sitio, como la preferencia de idioma."
+        "body": "Recogemos los datos que nos facilita voluntariamente. En el formulario de contacto: nombre, correo electrónico, número de teléfono (si lo indica) y el contenido de su mensaje. En la solicitud de presupuesto: nombre, empresa (si procede), número de identificación fiscal, correo electrónico, número de teléfono, lugar de la obra, tipo de proyecto, materiales de interés, su mensaje y los archivos que adjunte, como planos, fotografías o documentos. También recogemos datos técnicos necesarios para el funcionamiento y la seguridad del sitio, como la preferencia de idioma y la dirección IP desde la que se envía un formulario, utilizada para limitar los envíos abusivos."
       },
       {
         "heading": "Finalidades y base legal",
@@ -630,7 +630,7 @@
       },
       {
         "heading": "Compartir datos y encargados",
-        "body": "No vendemos sus datos personales. Para prestar el servicio recurrimos a proveedores que tratan datos por cuenta nuestra con garantías adecuadas: Brevo (envío de los correos del formulario), Sanity (gestión de contenidos) y Vercel (alojamiento del sitio). Estos proveedores pueden tratar datos en servidores ubicados dentro o fuera del Espacio Económico Europeo, siempre con salvaguardas legales adecuadas."
+        "body": "No vendemos sus datos personales. Para prestar el servicio recurrimos a proveedores que tratan datos por cuenta nuestra con garantías adecuadas: Brevo (envío de los correos de los formularios, incluidos los adjuntos), Sanity (gestión de contenidos) y Vercel (alojamiento del sitio). Estos proveedores pueden tratar datos en servidores ubicados dentro o fuera del Espacio Económico Europeo, siempre con salvaguardas legales adecuadas."
       },
       {
         "heading": "Conservación de los datos",
