@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { detailMetadata } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 import FeaturedProjectDetail, {
   type FeaturedProjectDetailLabels,
@@ -26,6 +28,35 @@ type FeaturedProjectPageProps = {
     slug: string;
   }>;
 };
+
+async function loadFeaturedProject(slug: string, locale: string) {
+  let sanityProject: SanityFeaturedProjectDetail | null = null;
+  try {
+    sanityProject = await client.fetch<SanityFeaturedProjectDetail | null>(
+      featuredProjectBySlugQuery,
+      { slug }
+    );
+  } catch {
+    // Sem ligação ao Sanity: usa os dados locais.
+  }
+  return sanityProject
+    ? mapSanityFeaturedProjectDetail(sanityProject, locale)
+    : getLocalFeaturedProject(slug) ?? null;
+}
+
+export async function generateMetadata({
+  params,
+}: FeaturedProjectPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const project = await loadFeaturedProject(slug, locale);
+  if (!project) return {};
+
+  return detailMetadata(locale, `/projetos-destaque/${slug}`, {
+    title: project.title,
+    description: project.subtitle,
+    image: project.heroImage,
+  });
+}
 
 export default async function FeaturedProjectPage({
   params,
