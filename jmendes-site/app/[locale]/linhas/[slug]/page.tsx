@@ -1,4 +1,6 @@
+import type {Metadata} from "next";
 import Link from "next/link";
+import {detailMetadata} from "@/lib/seo";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {client} from "@/sanity/lib/client";
@@ -31,6 +33,21 @@ export async function generateStaticParams() {
       slug: item.slug,
     }))
   );
+}
+
+export async function generateMetadata({params}: PageProps): Promise<Metadata> {
+  const {locale, slug} = await params;
+  const rawProduct = await client.fetch<ProductLine | null>(productLineBySlugQuery, {slug});
+  if (!rawProduct) return {};
+
+  const product = getLocalizedProductLine(rawProduct, locale);
+  return detailMetadata(locale, `/linhas/${slug}`, {
+    title: product.title,
+    description: product.subtitle,
+    image: product.heroImage?.asset
+      ? urlFor(product.heroImage).width(1200).height(630).fit("crop").url()
+      : undefined,
+  });
 }
 
 export default async function ProductLineDetailPage({params}: PageProps) {

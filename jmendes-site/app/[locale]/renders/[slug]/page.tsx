@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { detailMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/container";
@@ -24,6 +26,26 @@ export async function generateStaticParams() {
   } catch {
     return [];
   }
+}
+
+export async function generateMetadata({ params }: RenderDetailPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  let grupo: SanityGrupoRenderDetail | null = null;
+  try {
+    grupo = await client.fetch<SanityGrupoRenderDetail | null>(grupoRenderBySlugQuery, { slug });
+  } catch {
+    return {};
+  }
+  if (!grupo) return {};
+
+  const localizado = getLocalizedGrupoRender(grupo, locale);
+  return detailMetadata(locale, `/renders/${slug}`, {
+    title: localizado.titulo,
+    description: localizado.descricao,
+    image: localizado.capa
+      ? urlFor(localizado.capa).width(1200).height(630).fit("crop").url()
+      : undefined,
+  });
 }
 
 export default async function RenderDetailPage({ params }: RenderDetailPageProps) {
